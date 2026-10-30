@@ -1,0 +1,228 @@
+{:linearizable
+ {:valid? false,
+  :op
+  {:process 2,
+   :type :ok,
+   :f :read,
+   :value 2,
+   :index 571,
+   :time 6390702322},
+  :previous-ok
+  {:process 1,
+   :type :ok,
+   :f :read,
+   :value 0,
+   :index 565,
+   :time 6340603303},
+  :final-paths
+  ([{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 565,
+      :time 6340603303},
+     :model {:value 0}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 581,
+      :time 6502177125},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 565,
+      :time 6340603303},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 565,
+      :time 6340603303},
+     :model {:value 0}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 578,
+      :time 6452551833},
+     :model {:value 0}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 581,
+      :time 6502177125},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 565,
+      :time 6340603303},
+     :model {:value 0}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 581,
+      :time 6502177125},
+     :model {:value 0}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 578,
+      :time 6452551833},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 581,
+      :time 6502177125},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 565,
+      :time 6340603303},
+     :model {:value 0}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 578,
+      :time 6452551833},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 581,
+      :time 6502177125},
+     :model {:value 0}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 578,
+      :time 6452551833},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 578,
+      :time 6452551833},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 578,
+      :time 6452551833},
+     :model {:value 0}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 581,
+      :time 6502177125},
+     :model {:value 0}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 571,
+      :time 6390702322},
+     :model {:msg "can't read 2 from register 0"}}]),
+  :configs ()},
+ :timeline {:valid? true},
+ :valid? false}

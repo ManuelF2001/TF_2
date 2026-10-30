@@ -1,0 +1,88 @@
+{:linearizable
+ {:valid? false,
+  :configs
+  ({:model {:value 4},
+    :last-op
+    {:process 1,
+     :type :ok,
+     :f :read,
+     :value 4,
+     :index 29,
+     :time 1019370922},
+    :pending
+    [{:process 0,
+      :type :invoke,
+      :f :read,
+      :value 2,
+      :index 31,
+      :time 1374607817}
+     {:process 5,
+      :type :invoke,
+      :f :write,
+      :value 0,
+      :index 30,
+      :time 1199383491}]}),
+  :final-paths
+  ([{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 29,
+      :time 1019370922},
+     :model {:value 4}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 32,
+      :time 1379573485},
+     :model {:msg "can't read 2 from register 4"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 29,
+      :time 1019370922},
+     :model {:value 4}}
+    {:op
+     {:process 5,
+      :type :invoke,
+      :f :write,
+      :value 0,
+      :index 30,
+      :time 1199383491},
+     :model {:value 0}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 2,
+      :index 32,
+      :time 1379573485},
+     :model {:msg "can't read 2 from register 0"}}]),
+  :previous-ok
+  {:process 1,
+   :type :ok,
+   :f :read,
+   :value 4,
+   :index 29,
+   :time 1019370922},
+  :last-op
+  {:process 1,
+   :type :ok,
+   :f :read,
+   :value 4,
+   :index 29,
+   :time 1019370922},
+  :op
+  {:process 0,
+   :type :ok,
+   :f :read,
+   :value 2,
+   :index 32,
+   :time 1379573485}},
+ :timeline {:valid? true},
+ :valid? false}

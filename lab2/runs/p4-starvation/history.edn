@@ -1,0 +1,942 @@
+{:index 0, :time 14886535, :type :invoke, :process 3, :f :cas, :value [0 [2 1]]}
+{:index 1, :time 45729301, :type :invoke, :process 4, :f :cas, :value [0 [3 3]]}
+{:index 2, :time 72185491, :type :invoke, :process 5, :f :cas, :value [0 [2 3]]}
+{:index 3, :time 103115337, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 4, :time 111274210, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 5, :time 124282828, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 6, :time 258249832, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 7, :time 258488951, :type :fail, :process 3, :f :cas, :value [0 [2 1]], :error [:key-does-not-exist "key does not exist"]}
+{:index 8, :time 258579784, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 9, :time 259062038, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 10, :time 259143608, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 11, :time 284068310, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 12, :time 321115848, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 13, :time 327337504, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 14, :time 369237973, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 15, :time 369466649, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 16, :time 396487985, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 17, :time 406025245, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 18, :time 451393064, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 19, :time 451594364, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 20, :time 500742146, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 21, :time 500931218, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 22, :time 554523653, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 23, :time 554703209, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 24, :time 604666588, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 25, :time 604830212, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 26, :time 610100152, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 27, :time 643274433, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 28, :time 655448723, :type :ok, :process 3, :f :write, :value [0 2]}
+{:index 29, :time 655634394, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 30, :time 660994817, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 31, :time 661215612, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 32, :time 711770403, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 33, :time 711930715, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 34, :time 758432044, :type :fail, :process 5, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "key is locked"]}
+{:index 35, :time 758613778, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 36, :time 759510947, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 37, :time 786359084, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 38, :time 808597116, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 39, :time 808784592, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 40, :time 830916539, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 41, :time 831162915, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 42, :time 865366090, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0, found 2"]}
+{:index 43, :time 865555837, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 44, :time 897019987, :type :fail, :process 4, :f :cas, :value [0 [3 3]], :error [:temporarily-unavailable "key is locked"]}
+{:index 45, :time 897176747, :type :invoke, :process 4, :f :cas, :value [0 [1 0]]}
+{:index 46, :time 911317229, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 47, :time 913060053, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 48, :time 916854255, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 49, :time 948176279, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 50, :time 948415682, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 51, :time 959670259, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 52, :time 1050553878, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 53, :time 1050728065, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 54, :time 1073749981, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 55, :time 1075748243, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 56, :time 1100969993, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 57, :time 1101348276, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 58, :time 1101946435, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3, found 2"]}
+{:index 59, :time 1109790510, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 60, :time 1177002044, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 61, :time 1177164616, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 62, :time 1187676581, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 63, :time 1188563754, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 64, :time 1227634363, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 65, :time 1227820002, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 66, :time 1285028060, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 67, :time 1285202489, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 68, :time 1331625221, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 69, :time 1331838792, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 70, :time 1336968062, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 71, :time 1348419540, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 72, :time 1393374553, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 73, :time 1393562816, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 74, :time 1444859186, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 75, :time 1445030305, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 76, :time 1473856690, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0, found 2"]}
+{:index 77, :time 1480051899, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 78, :time 1495422117, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 79, :time 1519791929, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 80, :time 1547219353, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 81, :time 1547397637, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 82, :time 1597141117, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 83, :time 1597399531, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 84, :time 1626702788, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 85, :time 1626856268, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 86, :time 1674763032, :type :fail, :process 4, :f :cas, :value [0 [1 0]], :error [:temporarily-unavailable "key is locked"]}
+{:index 87, :time 1674900216, :type :invoke, :process 4, :f :write, :value [0 4]}
+{:index 88, :time 1677768872, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 89, :time 1698201577, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 90, :time 1725496663, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 91, :time 1725655801, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 92, :time 1753574781, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 93, :time 1754583220, :type :ok, :process 5, :f :write, :value [0 3]}
+{:index 94, :time 1756019862, :type :invoke, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 95, :time 1778937170, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 96, :time 1804491575, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 97, :time 1810678312, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 98, :time 1856731533, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 99, :time 1856918855, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 100, :time 1924123432, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 101, :time 1924280572, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 102, :time 1958151608, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 103, :time 1958397187, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 104, :time 1975908603, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 105, :time 1977451806, :type :fail, :process 5, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0, found 3"]}
+{:index 106, :time 1981959191, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 107, :time 2011538883, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 108, :time 2056915825, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 109, :time 2057062651, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 110, :time 2106247020, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 111, :time 2106404997, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 112, :time 2136193553, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 113, :time 2136376093, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 114, :time 2172739476, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 115, :time 2172886999, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 116, :time 2223423266, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 117, :time 2223608681, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 118, :time 2274118831, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 119, :time 2274317002, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 120, :time 2327450006, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 121, :time 2327638317, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 122, :time 2355423234, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "key is locked"]}
+{:index 123, :time 2360495779, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 124, :time 2379011642, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 125, :time 2379187198, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 126, :time 2406400974, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 127, :time 2406577671, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 128, :time 2430377816, :type :ok, :process 4, :f :write, :value [0 4]}
+{:index 129, :time 2434522464, :type :invoke, :process 4, :f :write, :value [0 4]}
+{:index 130, :time 2455964371, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 131, :time 2473797948, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 132, :time 2494010117, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 133, :time 2494191788, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 134, :time 2534034831, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 135, :time 2534179519, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 136, :time 2585239909, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 137, :time 2585372688, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 138, :time 2635042638, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 139, :time 2635217640, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 140, :time 2656560775, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 141, :time 2656729156, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 142, :time 2707548339, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 143, :time 2707684040, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 144, :time 2749572114, :type :ok, :process 4, :f :write, :value [0 4]}
+{:index 145, :time 2749733236, :type :invoke, :process 4, :f :cas, :value [0 [4 3]]}
+{:index 146, :time 2757981278, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 147, :time 2765645886, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 148, :time 2787789823, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 149, :time 2807669712, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 150, :time 2816430483, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 151, :time 2835872764, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 152, :time 2883311478, :type :fail, :process 5, :f :write, :value [0 3], :error [:temporarily-unavailable "key is locked"]}
+{:index 153, :time 2883482116, :type :invoke, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 154, :time 2903282756, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 155, :time 2909563825, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 156, :time 2920284475, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 157, :time 2924242905, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 158, :time 2953027832, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 159, :time 2953294269, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 160, :time 3025330007, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 161, :time 3025496891, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 162, :time 3054058323, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 163, :time 3054203389, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 164, :time 3077988992, :type :ok, :process 4, :f :cas, :value [0 [4 3]]}
+{:index 165, :time 3078164121, :type :invoke, :process 4, :f :write, :value [0 2]}
+{:index 166, :time 3078626647, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 167, :time 3103582991, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 168, :time 3142656200, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "key is locked"]}
+{:index 169, :time 3142860493, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 170, :time 3158615542, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 171, :time 3175854909, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 172, :time 3190859903, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 173, :time 3209498170, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 174, :time 3214487107, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 175, :time 3240193510, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 176, :time 3284614723, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 177, :time 3284787641, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 178, :time 3336034937, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 179, :time 3336189519, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 180, :time 3386386411, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 181, :time 3386585608, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 182, :time 3437869539, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 183, :time 3438046424, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 184, :time 3477415215, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 185, :time 3477556950, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 186, :time 3509599698, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 187, :time 3509788248, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 188, :time 3531169552, :type :fail, :process 5, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0, found 3"]}
+{:index 189, :time 3531304073, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 190, :time 3561781153, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 191, :time 3561956372, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 192, :time 3612423034, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 193, :time 3612683023, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 194, :time 3613594129, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 195, :time 3632522314, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 196, :time 3679291914, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 197, :time 3679465787, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 198, :time 3730381522, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 199, :time 3730544011, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 200, :time 3751855818, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 201, :time 3752070714, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 202, :time 3804495424, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 203, :time 3804671133, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 204, :time 3855733046, :type :ok, :process 5, :f :write, :value [0 2]}
+{:index 205, :time 3855893406, :type :invoke, :process 5, :f :cas, :value [0 [3 2]]}
+{:index 206, :time 3856343311, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 207, :time 3860463580, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 208, :time 3884786989, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 209, :time 3888049478, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 210, :time 3923895089, :type :fail, :process 3, :f :write, :value [0 3], :error [:temporarily-unavailable "key is locked"]}
+{:index 211, :time 3924022519, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 212, :time 3934951349, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 213, :time 3936494729, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 214, :time 3973726024, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 215, :time 3974001481, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 216, :time 3975518915, :type :fail, :process 4, :f :write, :value [0 2], :error [:temporarily-unavailable "key is locked"]}
+{:index 217, :time 4006885795, :type :invoke, :process 4, :f :write, :value [0 3]}
+{:index 218, :time 4010598250, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 219, :time 4042358570, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 220, :time 4060573737, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 221, :time 4060734914, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 222, :time 4077383652, :type :fail, :process 5, :f :cas, :value [0 [3 2]], :error [:precondition-failed "expected 3, found 2"]}
+{:index 223, :time 4084618008, :type :invoke, :process 5, :f :cas, :value [0 [0 0]]}
+{:index 224, :time 4088111490, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 225, :time 4088298735, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 226, :time 4163885579, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 227, :time 4164051933, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 228, :time 4213580828, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 229, :time 4213764187, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 230, :time 4213822690, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 231, :time 4230232136, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 232, :time 4296108839, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 233, :time 4296261610, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 234, :time 4297485814, :type :fail, :process 5, :f :cas, :value [0 [0 0]], :error [:precondition-failed "expected 0, found 2"]}
+{:index 235, :time 4312807106, :type :invoke, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 236, :time 4345658642, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 237, :time 4345800352, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 238, :time 4346272338, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 239, :time 4368093007, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 240, :time 4423441840, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 241, :time 4423576527, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 242, :time 4451386446, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 243, :time 4451518337, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 244, :time 4473101201, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 245, :time 4483893576, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 246, :time 4562263566, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 247, :time 4562435714, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 248, :time 4562499353, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 249, :time 4594793081, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 250, :time 4614084333, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 251, :time 4614226104, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 252, :time 4700216163, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 253, :time 4700384289, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 254, :time 4701492130, :type :fail, :process 4, :f :write, :value [0 3], :error [:temporarily-unavailable "key is locked"]}
+{:index 255, :time 4715484086, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 256, :time 4717485371, :type :fail, :process 3, :f :cas, :value [0 [2 0]], :error [:temporarily-unavailable "key is locked"]}
+{:index 257, :time 4735084146, :type :invoke, :process 4, :f :write, :value [0 2]}
+{:index 258, :time 4744654484, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 259, :time 4747970023, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 260, :time 4751538279, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 261, :time 4787731684, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 262, :time 4853105236, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 263, :time 4853289559, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 264, :time 4855819464, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 265, :time 4869815034, :type :ok, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 266, :time 4888519889, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 267, :time 4904567015, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 268, :time 4917869815, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 269, :time 4924492578, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 270, :time 4971013473, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 271, :time 4971179096, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 272, :time 5021582493, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 273, :time 5021720493, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 274, :time 5092095290, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 275, :time 5092262325, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 276, :time 5143170366, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 277, :time 5143329994, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 278, :time 5213999452, :type :ok, :process 5, :f :write, :value [0 1]}
+{:index 279, :time 5214152086, :type :invoke, :process 5, :f :cas, :value [0 [3 0]]}
+{:index 280, :time 5214660811, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 281, :time 5217776836, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 282, :time 5264533588, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 283, :time 5264687433, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 284, :time 5322338317, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 285, :time 5322484845, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 286, :time 5369683902, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 287, :time 5369834729, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 288, :time 5420647029, :type :fail, :process 5, :f :cas, :value [0 [3 0]], :error [:precondition-failed "expected 3, found 1"]}
+{:index 289, :time 5420775805, :type :invoke, :process 5, :f :cas, :value [0 [3 1]]}
+{:index 290, :time 5430428456, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 291, :time 5441714157, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 292, :time 5480691782, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 293, :time 5480958225, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 294, :time 5545758662, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 295, :time 5545920813, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 296, :time 5596463786, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 297, :time 5596623332, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 298, :time 5633069668, :type :fail, :process 5, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3, found 1"]}
+{:index 299, :time 5633212008, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 300, :time 5640813558, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "key is locked"]}
+{:index 301, :time 5666250868, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 302, :time 5691793676, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 303, :time 5691946758, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 304, :time 5736047358, :type :info, :process 4, :f :write, :value [0 2], :error :net-timeout}
+{:index 305, :time 5736316967, :type :invoke, :process 10, :f :write, :value [0 0]}
+{:index 306, :time 5741894339, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 307, :time 5763398186, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 308, :time 5836245374, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 309, :time 5836387838, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 310, :time 5886324511, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 311, :time 5886603010, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 312, :time 5924655457, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 313, :time 5924818227, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 314, :time 5939273523, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 315, :time 5959147220, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 316, :time 5990373040, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 317, :time 5990509933, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 318, :time 6086442145, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 319, :time 6086813526, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 320, :time 6137522509, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 321, :time 6137687571, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 322, :time 6188954491, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 323, :time 6189086822, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 324, :time 6241443052, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 325, :time 6241607185, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 326, :time 6292307523, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 327, :time 6292470505, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 328, :time 6317743874, :type :fail, :process 5, :f :write, :value [0 2], :error [:temporarily-unavailable "key is locked"]}
+{:index 329, :time 6325656649, :type :invoke, :process 5, :f :write, :value [0 4]}
+{:index 330, :time 6343995822, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 331, :time 6344176880, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 332, :time 6395343195, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 333, :time 6395502030, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 334, :time 6469540438, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 335, :time 6469673183, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 336, :time 6520154553, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 337, :time 6520329323, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 338, :time 6578078775, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "key is locked"]}
+{:index 339, :time 6578200247, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 340, :time 6584754711, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 341, :time 6605588055, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 342, :time 6628212624, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 343, :time 6628346247, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 344, :time 6636226605, :type :ok, :process 5, :f :write, :value [0 4]}
+{:index 345, :time 6645464360, :type :invoke, :process 5, :f :cas, :value [0 [1 4]]}
+{:index 346, :time 6710868046, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 347, :time 6711131887, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 348, :time 6736647653, :type :info, :process 10, :f :write, :value [0 0], :error :net-timeout}
+{:index 349, :time 6736839221, :type :invoke, :process 16, :f :cas, :value [0 [3 2]]}
+{:index 350, :time 6737389576, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 351, :time 6739471228, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 352, :time 6813774764, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 353, :time 6813919432, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 354, :time 6863438255, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 355, :time 6863591774, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 356, :time 6918245760, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 357, :time 6918412187, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 358, :time 6924830969, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 359, :time 6951171188, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 360, :time 6968527087, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 361, :time 6971563816, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 362, :time 7063932326, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 363, :time 7064066942, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 364, :time 7114297365, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 365, :time 7114434998, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 366, :time 7167573173, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 367, :time 7167738672, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 368, :time 7168509295, :type :fail, :process 5, :f :cas, :value [0 [1 4]], :error [:precondition-failed "expected 1, found 4"]}
+{:index 369, :time 7194141767, :type :invoke, :process 5, :f :cas, :value [0 [1 0]]}
+{:index 370, :time 7219122601, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 371, :time 7219285062, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 372, :time 7283863632, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 373, :time 7284048892, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 374, :time 7334099012, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 375, :time 7334307283, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 376, :time 7433118035, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 377, :time 7433260543, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 378, :time 7479474356, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "key is locked"]}
+{:index 379, :time 7479591713, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 380, :time 7483973856, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 381, :time 7507095347, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 382, :time 7537022339, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 383, :time 7537187232, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 384, :time 7631422597, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 385, :time 7631719774, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 386, :time 7682305968, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 387, :time 7682448469, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 388, :time 7736269365, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 389, :time 7736419848, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 390, :time 7737119935, :type :info, :process 16, :f :cas, :value [0 [3 2]], :error :net-timeout}
+{:index 391, :time 7774871051, :type :invoke, :process 22, :f :write, :value [0 3]}
+{:index 392, :time 7786359017, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 393, :time 7814698771, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 394, :time 7839602066, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 395, :time 7839719436, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 396, :time 7919440950, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 397, :time 7919595592, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 398, :time 7951942858, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 399, :time 7952078979, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 400, :time 7970244429, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 401, :time 7974440691, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 402, :time 8028254395, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 403, :time 8028389830, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 404, :time 8079435481, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 405, :time 8079597158, :type :fail, :process 5, :f :cas, :value [0 [1 0]], :error [:precondition-failed "expected 1, found 4"]}
+{:index 406, :time 8079649873, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 407, :time 8083174780, :type :invoke, :process 5, :f :cas, :value [0 [4 0]]}
+{:index 408, :time 8131022358, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 409, :time 8131180543, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 410, :time 8183409515, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 411, :time 8183540530, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 412, :time 8240572525, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 413, :time 8240704319, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 414, :time 8292107424, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 415, :time 8292266989, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 416, :time 8297096835, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "key is locked"]}
+{:index 417, :time 8309588435, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 418, :time 8344331976, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 419, :time 8344489341, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 420, :time 8394214310, :type :ok, :process 5, :f :cas, :value [0 [4 0]]}
+{:index 421, :time 8394361778, :type :invoke, :process 5, :f :cas, :value [0 [4 4]]}
+{:index 422, :time 8396055475, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 423, :time 8424726838, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 424, :time 8448844567, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 425, :time 8449000465, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 426, :time 8528955421, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 427, :time 8529116715, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 428, :time 8579511384, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 429, :time 8579659204, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 430, :time 8630717430, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 431, :time 8630855152, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 432, :time 8682451758, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 433, :time 8682594325, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 434, :time 8746446573, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 435, :time 8746571748, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 436, :time 8776225077, :type :info, :process 22, :f :write, :value [0 3], :error :net-timeout}
+{:index 437, :time 8783151265, :type :invoke, :process 28, :f :cas, :value [0 [1 2]]}
+{:index 438, :time 8798170698, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 439, :time 8808283092, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 440, :time 8849798469, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 441, :time 8849930335, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 442, :time 8910731611, :type :fail, :process 5, :f :cas, :value [0 [4 4]], :error [:precondition-failed "expected 4, found 0"]}
+{:index 443, :time 8910851280, :type :invoke, :process 5, :f :cas, :value [0 [4 0]]}
+{:index 444, :time 8952102891, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 445, :time 8952231552, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 446, :time 8960662694, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 447, :time 8960782322, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 448, :time 8977915877, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 449, :time 8978572531, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 450, :time 9066471395, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 451, :time 9066600127, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 452, :time 9117346612, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 453, :time 9117490978, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 454, :time 9118333079, :type :fail, :process 5, :f :cas, :value [0 [4 0]], :error [:precondition-failed "expected 4, found 0"]}
+{:index 455, :time 9155034572, :type :invoke, :process 5, :f :cas, :value [0 [0 3]]}
+{:index 456, :time 9169325181, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 457, :time 9176569738, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 458, :time 9237367156, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 459, :time 9237492180, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 460, :time 9287734732, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 461, :time 9287863634, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 462, :time 9310463608, :type :info, :process 3, :f :write, :value [0 4], :error :net-timeout}
+{:index 463, :time 9317139978, :type :invoke, :process 9, :f :cas, :value [0 [2 4]]}
+{:index 464, :time 9362252707, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 465, :time 9362382212, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 466, :time 9412457425, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 467, :time 9412585935, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 468, :time 9473646187, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 469, :time 9473812808, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 470, :time 9524296435, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 471, :time 9524455923, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 472, :time 9578137455, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 473, :time 9578339204, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 474, :time 9629653014, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 475, :time 9629885890, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 476, :time 9681204741, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 477, :time 9681379062, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 478, :time 9732585503, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 479, :time 9732736984, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 480, :time 9764637051, :type :ok, :process 5, :f :cas, :value [0 [0 3]]}
+{:index 481, :time 9765727697, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 482, :time 9783816270, :type :info, :process 28, :f :cas, :value [0 [1 2]], :error :net-timeout}
+{:index 483, :time 9785372776, :type :invoke, :process 34, :f :cas, :value [0 [1 3]]}
+{:index 484, :time 9785845358, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 485, :time 9801361390, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 486, :time 9838044504, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 487, :time 9838197895, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 488, :time 9938469209, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 489, :time 9938627111, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 490, :time 9952426847, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 491, :time 9953975527, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 492, :time 9988696200, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 493, :time 9988851349, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 494, :time 10061946195, :type :fail, :process 9, :f :cas, :value [0 [2 4]], :error [:temporarily-unavailable "key is locked"]}
+{:index 495, :time 10062093245, :type :invoke, :process 9, :f :cas, :value [0 [1 0]]}
+{:index 496, :time 10093695651, :type :ok, :process 5, :f :write, :value [0 0]}
+{:index 497, :time 10093864245, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 498, :time 10094246134, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 499, :time 10121347054, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 500, :time 10144440495, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 501, :time 10144583808, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 502, :time 10224875576, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 503, :time 10225031318, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 504, :time 10265884313, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 505, :time 10266012564, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 506, :time 10339186952, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 507, :time 10339331279, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 508, :time 10389457702, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 509, :time 10389591098, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 510, :time 10418393786, :type :ok, :process 5, :f :write, :value [0 0]}
+{:index 511, :time 10418516872, :type :invoke, :process 5, :f :cas, :value [0 [2 1]]}
+{:index 512, :time 10475929577, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 513, :time 10476149656, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 514, :time 10525989174, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 515, :time 10526212800, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 516, :time 10626270887, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 517, :time 10626444233, :type :fail, :process 5, :f :cas, :value [0 [2 1]], :error [:precondition-failed "expected 2, found 0"]}
+{:index 518, :time 10626490393, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 519, :time 10646659857, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 520, :time 10677024898, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 521, :time 10677190750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 522, :time 10757512788, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 523, :time 10757736848, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 524, :time 10785678813, :type :info, :process 34, :f :cas, :value [0 [1 3]], :error :net-timeout}
+{:index 525, :time 10785842927, :type :invoke, :process 40, :f :write, :value [0 1]}
+{:index 526, :time 10808017793, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 527, :time 10824103544, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 528, :time 10857598751, :type :fail, :process 9, :f :cas, :value [0 [1 0]], :error [:temporarily-unavailable "key is locked"]}
+{:index 529, :time 10860396043, :type :invoke, :process 9, :f :write, :value [0 1]}
+{:index 530, :time 10908841227, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 531, :time 10908977859, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 532, :time 10954629538, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 533, :time 10954779936, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 534, :time 10959804761, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 535, :time 10961587798, :type :ok, :process 5, :f :write, :value [0 0]}
+{:index 536, :time 10990557193, :type :invoke, :process 5, :f :cas, :value [0 [0 1]]}
+{:index 537, :time 11010222758, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 538, :time 11012160375, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 539, :time 11048757008, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 540, :time 11117280674, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 541, :time 11117425406, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 542, :time 11167976067, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 543, :time 11168193024, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 544, :time 11220338589, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 545, :time 11220443953, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 546, :time 11271059881, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 547, :time 11271196624, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 548, :time 11322418149, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 549, :time 11322546904, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 550, :time 11399467846, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 551, :time 11399587448, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 552, :time 11449446676, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 553, :time 11449559857, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 554, :time 11502672636, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 555, :time 11503216082, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 556, :time 11553489138, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 557, :time 11553596421, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 558, :time 11644891971, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 559, :time 11645024685, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 560, :time 11695056367, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 561, :time 11695172935, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 562, :time 11748721980, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 563, :time 11748829545, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 564, :time 11786111743, :type :info, :process 40, :f :write, :value [0 1], :error :net-timeout}
+{:index 565, :time 11786273387, :type :invoke, :process 46, :f :write, :value [0 2]}
+{:index 566, :time 11800412827, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 567, :time 11824603452, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 568, :time 11852476438, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 569, :time 11855103116, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 570, :time 11861257454, :type :info, :process 9, :f :write, :value [0 1], :error :net-timeout}
+{:index 571, :time 11878450473, :type :invoke, :process 15, :f :write, :value [0 1]}
+{:index 572, :time 11942599553, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 573, :time 11942721045, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 574, :time 11955152546, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 575, :time 11955283574, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 576, :time 11991464671, :type :info, :process 5, :f :cas, :value [0 [0 1]], :error :net-timeout}
+{:index 577, :time 11991602521, :type :invoke, :process 11, :f :write, :value [0 0]}
+{:index 578, :time 11992850757, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 579, :time 12022268058, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 580, :time 12086821043, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 581, :time 12086956894, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 582, :time 12136990416, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 583, :time 12137230897, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 584, :time 12194081281, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 585, :time 12194255575, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 586, :time 12244835462, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 587, :time 12244952855, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 588, :time 12332581775, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 589, :time 12332690636, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 590, :time 12382831843, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 591, :time 12382957033, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 592, :time 12437855541, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 593, :time 12437988789, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 594, :time 12489199317, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 595, :time 12489333429, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 596, :time 12542206627, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 597, :time 12542310796, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 598, :time 12592918558, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 599, :time 12593028956, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 600, :time 12645737751, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 601, :time 12645879449, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 602, :time 12696458150, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 603, :time 12696578005, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 604, :time 12749268758, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 605, :time 12749384513, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 606, :time 12786718189, :type :info, :process 46, :f :write, :value [0 2], :error :net-timeout}
+{:index 607, :time 12786967184, :type :invoke, :process 52, :f :cas, :value [0 [4 3]]}
+{:index 608, :time 12799360745, :type :fail, :process 11, :f :write, :value [0 0], :error [:temporarily-unavailable "key is locked"]}
+{:index 609, :time 12799461267, :type :invoke, :process 11, :f :cas, :value [0 [1 3]]}
+{:index 610, :time 12799728489, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 611, :time 12803801822, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 612, :time 12847771143, :type :ok, :process 15, :f :write, :value [0 1]}
+{:index 613, :time 12847908984, :type :invoke, :process 15, :f :cas, :value [0 [4 2]]}
+{:index 614, :time 12852535140, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 615, :time 12870525035, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 616, :time 12906873114, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 617, :time 12907033896, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 618, :time 12955421265, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 619, :time 12955546898, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 620, :time 12975501030, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 621, :time 12987834162, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 622, :time 13026099941, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 623, :time 13026233834, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 624, :time 13056798792, :type :fail, :process 15, :f :cas, :value [0 [4 2]], :error [:precondition-failed "expected 4, found 1"]}
+{:index 625, :time 13056900892, :type :invoke, :process 15, :f :cas, :value [0 [4 3]]}
+{:index 626, :time 13093506796, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 627, :time 13095571644, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 628, :time 13145289174, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 629, :time 13145447986, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 630, :time 13199447339, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 631, :time 13199577715, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 632, :time 13250577564, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 633, :time 13250749057, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 634, :time 13301882743, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 635, :time 13301991695, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 636, :time 13353532774, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 637, :time 13353661713, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 638, :time 13404830868, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 639, :time 13404973522, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 640, :time 13497999331, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 641, :time 13498194688, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 642, :time 13515994406, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 643, :time 13527435033, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 644, :time 13554269749, :type :fail, :process 15, :f :cas, :value [0 [4 3]], :error [:precondition-failed "expected 4, found 1"]}
+{:index 645, :time 13554395592, :type :invoke, :process 15, :f :cas, :value [0 [2 3]]}
+{:index 646, :time 13605493023, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 647, :time 13605595525, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 648, :time 13656833781, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 649, :time 13657542361, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 650, :time 13686880033, :type :fail, :process 11, :f :cas, :value [0 [1 3]], :error [:temporarily-unavailable "key is locked"]}
+{:index 651, :time 13686980175, :type :invoke, :process 11, :f :write, :value [0 3]}
+{:index 652, :time 13711646000, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 653, :time 13714464679, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 654, :time 13761330170, :type :fail, :process 15, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2, found 1"]}
+{:index 655, :time 13761432331, :type :invoke, :process 15, :f :cas, :value [0 [4 2]]}
+{:index 656, :time 13762254594, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 657, :time 13775194836, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 658, :time 13787394488, :type :info, :process 52, :f :cas, :value [0 [4 3]], :error :net-timeout}
+{:index 659, :time 13796425484, :type :invoke, :process 58, :f :write, :value [0 4]}
+{:index 660, :time 13817593128, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 661, :time 13820051242, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 662, :time 13879802946, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 663, :time 13879908021, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 664, :time 13930379715, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 665, :time 13930506595, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 666, :time 13955749075, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 667, :time 13955869705, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 668, :time 13981925503, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 669, :time 13995282328, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 670, :time 14033007390, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 671, :time 14033144137, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 672, :time 14115309577, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 673, :time 14115434517, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 674, :time 14166040179, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 675, :time 14166148354, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 676, :time 14218064176, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 677, :time 14218198595, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 678, :time 14274893308, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 679, :time 14275019662, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 680, :time 14325722211, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 681, :time 14325835009, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 682, :time 14376586049, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 683, :time 14376687370, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 684, :time 14428085361, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 685, :time 14428186581, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 686, :time 14527381010, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 687, :time 14527488236, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 688, :time 14578284770, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 689, :time 14578385354, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 690, :time 14640867991, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 691, :time 14640965931, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 692, :time 14687374152, :type :info, :process 11, :f :write, :value [0 3], :error :net-timeout}
+{:index 693, :time 14687565259, :type :invoke, :process 17, :f :cas, :value [0 [2 3]]}
+{:index 694, :time 14690893009, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 695, :time 14713032979, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 696, :time 14738529128, :type :fail, :process 15, :f :cas, :value [0 [4 2]], :error [:temporarily-unavailable "key is locked"]}
+{:index 697, :time 14738653899, :type :invoke, :process 15, :f :cas, :value [0 [4 4]]}
+{:index 698, :time 14742947521, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 699, :time 14773118474, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 700, :time 14796444357, :type :info, :process 58, :f :write, :value [0 4], :error :net-timeout}
+{:index 701, :time 14806287319, :type :invoke, :process 64, :f :cas, :value [0 [1 0]]}
+{:index 702, :time 14842011138, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 703, :time 14842105025, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 704, :time 14889539971, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 705, :time 14889693104, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 706, :time 14945148509, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 707, :time 14945272961, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 708, :time 14955829883, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 709, :time 14959091500, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 710, :time 14995697815, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 711, :time 14995803372, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 712, :time 15093981103, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 713, :time 15094111052, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 714, :time 15145205593, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 715, :time 15145298273, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 716, :time 15244631129, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 717, :time 15244753137, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 718, :time 15295290180, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 719, :time 15295384734, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 720, :time 15295649799, :type :fail, :process 17, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2, found 1"]}
+{:index 721, :time 15316013512, :type :invoke, :process 17, :f :cas, :value [0 [3 2]]}
+{:index 722, :time 15351227445, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 723, :time 15351328558, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 724, :time 15400580375, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 725, :time 15400676378, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 726, :time 15471295250, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 727, :time 15471414573, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 728, :time 15511115832, :type :fail, :process 15, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "key is locked"]}
+{:index 729, :time 15511225427, :type :invoke, :process 15, :f :write, :value [0 2]}
+{:index 730, :time 15521548844, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 731, :time 15521632955, :type :fail, :process 17, :f :cas, :value [0 [3 2]], :error [:precondition-failed "expected 3, found 1"]}
+{:index 732, :time 15524899632, :type :invoke, :process 17, :f :cas, :value [0 [3 3]]}
+{:index 733, :time 15530676151, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 734, :time 15613854512, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 735, :time 15613964706, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 736, :time 15664113413, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 737, :time 15664208537, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 738, :time 15716291379, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 739, :time 15716388650, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 740, :time 15765455431, :type :fail, :process 17, :f :cas, :value [0 [3 3]], :error [:precondition-failed "expected 3, found 1"]}
+{:index 741, :time 15765570169, :type :invoke, :process 17, :f :cas, :value [0 [1 4]]}
+{:index 742, :time 15766299336, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 743, :time 15804156859, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 744, :time 15806642419, :type :info, :process 64, :f :cas, :value [0 [1 0]], :error :net-timeout}
+{:index 745, :time 15819383559, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 746, :time 15830614803, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 747, :time 15837150679, :type :invoke, :process 70, :f :cas, :value [1 [4 2]]}
+{:index 748, :time 15907644173, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 749, :time 15907763641, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 750, :time 15958725817, :type :fail, :process 0, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 751, :time 15958818309, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 752, :time 15959267078, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 753, :time 15984073906, :type :invoke, :process 1, :f :read, :value [1 nil]}
+{:index 754, :time 16010225227, :type :fail, :process 2, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 755, :time 16010317562, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 756, :time 16061353930, :type :fail, :process 0, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 757, :time 16061451152, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 758, :time 16071149531, :type :ok, :process 17, :f :cas, :value [0 [1 4]]}
+{:index 759, :time 16099833117, :type :invoke, :process 17, :f :cas, :value [1 [4 4]]}
+{:index 760, :time 16114110824, :type :fail, :process 2, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 761, :time 16114225766, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 762, :time 16165915985, :type :fail, :process 0, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 763, :time 16166039611, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 764, :time 16217486560, :type :fail, :process 2, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 765, :time 16217606290, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 766, :time 16269754381, :type :fail, :process 0, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 767, :time 16269867234, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 768, :time 16317243281, :type :fail, :process 17, :f :cas, :value [1 [4 4]], :error [:key-does-not-exist "key does not exist"]}
+{:index 769, :time 16317333569, :type :invoke, :process 17, :f :write, :value [1 1]}
+{:index 770, :time 16321671679, :type :fail, :process 2, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 771, :time 16354598883, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 772, :time 16372730603, :type :fail, :process 0, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 773, :time 16385296151, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 774, :time 16459165174, :type :fail, :process 2, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 775, :time 16459256579, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 776, :time 16472518008, :type :ok, :process 15, :f :write, :value [0 2]}
+{:index 777, :time 16476726434, :type :invoke, :process 15, :f :cas, :value [1 [2 4]]}
+{:index 778, :time 16510629165, :type :fail, :process 0, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 779, :time 16510776171, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 780, :time 16562361019, :type :fail, :process 2, :f :read, :value [1 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 781, :time 16562453056, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 782, :time 16613889524, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 783, :time 16613991255, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 784, :time 16626496921, :type :ok, :process 17, :f :write, :value [1 1]}
+{:index 785, :time 16626588025, :type :invoke, :process 17, :f :write, :value [1 1]}
+{:index 786, :time 16665264451, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 787, :time 16665362131, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 788, :time 16717512067, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 789, :time 16717615583, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 790, :time 16767894012, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 791, :time 16768016563, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 792, :time 16819276075, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 793, :time 16819392203, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 794, :time 16837348084, :type :info, :process 70, :f :cas, :value [1 [4 2]], :error :net-timeout}
+{:index 795, :time 16837494179, :type :invoke, :process 76, :f :write, :value [1 3]}
+{:index 796, :time 16898980835, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 797, :time 16899128520, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 798, :time 16949815007, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 799, :time 16949912257, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 800, :time 16966608877, :type :ok, :process 17, :f :write, :value [1 1]}
+{:index 801, :time 16966731770, :type :invoke, :process 17, :f :cas, :value [1 [0 2]]}
+{:index 802, :time 16984235271, :type :fail, :process 1, :f :read, :value [1 nil], :error :net-timeout}
+{:index 803, :time 16984356133, :type :invoke, :process 1, :f :read, :value [1 nil]}
+{:index 804, :time 17012945824, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 805, :time 17013049126, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 806, :time 17062882901, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 807, :time 17062981928, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 808, :time 17156615836, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 809, :time 17156706399, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 810, :time 17206944159, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 811, :time 17207118355, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 812, :time 17213610742, :type :fail, :process 17, :f :cas, :value [1 [0 2]], :error [:precondition-failed "expected 0, found 1"]}
+{:index 813, :time 17245961264, :type :invoke, :process 17, :f :cas, :value [1 [2 0]]}
+{:index 814, :time 17258365392, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 815, :time 17258485103, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 816, :time 17310245291, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 817, :time 17310361272, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 818, :time 17359689892, :type :fail, :process 15, :f :cas, :value [1 [2 4]], :error [:temporarily-unavailable "key is locked"]}
+{:index 819, :time 17359798211, :type :invoke, :process 15, :f :cas, :value [1 [1 4]]}
+{:index 820, :time 17410849372, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 821, :time 17410942942, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 822, :time 17461200380, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 823, :time 17461334469, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 824, :time 17461904799, :type :fail, :process 17, :f :cas, :value [1 [2 0]], :error [:precondition-failed "expected 2, found 1"]}
+{:index 825, :time 17478690987, :type :invoke, :process 17, :f :write, :value [1 2]}
+{:index 826, :time 17564094900, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 827, :time 17564216504, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 828, :time 17614186412, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 829, :time 17614316742, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 830, :time 17684001893, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 831, :time 17684155539, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 832, :time 17734278357, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 833, :time 17734443581, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 834, :time 17814373703, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 835, :time 17814485336, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 836, :time 17837792313, :type :info, :process 76, :f :write, :value [1 3], :error :net-timeout}
+{:index 837, :time 17843068257, :type :invoke, :process 82, :f :write, :value [1 4]}
+{:index 838, :time 17864676202, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 839, :time 17864760250, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 840, :time 17916551619, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 841, :time 17916682877, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 842, :time 17968800596, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 843, :time 17969039487, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 844, :time 17984468549, :type :fail, :process 1, :f :read, :value [1 nil], :error :net-timeout}
+{:index 845, :time 17984581868, :type :invoke, :process 1, :f :read, :value [1 nil]}
+{:index 846, :time 18019417142, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 847, :time 18019536097, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 848, :time 18098701402, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 849, :time 18098861097, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 850, :time 18148874568, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 851, :time 18148985053, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 852, :time 18197590171, :type :fail, :process 17, :f :write, :value [1 2], :error [:temporarily-unavailable "key is locked"]}
+{:index 853, :time 18197680562, :type :invoke, :process 17, :f :write, :value [1 2]}
+{:index 854, :time 18201372995, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 855, :time 18202430706, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 856, :time 18251542504, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 857, :time 18251640668, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 858, :time 18349329429, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 859, :time 18349439602, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 860, :time 18360033016, :type :info, :process 15, :f :cas, :value [1 [1 4]], :error :net-timeout}
+{:index 861, :time 18360153618, :type :invoke, :process 21, :f :write, :value [1 4]}
+{:index 862, :time 18400153841, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 863, :time 18400278913, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 864, :time 18451214281, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 865, :time 18451314543, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 866, :time 18516064401, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 867, :time 18516155840, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 868, :time 18566261603, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 869, :time 18566360227, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 870, :time 18620010232, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 871, :time 18620117139, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 872, :time 18670250169, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 873, :time 18670363938, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 874, :time 18721653271, :type :ok, :process 2, :f :read, :value [1 1]}
+{:index 875, :time 18721766026, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 876, :time 18817196129, :type :ok, :process 0, :f :read, :value [1 1]}
+{:index 877, :time 18817289925, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 878, :time 18840479594, :type :ok, :process 21, :f :write, :value [1 4]}
+{:index 879, :time 18840568510, :type :invoke, :process 21, :f :cas, :value [1 [4 4]]}
+{:index 880, :time 18842900348, :type :info, :process 82, :f :write, :value [1 4], :error :net-timeout}
+{:index 881, :time 18854355202, :type :invoke, :process 88, :f :write, :value [1 2]}
+{:index 882, :time 18867636504, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 883, :time 18868745608, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 884, :time 18944203860, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 885, :time 18944297114, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 886, :time 18984647916, :type :fail, :process 1, :f :read, :value [1 nil], :error :net-timeout}
+{:index 887, :time 18984748490, :type :invoke, :process 1, :f :read, :value [1 nil]}
+{:index 888, :time 18992936239, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 889, :time 19006814859, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 890, :time 19039167598, :type :fail, :process 17, :f :write, :value [1 2], :error [:temporarily-unavailable "key is locked"]}
+{:index 891, :time 19039253326, :type :invoke, :process 17, :f :cas, :value [1 [4 3]]}
+{:index 892, :time 19089965877, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 893, :time 19090072679, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 894, :time 19141022528, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 895, :time 19141120427, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 896, :time 19145593157, :type :ok, :process 21, :f :cas, :value [1 [4 4]]}
+{:index 897, :time 19176482107, :type :invoke, :process 21, :f :write, :value [1 4]}
+{:index 898, :time 19194984082, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 899, :time 19210798952, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 900, :time 19245762584, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 901, :time 19245858721, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 902, :time 19314558598, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 903, :time 19314659881, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 904, :time 19365218717, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 905, :time 19365325333, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 906, :time 19418514632, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 907, :time 19418608743, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 908, :time 19468930365, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 909, :time 19469103502, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 910, :time 19497027614, :type :ok, :process 21, :f :write, :value [1 4]}
+{:index 911, :time 19508376858, :type :invoke, :process 21, :f :write, :value [1 2]}
+{:index 912, :time 19534667116, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 913, :time 19534760164, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 914, :time 19585138770, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 915, :time 19585246753, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 916, :time 19638479797, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 917, :time 19638583923, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 918, :time 19688677580, :type :ok, :process 2, :f :read, :value [1 4]}
+{:index 919, :time 19688786397, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 920, :time 19741851944, :type :ok, :process 0, :f :read, :value [1 4]}
+{:index 921, :time 19741970680, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 922, :time 19792326110, :type :ok, :process 2, :f :read, :value [1 2]}
+{:index 923, :time 19792426210, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 924, :time 19803593078, :type :fail, :process 17, :f :cas, :value [1 [4 3]], :error [:temporarily-unavailable "key is locked"]}
+{:index 925, :time 19813588455, :type :invoke, :process 17, :f :cas, :value [1 [0 1]]}
+{:index 926, :time 19836636726, :type :ok, :process 21, :f :write, :value [1 2]}
+{:index 927, :time 19852684440, :type :invoke, :process 21, :f :cas, :value [1 [0 3]]}
+{:index 928, :time 19854088507, :type :ok, :process 0, :f :read, :value [1 2]}
+{:index 929, :time 19854661884, :type :info, :process 88, :f :write, :value [1 2], :error :net-timeout}
+{:index 930, :time 19892655306, :type :invoke, :process 94, :f :cas, :value [1 [2 0]]}
+{:index 931, :time 19903970068, :type :ok, :process 2, :f :read, :value [1 2]}
+{:index 932, :time 19930806868, :type :invoke, :process 0, :f :read, :value [1 nil]}
+{:index 933, :time 19962090817, :type :invoke, :process 2, :f :read, :value [1 nil]}
+{:index 934, :time 19984881611, :type :fail, :process 1, :f :read, :value [1 nil], :error :net-timeout}
+{:index 935, :time 19985075938, :type :invoke, :process 1, :f :read, :value [1 nil]}
+{:index 936, :time 20066091134, :type :ok, :process 2, :f :read, :value [1 2]}
+{:index 937, :time 20068480409, :type :ok, :process 0, :f :read, :value [1 2]}
+{:index 938, :time 20344921575, :type :fail, :process 21, :f :cas, :value [1 [0 3]], :error [:precondition-failed "expected 0, found 2"]}
+{:index 939, :time 20629497078, :type :fail, :process 17, :f :cas, :value [1 [0 1]], :error [:precondition-failed "expected 0, found 2"]}
+{:index 940, :time 20893153284, :type :info, :process 94, :f :cas, :value [1 [2 0]], :error :net-timeout}
+{:index 941, :time 20985261181, :type :fail, :process 1, :f :read, :value [1 nil], :error :net-timeout}

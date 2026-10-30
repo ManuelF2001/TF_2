@@ -1,0 +1,392 @@
+{:index 0, :time 17637180, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1, :time 26389611, :type :info, :process :nemesis, :f :start-partition, :value :majorities-ring}
+{:index 2, :time 34108389, :type :info, :process :nemesis, :f :start-partition, :value [:isolated {"n4" #{"n2" "n0"}, "n1" #{"n2" "n3"}, "n0" #{"n4" "n3"}, "n2" #{"n1" "n4"}, "n3" #{"n1" "n0"}}]}
+{:index 3, :time 47548411, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 4, :time 190746994, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 5, :time 197572898, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 6, :time 263669707, :type :invoke, :process 5, :f :cas, :value [0 [1 4]]}
+{:index 7, :time 269720374, :type :fail, :process 5, :f :cas, :value [0 [1 4]], :error [:not-supported "cas not supported"]}
+{:index 8, :time 366287085, :type :invoke, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 9, :time 370922575, :type :fail, :process 5, :f :cas, :value [0 [2 4]], :error [:not-supported "cas not supported"]}
+{:index 10, :time 503136867, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 11, :time 665972452, :type :invoke, :process 6, :f :cas, :value [0 [4 2]]}
+{:index 12, :time 671230481, :type :fail, :process 6, :f :cas, :value [0 [4 2]], :error [:not-supported "cas not supported"]}
+{:index 13, :time 830828610, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 14, :time 837018010, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 15, :time 881709030, :type :invoke, :process 8, :f :cas, :value [0 [3 3]]}
+{:index 16, :time 888302026, :type :fail, :process 8, :f :cas, :value [0 [3 3]], :error [:not-supported "cas not supported"]}
+{:index 17, :time 918995890, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 18, :time 924851366, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 19, :time 1072462346, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 20, :time 1079000639, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 21, :time 1154468593, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 22, :time 1159859776, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 23, :time 1229517308, :type :invoke, :process 6, :f :write, :value [0 0]}
+{:index 24, :time 1286575843, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 25, :time 1292258241, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 26, :time 1330718113, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 27, :time 1336897268, :type :fail, :process 3, :f :read, :value [0 nil], :error [:key-does-not-exist "key does not exist"]}
+{:index 28, :time 1479849501, :type :invoke, :process 7, :f :write, :value [0 0]}
+{:index 29, :time 1505653053, :type :info, :process 5, :f :write, :value [0 3], :error :net-timeout}
+{:index 30, :time 1659420620, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 31, :time 1664684848, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 32, :time 1859924362, :type :invoke, :process 8, :f :cas, :value [0 [3 2]]}
+{:index 33, :time 1864109830, :type :fail, :process 8, :f :cas, :value [0 [3 2]], :error [:not-supported "cas not supported"]}
+{:index 34, :time 1969272091, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 35, :time 1974892359, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 36, :time 1975076842, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 37, :time 1980245395, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 38, :time 2138095458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 39, :time 2142677080, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 40, :time 2227177466, :type :invoke, :process 15, :f :write, :value [0 0]}
+{:index 41, :time 2233836081, :type :info, :process 6, :f :write, :value [0 0], :error :net-timeout}
+{:index 42, :time 2285626992, :type :invoke, :process 16, :f :cas, :value [0 [3 2]]}
+{:index 43, :time 2290742950, :type :fail, :process 16, :f :cas, :value [0 [3 2]], :error [:not-supported "cas not supported"]}
+{:index 44, :time 2388248441, :type :invoke, :process 16, :f :write, :value [0 4]}
+{:index 45, :time 2461384915, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 46, :time 2466331842, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 47, :time 2481761410, :type :info, :process 7, :f :write, :value [0 0], :error :net-timeout}
+{:index 48, :time 2510387925, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 49, :time 2514608964, :type :ok, :process 3, :f :read, :value [0 0]}
+{:index 50, :time 2578579003, :type :invoke, :process 4, :f :read, :value [0 nil]}
+{:index 51, :time 2583609455, :type :ok, :process 4, :f :read, :value [0 4]}
+{:index 52, :time 2686297165, :type :info, :process :nemesis, :f :stop-partition, :value nil}
+{:index 53, :time 2688173244, :type :info, :process :nemesis, :f :stop-partition, :value :network-healed}
+{:index 54, :time 2717498956, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 55, :time 2722285410, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 56, :time 2889978717, :type :invoke, :process 17, :f :cas, :value [0 [2 0]]}
+{:index 57, :time 2894477822, :type :fail, :process 17, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 58, :time 3019782196, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 59, :time 3024425490, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 60, :time 3151176779, :type :invoke, :process 9, :f :cas, :value [0 [0 1]]}
+{:index 61, :time 3155712413, :type :fail, :process 9, :f :cas, :value [0 [0 1]], :error [:not-supported "cas not supported"]}
+{:index 62, :time 3208012702, :type :invoke, :process 17, :f :cas, :value [0 [1 4]]}
+{:index 63, :time 3212419032, :type :fail, :process 17, :f :cas, :value [0 [1 4]], :error [:not-supported "cas not supported"]}
+{:index 64, :time 3228665121, :type :info, :process 15, :f :write, :value [0 0], :error :net-timeout}
+{:index 65, :time 3351356521, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 66, :time 3356153246, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 67, :time 3389964740, :type :info, :process 16, :f :write, :value [0 4], :error :net-timeout}
+{:index 68, :time 3398683223, :type :invoke, :process 25, :f :cas, :value [0 [3 3]]}
+{:index 69, :time 3402310440, :type :fail, :process 25, :f :cas, :value [0 [3 3]], :error [:not-supported "cas not supported"]}
+{:index 70, :time 3485652227, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 71, :time 3488961581, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 72, :time 3490524774, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 73, :time 3494346559, :type :ok, :process 3, :f :read, :value [0 0]}
+{:index 74, :time 3586319170, :type :invoke, :process 4, :f :read, :value [0 nil]}
+{:index 75, :time 3590600683, :type :ok, :process 4, :f :read, :value [0 4]}
+{:index 76, :time 3736025418, :type :invoke, :process 25, :f :write, :value [0 1]}
+{:index 77, :time 3747823636, :type :ok, :process 25, :f :write, :value [0 1]}
+{:index 78, :time 3912413623, :type :invoke, :process 26, :f :write, :value [0 0]}
+{:index 79, :time 3921405077, :type :ok, :process 26, :f :write, :value [0 0]}
+{:index 80, :time 3955240771, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 81, :time 3960118607, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 82, :time 4095018543, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 83, :time 4099844386, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 84, :time 4226078420, :type :invoke, :process 9, :f :cas, :value [0 [2 3]]}
+{:index 85, :time 4229877339, :type :fail, :process 9, :f :cas, :value [0 [2 3]], :error [:not-supported "cas not supported"]}
+{:index 86, :time 4247614055, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 87, :time 4253183829, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 88, :time 4366367059, :type :invoke, :process 25, :f :cas, :value [0 [3 3]]}
+{:index 89, :time 4369889302, :type :fail, :process 25, :f :cas, :value [0 [3 3]], :error [:not-supported "cas not supported"]}
+{:index 90, :time 4514870186, :type :invoke, :process 25, :f :cas, :value [0 [0 0]]}
+{:index 91, :time 4518359544, :type :fail, :process 25, :f :cas, :value [0 [0 0]], :error [:not-supported "cas not supported"]}
+{:index 92, :time 4619680473, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 93, :time 4623980986, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 94, :time 4663643747, :type :invoke, :process 25, :f :cas, :value [0 [2 2]]}
+{:index 95, :time 4667528840, :type :fail, :process 25, :f :cas, :value [0 [2 2]], :error [:not-supported "cas not supported"]}
+{:index 96, :time 4791453975, :type :invoke, :process 4, :f :read, :value [0 nil]}
+{:index 97, :time 4795647460, :type :ok, :process 4, :f :read, :value [0 0]}
+{:index 98, :time 4895018324, :type :invoke, :process 25, :f :cas, :value [0 [1 0]]}
+{:index 99, :time 4898318864, :type :fail, :process 25, :f :cas, :value [0 [1 0]], :error [:not-supported "cas not supported"]}
+{:index 100, :time 4932444835, :type :invoke, :process 26, :f :write, :value [0 2]}
+{:index 101, :time 4940523134, :type :ok, :process 26, :f :write, :value [0 2]}
+{:index 102, :time 5017050002, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 103, :time 5021704099, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 104, :time 5148648395, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 105, :time 5153623578, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 106, :time 5280209352, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 107, :time 5284880015, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 108, :time 5442458530, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 109, :time 5446153625, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 110, :time 5505094516, :type :invoke, :process 25, :f :cas, :value [0 [2 0]]}
+{:index 111, :time 5508220195, :type :fail, :process 25, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 112, :time 5508816325, :type :invoke, :process 25, :f :cas, :value [0 [4 0]]}
+{:index 113, :time 5511301716, :type :fail, :process 25, :f :cas, :value [0 [4 0]], :error [:not-supported "cas not supported"]}
+{:index 114, :time 5701794126, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 115, :time 5705889342, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 116, :time 5788928851, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 117, :time 5796214199, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 118, :time 5963669331, :type :invoke, :process 25, :f :cas, :value [0 [1 1]]}
+{:index 119, :time 5967135915, :type :fail, :process 25, :f :cas, :value [0 [1 1]], :error [:not-supported "cas not supported"]}
+{:index 120, :time 6015048531, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 121, :time 6018674879, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 122, :time 6179198397, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 123, :time 6183864054, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 124, :time 6336943584, :type :invoke, :process 17, :f :write, :value [0 4]}
+{:index 125, :time 6344143280, :type :ok, :process 17, :f :write, :value [0 4]}
+{:index 126, :time 6526760386, :type :invoke, :process 8, :f :write, :value [0 2]}
+{:index 127, :time 6537465472, :type :ok, :process 8, :f :write, :value [0 2]}
+{:index 128, :time 6599516284, :type :invoke, :process 9, :f :write, :value [0 2]}
+{:index 129, :time 6609481350, :type :ok, :process 9, :f :write, :value [0 2]}
+{:index 130, :time 6753087158, :type :invoke, :process 25, :f :cas, :value [0 [3 0]]}
+{:index 131, :time 6756689093, :type :fail, :process 25, :f :cas, :value [0 [3 0]], :error [:not-supported "cas not supported"]}
+{:index 132, :time 6924963716, :type :invoke, :process 25, :f :write, :value [0 2]}
+{:index 133, :time 6934157291, :type :ok, :process 25, :f :write, :value [0 2]}
+{:index 134, :time 6977518405, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 135, :time 6983109209, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 136, :time 7014670438, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 137, :time 7019060345, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 138, :time 7112536631, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 139, :time 7117522407, :type :ok, :process 3, :f :read, :value [0 2]}
+{:index 140, :time 7179865645, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 141, :time 7187336043, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 142, :time 7359750126, :type :invoke, :process 25, :f :cas, :value [0 [3 3]]}
+{:index 143, :time 7363238972, :type :fail, :process 25, :f :cas, :value [0 [3 3]], :error [:not-supported "cas not supported"]}
+{:index 144, :time 7392480560, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 145, :time 7395884247, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 146, :time 7464044249, :type :invoke, :process 17, :f :write, :value [0 3]}
+{:index 147, :time 7470332181, :type :ok, :process 17, :f :write, :value [0 3]}
+{:index 148, :time 7506371184, :type :invoke, :process 8, :f :cas, :value [0 [1 0]]}
+{:index 149, :time 7509851140, :type :fail, :process 8, :f :cas, :value [0 [1 0]], :error [:not-supported "cas not supported"]}
+{:index 150, :time 7576228320, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 151, :time 7580629036, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 152, :time 7762984220, :type :invoke, :process 25, :f :cas, :value [0 [3 0]]}
+{:index 153, :time 7766057213, :type :fail, :process 25, :f :cas, :value [0 [3 0]], :error [:not-supported "cas not supported"]}
+{:index 154, :time 7804597624, :type :invoke, :process 25, :f :write, :value [0 1]}
+{:index 155, :time 7811682948, :type :ok, :process 25, :f :write, :value [0 1]}
+{:index 156, :time 7997026573, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 157, :time 8003954981, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 158, :time 8117122309, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 159, :time 8120650815, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 160, :time 8169362818, :type :invoke, :process 25, :f :cas, :value [0 [2 0]]}
+{:index 161, :time 8172659129, :type :fail, :process 25, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 162, :time 8209704582, :type :invoke, :process 4, :f :read, :value [0 nil]}
+{:index 163, :time 8214775563, :type :ok, :process 4, :f :read, :value [0 0]}
+{:index 164, :time 8403902738, :type :invoke, :process 25, :f :cas, :value [0 [0 0]]}
+{:index 165, :time 8407292638, :type :fail, :process 25, :f :cas, :value [0 [0 0]], :error [:not-supported "cas not supported"]}
+{:index 166, :time 8500674528, :type :invoke, :process 26, :f :cas, :value [0 [4 0]]}
+{:index 167, :time 8502675548, :type :invoke, :process 17, :f :write, :value [0 0]}
+{:index 168, :time 8503907875, :type :fail, :process 26, :f :cas, :value [0 [4 0]], :error [:not-supported "cas not supported"]}
+{:index 169, :time 8509015413, :type :ok, :process 17, :f :write, :value [0 0]}
+{:index 170, :time 8669635740, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 171, :time 8673913489, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 172, :time 8815963486, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 173, :time 8819855502, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 174, :time 8945090198, :type :invoke, :process 25, :f :cas, :value [0 [2 2]]}
+{:index 175, :time 8948809025, :type :fail, :process 25, :f :cas, :value [0 [2 2]], :error [:not-supported "cas not supported"]}
+{:index 176, :time 9139274178, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 177, :time 9143081253, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 178, :time 9298342223, :type :invoke, :process 25, :f :cas, :value [0 [2 0]]}
+{:index 179, :time 9301054243, :type :fail, :process 25, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 180, :time 9445856300, :type :invoke, :process 25, :f :write, :value [0 4]}
+{:index 181, :time 9453585314, :type :ok, :process 25, :f :write, :value [0 4]}
+{:index 182, :time 9484841008, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 183, :time 9488665047, :type :ok, :process 3, :f :read, :value [0 4]}
+{:index 184, :time 9638811095, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 185, :time 9641386526, :type :invoke, :process 26, :f :cas, :value [0 [4 3]]}
+{:index 186, :time 9646789961, :type :fail, :process 26, :f :cas, :value [0 [4 3]], :error [:not-supported "cas not supported"]}
+{:index 187, :time 9647645224, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 188, :time 9713411222, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 189, :time 9717405532, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 190, :time 9875935468, :type :invoke, :process 17, :f :write, :value [0 1]}
+{:index 191, :time 9883006602, :type :ok, :process 17, :f :write, :value [0 1]}
+{:index 192, :time 10068970991, :type :invoke, :process 8, :f :cas, :value [0 [2 0]]}
+{:index 193, :time 10072458654, :type :fail, :process 8, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 194, :time 10073038469, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 195, :time 10075424536, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 196, :time 10100846677, :type :invoke, :process 25, :f :cas, :value [0 [4 4]]}
+{:index 197, :time 10104650353, :type :fail, :process 25, :f :cas, :value [0 [4 4]], :error [:not-supported "cas not supported"]}
+{:index 198, :time 10290678809, :type :invoke, :process 25, :f :write, :value [0 4]}
+{:index 199, :time 10299085728, :type :ok, :process 25, :f :write, :value [0 4]}
+{:index 200, :time 10459676961, :type :invoke, :process 25, :f :cas, :value [0 [0 4]]}
+{:index 201, :time 10462674297, :type :fail, :process 25, :f :cas, :value [0 [0 4]], :error [:not-supported "cas not supported"]}
+{:index 202, :time 10559542428, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 203, :time 10563120044, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 204, :time 10627986512, :type :invoke, :process 25, :f :cas, :value [0 [2 2]]}
+{:index 205, :time 10630711099, :type :fail, :process 25, :f :cas, :value [0 [2 2]], :error [:not-supported "cas not supported"]}
+{:index 206, :time 10768495529, :type :invoke, :process 25, :f :cas, :value [0 [1 0]]}
+{:index 207, :time 10771478164, :type :fail, :process 25, :f :cas, :value [0 [1 0]], :error [:not-supported "cas not supported"]}
+{:index 208, :time 10778198438, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 209, :time 10782205708, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 210, :time 10964206280, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 211, :time 10967237262, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 212, :time 11086707175, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 213, :time 11090745085, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 214, :time 11099898624, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 215, :time 11104618726, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 216, :time 11267788346, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 217, :time 11271290698, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 218, :time 11313579306, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 219, :time 11318593275, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 220, :time 11382623434, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 221, :time 11386019725, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 222, :time 11410090007, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 223, :time 11413764565, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 224, :time 11595462935, :type :invoke, :process 25, :f :cas, :value [0 [4 1]]}
+{:index 225, :time 11598553106, :type :fail, :process 25, :f :cas, :value [0 [4 1]], :error [:not-supported "cas not supported"]}
+{:index 226, :time 11755693301, :type :invoke, :process 25, :f :write, :value [0 4]}
+{:index 227, :time 11763581212, :type :ok, :process 25, :f :write, :value [0 4]}
+{:index 228, :time 11764893679, :type :invoke, :process 4, :f :read, :value [0 nil]}
+{:index 229, :time 11767330572, :type :ok, :process 4, :f :read, :value [0 4]}
+{:index 230, :time 11917816010, :type :invoke, :process 25, :f :cas, :value [0 [3 2]]}
+{:index 231, :time 11920751501, :type :fail, :process 25, :f :cas, :value [0 [3 2]], :error [:not-supported "cas not supported"]}
+{:index 232, :time 12089628181, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 233, :time 12092527568, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 234, :time 12153051194, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 235, :time 12156034220, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 236, :time 12289883911, :type :invoke, :process 8, :f :write, :value [0 0]}
+{:index 237, :time 12297316719, :type :ok, :process 8, :f :write, :value [0 0]}
+{:index 238, :time 12438657870, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 239, :time 12444528400, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 240, :time 12530637505, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 241, :time 12534123063, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 242, :time 12661868025, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 243, :time 12665515698, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 244, :time 12864055202, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 245, :time 12867691892, :type :ok, :process 1, :f :read, :value [0 0]}
+{:index 246, :time 13022586588, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 247, :time 13026667152, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 248, :time 13178101590, :type :invoke, :process 25, :f :write, :value [0 1]}
+{:index 249, :time 13184853654, :type :ok, :process 25, :f :write, :value [0 1]}
+{:index 250, :time 13350898790, :type :invoke, :process 25, :f :write, :value [0 1]}
+{:index 251, :time 13358927781, :type :ok, :process 25, :f :write, :value [0 1]}
+{:index 252, :time 13447104100, :type :invoke, :process 25, :f :write, :value [0 2]}
+{:index 253, :time 13455256000, :type :ok, :process 25, :f :write, :value [0 2]}
+{:index 254, :time 13628398143, :type :invoke, :process 26, :f :cas, :value [0 [2 0]]}
+{:index 255, :time 13631342531, :type :fail, :process 26, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 256, :time 13719549020, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 257, :time 13723134613, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 258, :time 13769595612, :type :invoke, :process 8, :f :write, :value [0 3]}
+{:index 259, :time 13776934754, :type :ok, :process 8, :f :write, :value [0 3]}
+{:index 260, :time 13868347010, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 261, :time 13871686136, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 262, :time 13934556619, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 263, :time 13938224491, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 264, :time 13973211657, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 265, :time 13976561100, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 266, :time 14051641396, :type :invoke, :process 25, :f :cas, :value [0 [2 4]]}
+{:index 267, :time 14054705996, :type :fail, :process 25, :f :cas, :value [0 [2 4]], :error [:not-supported "cas not supported"]}
+{:index 268, :time 14069035498, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 269, :time 14072024605, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 270, :time 14180823204, :type :invoke, :process 25, :f :cas, :value [0 [1 3]]}
+{:index 271, :time 14183825821, :type :fail, :process 25, :f :cas, :value [0 [1 3]], :error [:not-supported "cas not supported"]}
+{:index 272, :time 14196309080, :type :invoke, :process 25, :f :cas, :value [0 [1 2]]}
+{:index 273, :time 14199079202, :type :fail, :process 25, :f :cas, :value [0 [1 2]], :error [:not-supported "cas not supported"]}
+{:index 274, :time 14355919519, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 275, :time 14359556889, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 276, :time 14451290524, :type :invoke, :process 26, :f :cas, :value [0 [2 4]]}
+{:index 277, :time 14454460650, :type :fail, :process 26, :f :cas, :value [0 [2 4]], :error [:not-supported "cas not supported"]}
+{:index 278, :time 14586220346, :type :invoke, :process 17, :f :cas, :value [0 [0 0]]}
+{:index 279, :time 14589045573, :type :fail, :process 17, :f :cas, :value [0 [0 0]], :error [:not-supported "cas not supported"]}
+{:index 280, :time 14651559089, :type :invoke, :process 8, :f :cas, :value [0 [2 3]]}
+{:index 281, :time 14654202724, :type :fail, :process 8, :f :cas, :value [0 [2 3]], :error [:not-supported "cas not supported"]}
+{:index 282, :time 14662044192, :type :invoke, :process 9, :f :cas, :value [0 [1 4]]}
+{:index 283, :time 14664565910, :type :fail, :process 9, :f :cas, :value [0 [1 4]], :error [:not-supported "cas not supported"]}
+{:index 284, :time 14787143865, :type :invoke, :process 25, :f :cas, :value [0 [2 4]]}
+{:index 285, :time 14790726109, :type :fail, :process 25, :f :cas, :value [0 [2 4]], :error [:not-supported "cas not supported"]}
+{:index 286, :time 14898121628, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 287, :time 14906089783, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 288, :time 14988059231, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 289, :time 14991871376, :type :ok, :process 1, :f :read, :value [0 0]}
+{:index 290, :time 15069569608, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 291, :time 15073014861, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 292, :time 15245796345, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 293, :time 15249561811, :type :ok, :process 3, :f :read, :value [0 0]}
+{:index 294, :time 15379846549, :type :invoke, :process 25, :f :cas, :value [0 [3 3]]}
+{:index 295, :time 15382652278, :type :fail, :process 25, :f :cas, :value [0 [3 3]], :error [:not-supported "cas not supported"]}
+{:index 296, :time 15544117732, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 297, :time 15547866904, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 298, :time 15581957996, :type :invoke, :process 26, :f :write, :value [0 2]}
+{:index 299, :time 15589265346, :type :ok, :process 26, :f :write, :value [0 2]}
+{:index 300, :time 15660583330, :type :invoke, :process 17, :f :cas, :value [0 [1 3]]}
+{:index 301, :time 15663294422, :type :fail, :process 17, :f :cas, :value [0 [1 3]], :error [:not-supported "cas not supported"]}
+{:index 302, :time 15858220194, :type :invoke, :process 8, :f :cas, :value [0 [1 4]]}
+{:index 303, :time 15860937958, :type :fail, :process 8, :f :cas, :value [0 [1 4]], :error [:not-supported "cas not supported"]}
+{:index 304, :time 15866861865, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 305, :time 15869305050, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 306, :time 16026140544, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 307, :time 16034094234, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 308, :time 16182449722, :type :invoke, :process 25, :f :cas, :value [0 [0 0]]}
+{:index 309, :time 16186278985, :type :fail, :process 25, :f :cas, :value [0 [0 0]], :error [:not-supported "cas not supported"]}
+{:index 310, :time 16371486223, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 311, :time 16374242387, :type :ok, :process 1, :f :read, :value [0 0]}
+{:index 312, :time 16500622565, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 313, :time 16502224021, :type :invoke, :process 25, :f :write, :value [0 3]}
+{:index 314, :time 16505204619, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 315, :time 16513187535, :type :ok, :process 25, :f :write, :value [0 3]}
+{:index 316, :time 16542429833, :type :invoke, :process 25, :f :cas, :value [0 [2 0]]}
+{:index 317, :time 16545453286, :type :fail, :process 25, :f :cas, :value [0 [2 0]], :error [:not-supported "cas not supported"]}
+{:index 318, :time 16728473740, :type :invoke, :process 25, :f :cas, :value [0 [2 2]]}
+{:index 319, :time 16731629653, :type :fail, :process 25, :f :cas, :value [0 [2 2]], :error [:not-supported "cas not supported"]}
+{:index 320, :time 16854966716, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 321, :time 16858765316, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 322, :time 16963970959, :type :invoke, :process 17, :f :cas, :value [0 [3 4]]}
+{:index 323, :time 16966683798, :type :fail, :process 17, :f :cas, :value [0 [3 4]], :error [:not-supported "cas not supported"]}
+{:index 324, :time 17082639456, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 325, :time 17086527566, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 326, :time 17256419010, :type :invoke, :process 9, :f :cas, :value [0 [1 1]]}
+{:index 327, :time 17259455595, :type :fail, :process 9, :f :cas, :value [0 [1 1]], :error [:not-supported "cas not supported"]}
+{:index 328, :time 17362362285, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 329, :time 17366389342, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 330, :time 17484325623, :type :invoke, :process 25, :f :write, :value [0 4]}
+{:index 331, :time 17492347656, :type :ok, :process 25, :f :write, :value [0 4]}
+{:index 332, :time 17645660419, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 333, :time 17649293592, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 334, :time 17728004585, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 335, :time 17731296105, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 336, :time 17767836820, :type :invoke, :process 25, :f :cas, :value [0 [4 4]]}
+{:index 337, :time 17775601887, :type :fail, :process 25, :f :cas, :value [0 [4 4]], :error [:not-supported "cas not supported"]}
+{:index 338, :time 17803873248, :type :invoke, :process 25, :f :write, :value [0 0]}
+{:index 339, :time 17810489906, :type :ok, :process 25, :f :write, :value [0 0]}
+{:index 340, :time 17867802140, :type :invoke, :process 25, :f :cas, :value [0 [3 0]]}
+{:index 341, :time 17870535472, :type :fail, :process 25, :f :cas, :value [0 [3 0]], :error [:not-supported "cas not supported"]}
+{:index 342, :time 18017962049, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 343, :time 18021874334, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 344, :time 18040740499, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 345, :time 18044318193, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 346, :time 18080114130, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 347, :time 18082991573, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 348, :time 18156169579, :type :invoke, :process 9, :f :cas, :value [0 [3 3]]}
+{:index 349, :time 18160413794, :type :fail, :process 9, :f :cas, :value [0 [3 3]], :error [:not-supported "cas not supported"]}
+{:index 350, :time 18180755255, :type :invoke, :process 25, :f :cas, :value [0 [2 2]]}
+{:index 351, :time 18183357309, :type :fail, :process 25, :f :cas, :value [0 [2 2]], :error [:not-supported "cas not supported"]}
+{:index 352, :time 18344304337, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 353, :time 18347204341, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 354, :time 18454937607, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 355, :time 18458040905, :type :ok, :process 1, :f :read, :value [0 0]}
+{:index 356, :time 18493894513, :type :invoke, :process 25, :f :cas, :value [0 [4 4]]}
+{:index 357, :time 18496660944, :type :fail, :process 25, :f :cas, :value [0 [4 4]], :error [:not-supported "cas not supported"]}
+{:index 358, :time 18529823911, :type :invoke, :process 3, :f :read, :value [0 nil]}
+{:index 359, :time 18534114127, :type :ok, :process 3, :f :read, :value [0 0]}
+{:index 360, :time 18571664279, :type :invoke, :process 25, :f :cas, :value [0 [0 0]]}
+{:index 361, :time 18574600926, :type :fail, :process 25, :f :cas, :value [0 [0 0]], :error [:not-supported "cas not supported"]}
+{:index 362, :time 18698356000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 363, :time 18701797189, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 364, :time 18765443379, :type :invoke, :process 26, :f :cas, :value [0 [1 1]]}
+{:index 365, :time 18768337755, :type :fail, :process 26, :f :cas, :value [0 [1 1]], :error [:not-supported "cas not supported"]}
+{:index 366, :time 18857660963, :type :invoke, :process 17, :f :write, :value [0 0]}
+{:index 367, :time 18867154353, :type :ok, :process 17, :f :write, :value [0 0]}
+{:index 368, :time 18922384580, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 369, :time 18925462194, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 370, :time 19048375791, :type :invoke, :process 9, :f :cas, :value [0 [1 2]]}
+{:index 371, :time 19050939919, :type :fail, :process 9, :f :cas, :value [0 [1 2]], :error [:not-supported "cas not supported"]}
+{:index 372, :time 19117795417, :type :invoke, :process 25, :f :cas, :value [0 [0 1]]}
+{:index 373, :time 19120727255, :type :fail, :process 25, :f :cas, :value [0 [0 1]], :error [:not-supported "cas not supported"]}
+{:index 374, :time 19254080549, :type :invoke, :process 25, :f :cas, :value [0 [1 3]]}
+{:index 375, :time 19256861576, :type :fail, :process 25, :f :cas, :value [0 [1 3]], :error [:not-supported "cas not supported"]}
+{:index 376, :time 19397753681, :type :invoke, :process 25, :f :write, :value [0 3]}
+{:index 377, :time 19404785400, :type :ok, :process 25, :f :write, :value [0 3]}
+{:index 378, :time 19474599516, :type :invoke, :process 25, :f :cas, :value [0 [0 4]]}
+{:index 379, :time 19477484711, :type :fail, :process 25, :f :cas, :value [0 [0 4]], :error [:not-supported "cas not supported"]}
+{:index 380, :time 19532263488, :type :invoke, :process 25, :f :cas, :value [0 [2 3]]}
+{:index 381, :time 19534904396, :type :fail, :process 25, :f :cas, :value [0 [2 3]], :error [:not-supported "cas not supported"]}
+{:index 382, :time 19550337763, :type :invoke, :process 25, :f :cas, :value [0 [4 3]]}
+{:index 383, :time 19552962346, :type :fail, :process 25, :f :cas, :value [0 [4 3]], :error [:not-supported "cas not supported"]}
+{:index 384, :time 19637034332, :type :invoke, :process 25, :f :cas, :value [0 [0 3]]}
+{:index 385, :time 19639657486, :type :fail, :process 25, :f :cas, :value [0 [0 3]], :error [:not-supported "cas not supported"]}
+{:index 386, :time 19663750280, :type :invoke, :process 26, :f :write, :value [0 4]}
+{:index 387, :time 19670885325, :type :ok, :process 26, :f :write, :value [0 4]}
+{:index 388, :time 19797541433, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 389, :time 19800426292, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 390, :time 19923178794, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 391, :time 19926499830, :type :ok, :process 0, :f :read, :value [0 4]}

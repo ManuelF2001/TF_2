@@ -1,0 +1,196 @@
+<html><head><style>.ops        { position: absolute; }
+.op         { position: absolute; padding: 2px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.3s cubic-bezier(.25,.8,.25,1); overflow: hidden; }
+.op.invoke  { background: #eeeeee; }
+.op.ok      { background: #6DB6FE; }
+.op.info    { background: #FFAA26; }
+.op.fail    { background: #FEB5DA; }
+.op:target  { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+</style></head><body><div><a href="/">jepsen</a> / <a href="/files/lin-kv">lin-kv</a> / <a href="/files/lin-kv/20261030T152008.900Z">20261030T152008.900Z</a> / <a href="/files/lin-kv/20261030T152008.900Z/">independent</a> / <a href="/files/lin-kv/20261030T152008.900Z/independent/2">2</a></div><h1>lin-kv key 2</h1><div class="ops"><a href="#i358"><div class="op fail" id="i358" style="width:100;left:636;top:0;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:20:27.265Z
+
+Op:
+{:process 65
+ :type :fail
+ :f :cas
+ :index 358
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [0 4]}">65 cas [0 4]</div></a><a href="#i361"><div class="op ok" id="i361" style="width:100;left:0;top:48;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:27.415Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 361
+ :value 1}">0 read <br />1</div></a><a href="#i363"><div class="op ok" id="i363" style="width:100;left:0;top:80;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:27.610Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 363
+ :value 1}">0 read <br />1</div></a><a href="#i365"><div class="op ok" id="i365" style="width:100;left:0;top:112;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:27.666Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 365
+ :value 1}">0 read <br />1</div></a><a href="#i371"><div class="op fail" id="i371" style="width:100;left:530;top:192;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:20:28.011Z
+
+Op:
+{:process 57
+ :type :fail
+ :f :cas
+ :index 371
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 0]}">57 cas [1 0]</div></a><a href="#i374"><div class="op ok" id="i374" style="width:100;left:106;top:240;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.113Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 374
+ :value 4}">2 read <br />4</div></a><a href="#i375"><div class="op info" id="i375" style="width:100;left:636;top:32;height:624" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:20:28.272Z
+
+Op:
+{:process 65
+ :type :info
+ :f :write
+ :index 375
+ :error :net-timeout
+ :value 1}">65 write 1</div></a><a href="#i377"><div class="op ok" id="i377" style="width:100;left:212;top:288;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.277Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :read
+ :index 377
+ :value 4}">3 read <br />4</div></a><a href="#i380"><div class="op ok" id="i380" style="width:100;left:0;top:336;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.360Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 380
+ :value 0}">0 read <br />0</div></a><a href="#i382"><div class="op ok" id="i382" style="width:100;left:0;top:368;height:16" title="Dur: 4 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.439Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 382
+ :value 0}">0 read <br />0</div></a><a href="#i384"><div class="op ok" id="i384" style="width:100;left:0;top:400;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.472Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 384
+ :value 0}">0 read <br />0</div></a><a href="#i386"><div class="op ok" id="i386" style="width:100;left:0;top:432;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.560Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 386
+ :value 0}">0 read <br />0</div></a><a href="#i388"><div class="op ok" id="i388" style="width:100;left:0;top:464;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.676Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 388
+ :value 0}">0 read <br />0</div></a><a href="#i390"><div class="op ok" id="i390" style="width:100;left:0;top:496;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.713Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 390
+ :value 0}">0 read <br />0</div></a><a href="#i391"><div class="op info" id="i391" style="width:100;left:318;top:144;height:512" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:20:28.723Z
+
+Op:
+{:process 18
+ :type :info
+ :f :write
+ :index 391
+ :error :net-timeout
+ :value 4}">18 write 4</div></a><a href="#i392"><div class="op info" id="i392" style="width:100;left:424;top:160;height:496" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:20:28.756Z
+
+Op:
+{:process 39
+ :type :info
+ :f :write
+ :index 392
+ :error :net-timeout
+ :value 1}">39 write 1</div></a><a href="#i394"><div class="op ok" id="i394" style="width:100;left:0;top:560;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:20:28.802Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 394
+ :value 0}">0 read <br />0</div></a><a href="#i395"><div class="op info" id="i395" style="width:100;left:848;top:176;height:480" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:20:28.911Z
+
+Op:
+{:process 86
+ :type :info
+ :f :cas
+ :index 395
+ :error :net-timeout
+ :value [0 4]}">86 cas [0 4]</div></a><a href="#i396"><div class="op info" id="i396" style="width:100;left:530;top:224;height:432" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:20:29.023Z
+
+Op:
+{:process 57
+ :type :info
+ :f :write
+ :index 396
+ :error :net-timeout
+ :value 4}">57 write 4</div></a><a href="#i397"><div class="op info" id="i397" style="width:100;left:742;top:320;height:336" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:20:29.280Z
+
+Op:
+{:process 75
+ :type :info
+ :f :write
+ :index 397
+ :error :net-timeout
+ :value 0}">75 write 0</div></a></div></body></html>

@@ -1,0 +1,308 @@
+{:linearizable
+ {:valid? false,
+  :op
+  {:process 1,
+   :type :ok,
+   :f :read,
+   :value 4,
+   :index 995,
+   :time 10705695548},
+  :previous-ok
+  {:process 0,
+   :type :ok,
+   :f :read,
+   :value 0,
+   :index 990,
+   :time 10654131723},
+  :final-paths
+  ([{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 990,
+      :time 10654131723},
+     :model {:value 0}}
+    {:op
+     {:process 3,
+      :type :ok,
+      :f :write,
+      :value 2,
+      :index 1005,
+      :time 10808676699},
+     :model {:value 2}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:msg "can't read 1 from register 2"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 990,
+      :time 10654131723},
+     :model {:value 0}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:msg "can't read 1 from register 0"}}]
+   [{:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 998,
+      :time 10758024993},
+     :model {:value 1}}
+    {:op
+     {:process 3,
+      :type :ok,
+      :f :write,
+      :value 2,
+      :index 1005,
+      :time 10808676699},
+     :model {:value 2}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:msg "can't read 1 from register 2"}}]
+   [{:op
+     {:process 4,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 996,
+      :time 10706848418},
+     :model {:value 1}}
+    {:op
+     {:process 3,
+      :type :ok,
+      :f :write,
+      :value 2,
+      :index 1005,
+      :time 10808676699},
+     :model {:value 2}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:msg "can't read 1 from register 2"}}]
+   [{:op
+     {:process 4,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 996,
+      :time 10706848418},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:value 1}}
+    {:op
+     {:process 3,
+      :type :ok,
+      :f :write,
+      :value 2,
+      :index 1005,
+      :time 10808676699},
+     :model {:value 2}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 998,
+      :time 10758024993},
+     :model {:msg "can't read 1 from register 2"}}]
+   [{:op
+     {:process 3,
+      :type :ok,
+      :f :write,
+      :value 2,
+      :index 1005,
+      :time 10808676699},
+     :model {:value 2}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 996,
+      :time 10706848418},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:value 1}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 998,
+      :time 10758024993},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 995,
+      :time 10705695548},
+     :model {:msg "can't read 4 from register 1"}}]
+   [{:op
+     {:process 3,
+      :type :ok,
+      :f :write,
+      :value 2,
+      :index 1005,
+      :time 10808676699},
+     :model {:value 2}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 996,
+      :time 10706848418},
+     :model {:value 1}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 998,
+      :time 10758024993},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 995,
+      :time 10705695548},
+     :model {:msg "can't read 4 from register 1"}}]
+   [{:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 998,
+      :time 10758024993},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 995,
+      :time 10705695548},
+     :model {:msg "can't read 4 from register 1"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 990,
+      :time 10654131723},
+     :model {:value 0}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 996,
+      :time 10706848418},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 995,
+      :time 10705695548},
+     :model {:msg "can't read 4 from register 1"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 990,
+      :time 10654131723},
+     :model {:value 0}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 996,
+      :time 10706848418},
+     :model {:value 1}}
+    {:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 998,
+      :time 10758024993},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 1004,
+      :time 10808286771},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 995,
+      :time 10705695548},
+     :model {:msg "can't read 4 from register 1"}}]),
+  :configs ()},
+ :timeline {:valid? true},
+ :valid? false}

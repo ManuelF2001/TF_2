@@ -1,0 +1,2 @@
+{:index 403, :time 19994879061, :type :invoke, :process 0, :f :read, :value nil}
+{:index 404, :time 19998151892, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "key does not exist"]}

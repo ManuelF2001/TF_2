@@ -1,0 +1,300 @@
+{:linearizable
+ {:valid? false,
+  :op
+  {:process 4,
+   :type :ok,
+   :f :cas,
+   :value [2 1],
+   :index 735,
+   :time 10511425405},
+  :previous-ok
+  {:process 2,
+   :type :ok,
+   :f :read,
+   :value 1,
+   :index 734,
+   :time 10509575457},
+  :final-paths
+  ([{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 5,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 744,
+      :time 10664753588},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 734,
+      :time 10509575457},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 5,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 744,
+      :time 10664753588},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 734,
+      :time 10509575457},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 5,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 744,
+      :time 10664753588},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 5,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 744,
+      :time 10664753588},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 734,
+      :time 10509575457},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 5,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 744,
+      :time 10664753588},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]
+   [{:op
+     {:process 2,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 734,
+      :time 10509575457},
+     :model {:value 1}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 740,
+      :time 10613949341},
+     :model {:value 1}}
+    {:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 1,
+      :index 736,
+      :time 10526524167},
+     :model {:value 1}}
+    {:op
+     {:process 5,
+      :type :ok,
+      :f :write,
+      :value 1,
+      :index 744,
+      :time 10664753588},
+     :model {:value 1}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :cas,
+      :value [2 1],
+      :index 735,
+      :time 10511425405},
+     :model {:msg "can't CAS 1 from 2 to 1"}}]),
+  :configs ()},
+ :timeline {:valid? true},
+ :valid? false}

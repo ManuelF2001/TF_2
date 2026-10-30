@@ -1,0 +1,621 @@
+2026-10-30 15:45:23,567{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w lin-kv --bin code/q2local.py --node-count 3 --time-limit 20 --rate 10 --concurrency 2n --node-count 3 --nemesis partition
+2026-10-30 15:45:23,681{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 3
+ :availability nil
+ :max-txn-length 4
+ :concurrency 6
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x4a9e6ea7"
+         "maelstrom.db$db$reify__16612@4a9e6ea7"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "lin-kv"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x1acd660d" "2026-10-30T15:45:23.537Z"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x22f3b213"
+         "maelstrom.net$jepsen_net$reify__15721@22f3b213"]
+ :client
+ #object[maelstrom.workload.lin_kv$client$reify__20973
+         "0xe18848d"
+         "maelstrom.workload.lin_kv$client$reify__20973@e18848d"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x53a65166"
+         "java.util.concurrent.CyclicBarrier@53a65166"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x22aaa811"
+         "jepsen.checker$compose$reify__11089@22aaa811"]
+ :argv
+ ("test"
+  "-w"
+  "lin-kv"
+  "--bin"
+  "code/q2local.py"
+  "--node-count"
+  "3"
+  "--time-limit"
+  "20"
+  "--rate"
+  "10"
+  "--concurrency"
+  "2n"
+  "--node-count"
+  "3"
+  "--nemesis"
+  "partition")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@1df6f57d"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@578036a2"]})
+ :nodes ["n0" "n1" "n2"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "code/q2local.py"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x6a7c1725"
+         (jepsen.generator.TimeLimit
+          {:limit 20000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x28446b06"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@28446b06"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 20000000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.FlipFlop
+                                        {:gens [#object[jepsen.nemesis.combined$partition_package$start__16909
+                                                        "0x2cf7860e"
+                                                        "jepsen.nemesis.combined$partition_package$start__16909@2cf7860e"]
+                                                (jepsen.generator.Repeat
+                                                 {:remaining -1,
+                                                  :gen {:type :info,
+                                                        :f :stop-partition,
+                                                        :value nil}})],
+                                         :i 0})})})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x439b893a"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@439b893a"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.OnThreads
+                                        {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                                         :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                                 "0x4b5c84be"
+                                                                 "jepsen.generator.context$make_thread_filter$lazy_filter__12077@4b5c84be"],
+                                         :gen (jepsen.independent.ConcurrentGenerator
+                                               {:n 6,
+                                                :fgen #object[jepsen.tests.linearizable_register$test$fn__17385
+                                                              "0x404bca88"
+                                                              "jepsen.tests.linearizable_register$test$fn__17385@404bca88"],
+                                                :group->threads nil,
+                                                :thread->group nil,
+                                                :group->context-filter nil,
+                                                :keys (0 1 2 3 4 5 6 7 ...),
+                                                :gens nil})})})})]})})]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0x4f517209"
+         "maelstrom.net$jepsen_os$reify__15724@4f517209"]
+ :time-limit 20
+ :workload :lin-kv
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2026-10-30 15:45:27,136{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2026-10-30 15:45:27,140{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2026-10-30 15:45:27,143{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2026-10-30 15:45:27,145{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2026-10-30 15:45:27,145{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2026-10-30 15:45:27,146{GMT}	INFO	[jepsen node n2] maelstrom.process: launching code/q2local.py []
+2026-10-30 15:45:27,146{GMT}	INFO	[jepsen node n1] maelstrom.process: launching code/q2local.py []
+2026-10-30 15:45:27,149{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2026-10-30 15:45:27,153{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2026-10-30 15:45:27,154{GMT}	INFO	[jepsen node n0] maelstrom.process: launching code/q2local.py []
+2026-10-30 15:45:27,249{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2026-10-30 15:45:27,280{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:start-partition	:one
+2026-10-30 15:45:27,288{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:27,288{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:start-partition	[:isolated {"n2" #{"n1" "n0"}, "n1" #{"n2"}, "n0" #{"n2"}}]
+2026-10-30 15:45:27,309{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:key-does-not-exist "key does not exist"]
+2026-10-30 15:45:27,428{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-10-30 15:45:27,435{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-10-30 15:45:27,476{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 1]]
+2026-10-30 15:45:27,480{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:27,549{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:27,556{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:27,616{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:27,622{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:27,738{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-10-30 15:45:27,741{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:27,834{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-10-30 15:45:27,840{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-10-30 15:45:27,964{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 0]]
+2026-10-30 15:45:27,968{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:27,997{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-10-30 15:45:28,004{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-10-30 15:45:28,104{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 4]]
+2026-10-30 15:45:28,107{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:28,135{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,141{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,166{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,171{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,329{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 3]]
+2026-10-30 15:45:28,332{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:28,446{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,451{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,522{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,527{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-10-30 15:45:28,532{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,592{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 0]]
+2026-10-30 15:45:28,595{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:28,735{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,741{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,771{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,776{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,804{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,809{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,852{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:28,857{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:28,920{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 3]]
+2026-10-30 15:45:28,923{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:29,040{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-10-30 15:45:29,045{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-10-30 15:45:29,223{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:29,228{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:29,404{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 2]]
+2026-10-30 15:45:29,408{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:29,534{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-10-30 15:45:29,607{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:29,611{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:29,707{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:29,712{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:29,764{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-10-30 15:45:29,769{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-10-30 15:45:29,885{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 2]]
+2026-10-30 15:45:29,888{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:29,935{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-10-30 15:45:29,940{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:29,941{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-10-30 15:45:29,946{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:30,058{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,063{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:30,193{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,197{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:30,367{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 3]]
+2026-10-30 15:45:30,370{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:30,394{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,399{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:30,491{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,497{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-10-30 15:45:30,641{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,768{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,773{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:30,868{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 3]
+2026-10-30 15:45:30,873{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 3]
+2026-10-30 15:45:30,962{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:30,967{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:31,051{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 2]]
+2026-10-30 15:45:31,054{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:31,184{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:31,189{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:31,210{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:31,214{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-10-30 15:45:31,383{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:31,388{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:31,491{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:31,493{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:31,631{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:31,635{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:31,639{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:31,643{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:31,643{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-10-30 15:45:31,695{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:31,700{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:31,883{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 1]]
+2026-10-30 15:45:31,886{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:31,975{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-10-30 15:45:31,979{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-10-30 15:45:32,093{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-10-30 15:45:32,098{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-10-30 15:45:32,157{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 1]]
+2026-10-30 15:45:32,160{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:32,258{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,263{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:32,354{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,354{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,360{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:32,360{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 4]
+2026-10-30 15:45:32,427{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,431{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:32,497{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,501{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 4]
+2026-10-30 15:45:32,568{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,580{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,584{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:32,754{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [2 0]]
+2026-10-30 15:45:32,756{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [2 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:32,770{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:32,777{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:32,950{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 4]]
+2026-10-30 15:45:32,953{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:33,119{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:33,123{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-10-30 15:45:33,178{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-10-30 15:45:33,183{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-10-30 15:45:33,323{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-10-30 15:45:33,327{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-10-30 15:45:33,356{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:33,359{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:33,402{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:33,406{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:33,497{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 3]
+2026-10-30 15:45:33,569{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-10-30 15:45:33,647{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 2]]
+2026-10-30 15:45:33,650{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:33,701{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-10-30 15:45:33,706{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-10-30 15:45:33,824{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:33,828{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:33,908{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:34,019{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 2]]
+2026-10-30 15:45:34,021{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:34,026{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 1]]
+2026-10-30 15:45:34,028{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:34,216{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:34,220{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:34,366{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 0]]
+2026-10-30 15:45:34,368{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:34,433{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:34,439{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:34,498{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:info	:write	[0 3]	:net-timeout
+2026-10-30 15:45:34,604{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 1]]
+2026-10-30 15:45:34,606{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:34,627{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:34,629{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:34,823{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:34,827{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:34,910{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-10-30 15:45:34,955{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:34,959{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:35,084{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [4 4]]
+2026-10-30 15:45:35,087{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [4 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:35,143{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:stop-partition	nil
+2026-10-30 15:45:35,143{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:stop-partition	:network-healed
+2026-10-30 15:45:35,207{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 3]]
+2026-10-30 15:45:35,210{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:35,302{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 2]]
+2026-10-30 15:45:35,304{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:35,373{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-10-30 15:45:35,379{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-10-30 15:45:35,410{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 0]]
+2026-10-30 15:45:35,413{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:35,537{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:35,542{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:35,559{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [3 1]]
+2026-10-30 15:45:35,562{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [3 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:35,750{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-10-30 15:45:35,752{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:35,843{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:35,849{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:35,968{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:35,971{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 3]]
+2026-10-30 15:45:35,973{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-10-30 15:45:35,973{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:36,026{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:36,029{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:36,132{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:36,136{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:36,201{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [3 2]]
+2026-10-30 15:45:36,203{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [3 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:36,205{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:36,209{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:36,246{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-10-30 15:45:36,251{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-10-30 15:45:36,439{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:36,443{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-10-30 15:45:36,633{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:36,638{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 3]
+2026-10-30 15:45:36,663{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 2]]
+2026-10-30 15:45:36,665{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:36,674{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [1 0]]
+2026-10-30 15:45:36,676{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [1 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:36,841{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [1 0]]
+2026-10-30 15:45:36,843{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [1 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:36,905{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:36,909{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:37,047{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 0]]
+2026-10-30 15:45:37,049{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:37,172{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-10-30 15:45:37,176{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-10-30 15:45:37,262{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:37,267{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 2]
+2026-10-30 15:45:37,423{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:37,426{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:37,449{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:37,453{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:37,639{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [1 1]]
+2026-10-30 15:45:37,641{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [1 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:37,786{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-10-30 15:45:37,791{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-10-30 15:45:37,885{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:37,889{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:37,900{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 2]]
+2026-10-30 15:45:37,902{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:38,049{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 2]]
+2026-10-30 15:45:38,051{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:38,171{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:38,175{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:38,201{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:38,205{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:38,279{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [2 1]]
+2026-10-30 15:45:38,281{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [2 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:38,479{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:38,484{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:38,599{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 3]]
+2026-10-30 15:45:38,601{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:38,618{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:38,622{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 0]
+2026-10-30 15:45:38,689{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-10-30 15:45:38,691{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:38,780{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 2]]
+2026-10-30 15:45:38,783{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:38,923{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 4]]
+2026-10-30 15:45:38,925{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:39,123{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:write	[0 2]
+2026-10-30 15:45:39,127{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:ok	:write	[0 2]
+2026-10-30 15:45:39,207{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:39,211{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:39,323{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:39,327{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:39,474{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 3]]
+2026-10-30 15:45:39,476{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:39,642{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:39,646{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 2]
+2026-10-30 15:45:39,769{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:39,773{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:39,935{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 2]]
+2026-10-30 15:45:39,937{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:40,109{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [4 0]]
+2026-10-30 15:45:40,111{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [4 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:40,184{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-10-30 15:45:40,188{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-10-30 15:45:40,343{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:40,347{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:40,543{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:40,548{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:40,598{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:40,602{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 1]
+2026-10-30 15:45:40,758{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:40,762{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:40,831{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 1]
+2026-10-30 15:45:40,835{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 1]
+2026-10-30 15:45:40,913{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [4 4]]
+2026-10-30 15:45:40,915{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [4 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:41,058{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:41,062{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:41,222{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-10-30 15:45:41,227{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-10-30 15:45:41,327{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:41,331{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:41,380{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 1]]
+2026-10-30 15:45:41,382{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:41,446{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:41,450{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:41,585{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:41,589{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:41,670{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:41,675{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:41,865{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:41,869{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:41,902{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 3]]
+2026-10-30 15:45:41,904{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:42,029{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:42,033{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:42,122{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-10-30 15:45:42,127{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-10-30 15:45:42,224{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:42,228{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-10-30 15:45:42,330{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 1]
+2026-10-30 15:45:42,335{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 1]
+2026-10-30 15:45:42,429{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:42,435{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:42,617{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:42,622{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:42,757{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-10-30 15:45:42,759{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:42,852{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-10-30 15:45:42,856{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-10-30 15:45:43,017{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,021{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 0]
+2026-10-30 15:45:43,189{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 0]]
+2026-10-30 15:45:43,192{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:43,254{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 3]
+2026-10-30 15:45:43,258{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 3]
+2026-10-30 15:45:43,285{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,289{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-10-30 15:45:43,461{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-10-30 15:45:43,466{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-10-30 15:45:43,525{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,530{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-10-30 15:45:43,533{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,537{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-10-30 15:45:43,677{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-10-30 15:45:43,682{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-10-30 15:45:43,704{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,707{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:43,714{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,718{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:43,880{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,884{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:43,963{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:43,967{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:44,045{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 3]]
+2026-10-30 15:45:44,047{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:44,049{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,053{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:44,144{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,148{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 1]
+2026-10-30 15:45:44,161{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,165{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:44,280{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,285{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:44,413{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,418{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:44,608{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,612{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:44,681{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 4]]
+2026-10-30 15:45:44,684{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:44,693{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,697{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:44,706{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 2]]
+2026-10-30 15:45:44,709{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:44,871{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,875{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:44,897{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:44,899{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:44,921{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:44,925{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:45,038{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 0]]
+2026-10-30 15:45:45,041{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:45,149{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:45,153{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:45,259{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 0]]
+2026-10-30 15:45:45,261{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:45,352{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-10-30 15:45:45,354{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:45,396{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 4]]
+2026-10-30 15:45:45,398{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 4]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:45,547{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 0]]
+2026-10-30 15:45:45,549{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:45,623{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [2 0]]
+2026-10-30 15:45:45,625{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[0 [2 0]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:45,811{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:45,815{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:45,940{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:45,943{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:46,111{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:46,115{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:46,208{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-10-30 15:45:46,211{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:46,344{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:46,348{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:46,507{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [1 1]]
+2026-10-30 15:45:46,510{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [1 1]]	[:not-supported "cas not supported"]
+2026-10-30 15:45:46,577{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:46,583{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:46,752{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:46,756{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:46,946{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-10-30 15:45:46,950{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-10-30 15:45:47,145{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-10-30 15:45:47,149{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-10-30 15:45:47,166{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2026-10-30 15:45:47,232{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2026-10-30 15:45:47,232{GMT}	INFO	[jepsen node n1] maelstrom.db: Tearing down n1
+2026-10-30 15:45:47,233{GMT}	INFO	[jepsen node n2] maelstrom.db: Tearing down n2
+2026-10-30 15:45:48,165{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2026-10-30 15:45:48,167{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2026-10-30 15:45:48,431{GMT}	INFO	[clojure-agent-send-pool-0] jepsen.independent: Wrote /home/kernel/TF_2/lab2/store/lin-kv/20261030T154523.537Z/independent/0/results.edn
+2026-10-30 15:45:48,443{GMT}	INFO	[clojure-agent-send-pool-0] jepsen.independent: Wrote /home/kernel/TF_2/lab2/store/lin-kv/20261030T154523.537Z/independent/0/history.edn
+2026-10-30 15:45:48,565{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2026-10-30 15:45:48,589{GMT}	INFO	[jepsen results] jepsen.store: Wrote /home/kernel/TF_2/lab2/store/lin-kv/20261030T154523.537Z/results.edn
+2026-10-30 15:45:48,620{GMT}	INFO	[jepsen test runner] jepsen.core: {:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? false,
+         :count 196,
+         :ok-count 125,
+         :fail-count 70,
+         :info-count 1,
+         :by-f {:cas {:valid? false,
+                      :count 65,
+                      :ok-count 0,
+                      :fail-count 65,
+                      :info-count 0},
+                :read {:valid? true,
+                       :count 104,
+                       :ok-count 99,
+                       :fail-count 5,
+                       :info-count 0},
+                :write {:valid? true,
+                        :count 27,
+                        :ok-count 26,
+                        :fail-count 0,
+                        :info-count 1}}},
+ :availability {:valid? true, :ok-fraction 0.6377551},
+ :net {:all {:send-count 854,
+             :recv-count 791,
+             :msg-count 854,
+             :msgs-per-op 4.357143},
+       :clients {:send-count 393, :recv-count 393, :msg-count 393},
+       :servers {:send-count 461,
+                 :recv-count 398,
+                 :msg-count 461,
+                 :msgs-per-op 2.3520408},
+       :valid? true},
+ :workload {:valid? true,
+            :results {0 {:linearizable {:valid? true,
+                                        :configs ({:model #knossos.model.CASRegister{:value 1},
+                                                   :last-op {:process 1,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 1,
+                                                             :index 395,
+                                                             :time 19901188239},
+                                                   :pending []}
+                                                  {:model #knossos.model.CASRegister{:value 1},
+                                                   :last-op {:process 1,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 1,
+                                                             :index 395,
+                                                             :time 19901188239},
+                                                   :pending [{:process 5,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 3,
+                                                              :index 135,
+                                                              :time 6247694051}]}),
+                                        :final-paths ()},
+                         :timeline {:valid? true},
+                         :valid? true}},
+            :failures []},
+ :valid? false}
+
+
+Analysis invalid! (ﾉಥ益ಥ）ﾉ ┻━┻

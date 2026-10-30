@@ -1,0 +1,402 @@
+5	:invoke	:cas	[0 [2 2]]
+5	:fail	:cas	[0 [2 2]]	[:not-supported cas not supported]
+5	:invoke	:write	[0 3]
+5	:ok	:write	[0 3]
+2	:invoke	:read	[0 nil]
+2	:ok	:read	[0 3]
+3	:invoke	:read	[0 nil]
+3	:ok	:read	[0 3]
+5	:invoke	:cas	[0 [2 2]]
+5	:fail	:cas	[0 [2 2]]	[:not-supported cas not supported]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+6	:invoke	:cas	[0 [1 0]]
+6	:fail	:cas	[0 [1 0]]	[:not-supported cas not supported]
+7	:invoke	:cas	[0 [0 2]]
+7	:fail	:cas	[0 [0 2]]	[:not-supported cas not supported]
+8	:invoke	:write	[0 4]
+8	:ok	:write	[0 4]
+9	:invoke	:write	[0 3]
+9	:ok	:write	[0 3]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+5	:invoke	:cas	[0 [4 0]]
+5	:fail	:cas	[0 [4 0]]	[:not-supported cas not supported]
+1	:invoke	:read	[0 nil]
+1	:ok	:read	[0 3]
+5	:invoke	:cas	[0 [1 3]]
+5	:fail	:cas	[0 [1 3]]	[:not-supported cas not supported]
+3	:invoke	:read	[0 nil]
+5	:invoke	:cas	[0 [4 4]]
+3	:ok	:read	[0 3]
+5	:fail	:cas	[0 [4 4]]	[:not-supported cas not supported]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+6	:invoke	:write	[0 2]
+6	:ok	:write	[0 2]
+7	:invoke	:write	[0 2]
+7	:ok	:write	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+5	:invoke	:cas	[0 [2 3]]
+5	:fail	:cas	[0 [2 3]]	[:not-supported cas not supported]
+5	:invoke	:cas	[0 [2 4]]
+5	:fail	:cas	[0 [2 4]]	[:not-supported cas not supported]
+5	:invoke	:cas	[0 [0 4]]
+5	:fail	:cas	[0 [0 4]]	[:not-supported cas not supported]
+5	:invoke	:cas	[0 [4 4]]
+5	:fail	:cas	[0 [4 4]]	[:not-supported cas not supported]
+5	:invoke	:write	[0 2]
+5	:ok	:write	[0 2]
+4	:invoke	:read	[0 nil]
+4	:ok	:read	[0 2]
+0	:invoke	:read	[0 nil]
+1	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+1	:ok	:read	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+8	:invoke	:write	[0 2]
+8	:ok	:write	[0 2]
+9	:invoke	:write	[0 3]
+9	:ok	:write	[0 3]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+5	:invoke	:cas	[0 [0 3]]
+5	:fail	:cas	[0 [0 3]]	[:not-supported cas not supported]
+5	:invoke	:write	[0 0]
+5	:ok	:write	[0 0]
+5	:invoke	:cas	[0 [1 3]]
+5	:fail	:cas	[0 [1 3]]	[:not-supported cas not supported]
+5	:invoke	:cas	[0 [3 4]]
+5	:fail	:cas	[0 [3 4]]	[:not-supported cas not supported]
+5	:invoke	:write	[0 0]
+5	:ok	:write	[0 0]
+6	:invoke	:cas	[0 [2 3]]
+6	:fail	:cas	[0 [2 3]]	[:not-supported cas not supported]
+7	:invoke	:cas	[0 [3 1]]
+7	:fail	:cas	[0 [3 1]]	[:not-supported cas not supported]
+8	:invoke	:cas	[0 [0 0]]
+8	:fail	:cas	[0 [0 0]]	[:not-supported cas not supported]
+9	:invoke	:cas	[0 [0 4]]
+9	:fail	:cas	[0 [0 4]]	[:not-supported cas not supported]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+1	:invoke	:read	[0 nil]
+1	:ok	:read	[0 0]
+2	:invoke	:read	[0 nil]
+2	:ok	:read	[0 0]
+3	:invoke	:read	[0 nil]
+3	:ok	:read	[0 0]
+5	:invoke	:cas	[0 [3 4]]
+5	:fail	:cas	[0 [3 4]]	[:not-supported cas not supported]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+6	:invoke	:write	[0 2]
+6	:ok	:write	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+8	:invoke	:write	[0 2]
+8	:ok	:write	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+0	:invoke	:read	[0 nil]
+5	:invoke	:cas	[0 [2 3]]
+5	:fail	:cas	[0 [2 3]]	[:not-supported cas not supported]
+2	:invoke	:read	[0 nil]
+3	:invoke	:read	[0 nil]
+5	:invoke	:cas	[0 [4 2]]
+5	:fail	:cas	[0 [4 2]]	[:not-supported cas not supported]
+1	:invoke	:read	[0 nil]
+4	:invoke	:read	[0 nil]
+7	:invoke	:cas	[0 [1 0]]
+8	:invoke	:cas	[0 [1 4]]
+8	:fail	:cas	[0 [1 4]]	[:not-supported cas not supported]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+5	:invoke	:cas	[0 [4 0]]
+5	:fail	:cas	[0 [4 0]]	[:not-supported cas not supported]
+2	:fail	:read	[0 nil]	:net-timeout
+3	:fail	:read	[0 nil]	:net-timeout
+2	:invoke	:read	[0 nil]
+3	:invoke	:read	[0 nil]
+5	:invoke	:cas	[0 [2 0]]
+5	:fail	:cas	[0 [2 0]]	[:not-supported cas not supported]
+1	:fail	:read	[0 nil]	:net-timeout
+1	:invoke	:read	[0 nil]
+4	:fail	:read	[0 nil]	:net-timeout
+7	:info	:cas	[0 [1 0]]	:net-timeout
+4	:invoke	:read	[0 nil]
+5	:invoke	:cas	[0 [4 1]]
+5	:fail	:cas	[0 [4 1]]	[:not-supported cas not supported]
+6	:invoke	:cas	[0 [0 3]]
+17	:invoke	:cas	[0 [4 1]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+9	:invoke	:cas	[0 [1 2]]
+9	:fail	:cas	[0 [1 2]]	[:not-supported cas not supported]
+2	:fail	:read	[0 nil]	:net-timeout
+5	:invoke	:write	[0 4]
+3	:fail	:read	[0 nil]	:net-timeout
+8	:invoke	:write	[0 3]
+2	:invoke	:read	[0 nil]
+9	:invoke	:cas	[0 [3 2]]
+9	:fail	:cas	[0 [3 2]]	[:not-supported cas not supported]
+1	:fail	:read	[0 nil]	:net-timeout
+9	:invoke	:cas	[0 [4 1]]
+9	:fail	:cas	[0 [4 1]]	[:not-supported cas not supported]
+1	:invoke	:read	[0 nil]
+4	:fail	:read	[0 nil]	:net-timeout
+3	:invoke	:read	[0 nil]
+9	:invoke	:cas	[0 [1 1]]
+9	:fail	:cas	[0 [1 1]]	[:not-supported cas not supported]
+6	:info	:cas	[0 [0 3]]	:net-timeout
+17	:info	:cas	[0 [4 1]]	:net-timeout
+27	:invoke	:cas	[0 [1 3]]
+4	:invoke	:read	[0 nil]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+16	:invoke	:write	[0 3]
+5	:info	:write	[0 4]	:net-timeout
+15	:invoke	:write	[0 3]
+8	:info	:write	[0 3]	:net-timeout
+2	:fail	:read	[0 nil]	:net-timeout
+2	:invoke	:read	[0 nil]
+18	:invoke	:cas	[0 [2 2]]
+18	:fail	:cas	[0 [2 2]]	[:not-supported cas not supported]
+1	:fail	:read	[0 nil]	:net-timeout
+1	:invoke	:read	[0 nil]
+3	:fail	:read	[0 nil]	:net-timeout
+18	:invoke	:cas	[0 [0 1]]
+18	:fail	:cas	[0 [0 1]]	[:not-supported cas not supported]
+27	:info	:cas	[0 [1 3]]	:net-timeout
+4	:fail	:read	[0 nil]	:net-timeout
+3	:invoke	:read	[0 nil]
+0	:fail	:read	[0 nil]	:net-timeout
+37	:invoke	:cas	[0 [2 4]]
+16	:info	:write	[0 3]	:net-timeout
+0	:invoke	:read	[0 nil]
+15	:info	:write	[0 3]	:net-timeout
+4	:invoke	:read	[0 nil]
+2	:fail	:read	[0 nil]	:net-timeout
+2	:invoke	:read	[0 nil]
+25	:invoke	:cas	[0 [3 3]]
+25	:fail	:cas	[0 [3 3]]	[:not-supported cas not supported]
+25	:invoke	:write	[0 0]
+1	:fail	:read	[0 nil]	:net-timeout
+26	:invoke	:write	[0 0]
+18	:invoke	:cas	[0 [0 0]]
+18	:fail	:cas	[0 [0 0]]	[:not-supported cas not supported]
+18	:invoke	:cas	[0 [1 4]]
+18	:fail	:cas	[0 [1 4]]	[:not-supported cas not supported]
+1	:invoke	:read	[0 nil]
+3	:fail	:read	[0 nil]	:net-timeout
+18	:invoke	:cas	[0 [4 0]]
+18	:fail	:cas	[0 [4 0]]	[:not-supported cas not supported]
+18	:invoke	:write	[0 2]
+37	:info	:cas	[0 [2 4]]	:net-timeout
+3	:invoke	:read	[0 nil]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+9	:invoke	:cas	[0 [0 1]]
+9	:fail	:cas	[0 [0 1]]	[:not-supported cas not supported]
+4	:fail	:read	[0 nil]	:net-timeout
+4	:invoke	:read	[0 nil]
+2	:fail	:read	[0 nil]	:net-timeout
+25	:info	:write	[0 0]	:net-timeout
+2	:invoke	:read	[0 nil]
+35	:invoke	:cas	[0 [3 2]]
+35	:fail	:cas	[0 [3 2]]	[:not-supported cas not supported]
+26	:info	:write	[0 0]	:net-timeout
+35	:invoke	:cas	[1 [3 3]]
+35	:fail	:cas	[1 [3 3]]	[:not-supported cas not supported]
+1	:fail	:read	[0 nil]	:net-timeout
+18	:info	:write	[0 2]	:net-timeout
+1	:invoke	:read	[1 nil]
+3	:fail	:read	[0 nil]	:net-timeout
+3	:invoke	:read	[1 nil]
+35	:invoke	:write	[1 2]
+0	:fail	:read	[0 nil]	:net-timeout
+36	:invoke	:cas	[1 [1 4]]
+0	:invoke	:read	[1 nil]
+4	:fail	:read	[0 nil]	:net-timeout
+28	:invoke	:write	[1 4]
+4	:invoke	:read	[1 nil]
+2	:fail	:read	[0 nil]	:net-timeout
+47	:invoke	:cas	[1 [3 3]]
+9	:invoke	:cas	[1 [2 2]]
+9	:fail	:cas	[1 [2 2]]	[:not-supported cas not supported]
+9	:invoke	:cas	[1 [1 4]]
+9	:fail	:cas	[1 [1 4]]	[:not-supported cas not supported]
+1	:fail	:read	[1 nil]	:net-timeout
+9	:invoke	:cas	[1 [4 1]]
+9	:fail	:cas	[1 [4 1]]	[:not-supported cas not supported]
+1	:invoke	:read	[1 nil]
+2	:invoke	:read	[1 nil]
+3	:fail	:read	[1 nil]	:net-timeout
+35	:info	:write	[1 2]	:net-timeout
+45	:invoke	:cas	[1 [1 4]]
+45	:fail	:cas	[1 [1 4]]	[:not-supported cas not supported]
+36	:info	:cas	[1 [1 4]]	:net-timeout
+46	:invoke	:cas	[1 [4 4]]
+0	:fail	:read	[1 nil]	:net-timeout
+28	:info	:write	[1 4]	:net-timeout
+4	:fail	:read	[1 nil]	:net-timeout
+38	:invoke	:write	[1 3]
+47	:info	:cas	[1 [3 3]]	:net-timeout
+0	:invoke	:read	[1 nil]
+3	:invoke	:read	[1 nil]
+4	:invoke	:read	[1 nil]
+1	:fail	:read	[1 nil]	:net-timeout
+45	:invoke	:write	[1 4]
+2	:fail	:read	[1 nil]	:net-timeout
+57	:invoke	:cas	[1 [1 4]]
+9	:invoke	:write	[1 1]
+46	:info	:cas	[1 [4 4]]	:net-timeout
+56	:invoke	:cas	[1 [3 0]]
+38	:info	:write	[1 3]	:net-timeout
+1	:invoke	:read	[1 nil]
+48	:invoke	:cas	[1 [1 4]]
+48	:fail	:cas	[1 [1 4]]	[:not-supported cas not supported]
+0	:fail	:read	[1 nil]	:net-timeout
+0	:invoke	:read	[1 nil]
+2	:invoke	:read	[1 nil]
+48	:invoke	:cas	[1 [0 1]]
+48	:fail	:cas	[1 [0 1]]	[:not-supported cas not supported]
+48	:invoke	:cas	[1 [2 3]]
+48	:fail	:cas	[1 [2 3]]	[:not-supported cas not supported]
+48	:invoke	:cas	[1 [2 0]]
+48	:fail	:cas	[1 [2 0]]	[:not-supported cas not supported]
+3	:fail	:read	[1 nil]	:net-timeout
+4	:fail	:read	[1 nil]	:net-timeout
+48	:invoke	:cas	[1 [1 0]]
+3	:invoke	:read	[1 nil]
+48	:fail	:cas	[1 [1 0]]	[:not-supported cas not supported]
+45	:info	:write	[1 4]	:net-timeout
+4	:invoke	:read	[1 nil]
+57	:info	:cas	[1 [1 4]]	:net-timeout
+55	:invoke	:write	[1 0]
+9	:info	:write	[1 1]	:net-timeout
+67	:invoke	:cas	[1 [3 0]]
+48	:invoke	:cas	[1 [2 2]]
+48	:fail	:cas	[1 [2 2]]	[:not-supported cas not supported]
+48	:invoke	:cas	[1 [2 2]]
+48	:fail	:cas	[1 [2 2]]	[:not-supported cas not supported]
+56	:info	:cas	[1 [3 0]]	:net-timeout
+1	:fail	:read	[1 nil]	:net-timeout
+1	:invoke	:read	[2 nil]
+0	:fail	:read	[1 nil]	:net-timeout
+2	:fail	:read	[1 nil]	:net-timeout
+48	:invoke	:write	[2 0]
+0	:invoke	:read	[2 nil]
+66	:invoke	:cas	[2 [1 4]]
+3	:fail	:read	[1 nil]	:net-timeout
+2	:invoke	:read	[2 nil]
+4	:fail	:read	[1 nil]	:net-timeout
+3	:invoke	:read	[2 nil]
+55	:info	:write	[1 0]	:net-timeout
+65	:invoke	:cas	[2 [0 3]]
+65	:fail	:cas	[2 [0 3]]	[:not-supported cas not supported]
+67	:info	:cas	[1 [3 0]]	:net-timeout
+65	:invoke	:cas	[2 [0 4]]
+65	:fail	:cas	[2 [0 4]]	[:not-supported cas not supported]
+4	:invoke	:read	[2 nil]
+65	:invoke	:write	[2 3]
+77	:invoke	:cas	[2 [3 3]]
+19	:invoke	:cas	[2 [2 3]]
+19	:fail	:cas	[2 [2 3]]	[:not-supported cas not supported]
+1	:fail	:read	[2 nil]	:net-timeout
+48	:info	:write	[2 0]	:net-timeout
+1	:invoke	:read	[2 nil]
+0	:fail	:read	[2 nil]	:net-timeout
+0	:invoke	:read	[2 nil]
+66	:info	:cas	[2 [1 4]]	:net-timeout
+76	:invoke	:cas	[2 [4 2]]
+2	:fail	:read	[2 nil]	:net-timeout
+58	:invoke	:cas	[2 [2 4]]
+19	:invoke	:cas	[2 [1 0]]
+58	:fail	:cas	[2 [2 4]]	[:not-supported cas not supported]
+19	:fail	:cas	[2 [1 0]]	[:not-supported cas not supported]
+3	:fail	:read	[2 nil]	:net-timeout
+58	:invoke	:write	[2 3]
+3	:invoke	:read	[2 nil]
+19	:invoke	:cas	[2 [0 3]]
+19	:fail	:cas	[2 [0 3]]	[:not-supported cas not supported]
+2	:invoke	:read	[2 nil]
+4	:fail	:read	[2 nil]	:net-timeout
+65	:info	:write	[2 3]	:net-timeout
+19	:invoke	:cas	[2 [1 3]]
+19	:fail	:cas	[2 [1 3]]	[:not-supported cas not supported]
+19	:invoke	:cas	[2 [1 3]]
+19	:fail	:cas	[2 [1 3]]	[:not-supported cas not supported]
+77	:info	:cas	[2 [3 3]]	:net-timeout
+4	:invoke	:read	[2 nil]
+19	:invoke	:cas	[2 [3 1]]
+19	:fail	:cas	[2 [3 1]]	[:not-supported cas not supported]
+75	:invoke	:cas	[2 [4 4]]
+75	:fail	:cas	[2 [4 4]]	[:not-supported cas not supported]
+1	:fail	:read	[2 nil]	:net-timeout
+0	:fail	:read	[2 nil]	:net-timeout
+0	:invoke	:read	[2 nil]
+75	:invoke	:cas	[2 [3 4]]
+75	:fail	:cas	[2 [3 4]]	[:not-supported cas not supported]
+76	:info	:cas	[2 [4 2]]	:net-timeout
+75	:invoke	:cas	[2 [4 2]]
+75	:fail	:cas	[2 [4 2]]	[:not-supported cas not supported]
+58	:info	:write	[2 3]	:net-timeout
+3	:fail	:read	[2 nil]	:net-timeout
+75	:invoke	:write	[2 4]
+86	:invoke	:write	[2 4]
+2	:fail	:read	[2 nil]	:net-timeout
+87	:invoke	:cas	[2 [1 0]]
+4	:fail	:read	[2 nil]	:net-timeout
+68	:invoke	:cas	[2 [1 4]]
+68	:fail	:cas	[2 [1 4]]	[:not-supported cas not supported]
+0	:fail	:read	[2 nil]	:net-timeout
+0	:invoke	:read	[2 nil]
+68	:invoke	:cas	[2 [2 2]]
+68	:fail	:cas	[2 [2 2]]	[:not-supported cas not supported]
+19	:invoke	:cas	[2 [2 4]]
+19	:fail	:cas	[2 [2 4]]	[:not-supported cas not supported]
+1	:invoke	:read	[2 nil]
+68	:invoke	:cas	[2 [0 0]]
+68	:fail	:cas	[2 [0 0]]	[:not-supported cas not supported]
+75	:info	:write	[2 4]	:net-timeout
+2	:invoke	:read	[2 nil]
+86	:info	:write	[2 4]	:net-timeout
+85	:invoke	:cas	[2 [3 2]]
+85	:fail	:cas	[2 [3 2]]	[:not-supported cas not supported]
+85	:invoke	:cas	[2 [3 2]]
+85	:fail	:cas	[2 [3 2]]	[:not-supported cas not supported]
+87	:info	:cas	[2 [1 0]]	:net-timeout
+85	:invoke	:write	[3 0]
+96	:invoke	:write	[3 4]
+3	:invoke	:read	[3 nil]
+0	:fail	:read	[2 nil]	:net-timeout
+0	:invoke	:read	[3 nil]
+1	:fail	:read	[2 nil]	:net-timeout
+68	:invoke	:write	[3 1]
+1	:invoke	:read	[3 nil]
+4	:invoke	:read	[3 nil]
+2	:fail	:read	[2 nil]	:net-timeout
+2	:invoke	:read	[3 nil]
+85	:info	:write	[3 0]	:net-timeout
+95	:invoke	:write	[3 4]
+96	:info	:write	[3 4]	:net-timeout
+106	:invoke	:cas	[3 [1 2]]
+3	:fail	:read	[3 nil]	:net-timeout
+0	:fail	:read	[3 nil]	:net-timeout
+68	:info	:write	[3 1]	:net-timeout
+1	:fail	:read	[3 nil]	:net-timeout
+4	:fail	:read	[3 nil]	:net-timeout
+2	:fail	:read	[3 nil]	:net-timeout
+95	:info	:write	[3 4]	:net-timeout
+106	:info	:cas	[3 [1 2]]	:net-timeout

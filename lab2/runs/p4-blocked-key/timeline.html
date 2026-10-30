@@ -1,0 +1,4870 @@
+<html><head><style>.ops        { position: absolute; }
+.op         { position: absolute; padding: 2px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.3s cubic-bezier(.25,.8,.25,1); overflow: hidden; }
+.op.invoke  { background: #eeeeee; }
+.op.ok      { background: #6DB6FE; }
+.op.info    { background: #FFAA26; }
+.op.fail    { background: #FEB5DA; }
+.op:target  { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+</style></head><body><div><a href="/">jepsen</a> / <a href="/files/lin-kv">lin-kv</a> / <a href="/files/lin-kv/20261030T154242.759Z">20261030T154242.759Z</a> / <a href="/files/lin-kv/20261030T154242.759Z/">independent</a> / <a href="/files/lin-kv/20261030T154242.759Z/independent/"></a></div><h1>lin-kv key </h1><div class="ops"><a href="#i0"><div class="op info" id="i0" style="width:100;left:0;top:0;height:16" title="Msg: :one
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:42.775Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 0
+ :value :one}">:nemesis start-partition <br /></div></a><a href="#i2"><div class="op info" id="i2" style="width:100;left:0;top:32;height:16" title="Msg: [:isolated {&quot;n1&quot; #{&quot;n2&quot; &quot;n0&quot;}, &quot;n2&quot; #{&quot;n1&quot;}, &quot;n0&quot; #{&quot;n1&quot;}}]
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:42.790Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 2
+ :value [:isolated {&quot;n1&quot; #{&quot;n2&quot; &quot;n0&quot;}, &quot;n2&quot; #{&quot;n1&quot;}, &quot;n0&quot; #{&quot;n1&quot;}}]}">:nemesis start-partition <br /></div></a><a href="#i8"><div class="op fail" id="i8" style="width:100;left:106;top:96;height:32" title="Dur: 120 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:42.974Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 8
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i10"><div class="op fail" id="i10" style="width:100;left:318;top:112;height:48" title="Dur: 152 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.017Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 10
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i12"><div class="op fail" id="i12" style="width:100;left:424;top:48;height:144" title="Dur: 215 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.022Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 12
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 [2 3]]}">3 cas [0 [2 3]]</div></a><a href="#i14"><div class="op fail" id="i14" style="width:100;left:318;top:176;height:48" title="Dur: 107 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.125Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 14
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i15"><div class="op fail" id="i15" style="width:100;left:106;top:144;height:96" title="Dur: 150 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.125Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 15
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i18"><div class="op fail" id="i18" style="width:100;left:318;top:272;height:16" title="Dur: 109 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.244Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 18
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i20"><div class="op fail" id="i20" style="width:100;left:106;top:256;height:64" title="Dur: 134 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.259Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 20
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i22"><div class="op fail" id="i22" style="width:100;left:318;top:304;height:48" title="Dur: 106 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.350Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 22
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i24"><div class="op fail" id="i24" style="width:100;left:106;top:336;height:48" title="Dur: 123 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.401Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 24
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i26"><div class="op fail" id="i26" style="width:100;left:318;top:368;height:48" title="Dur: 128 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.479Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 26
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i28"><div class="op fail" id="i28" style="width:100;left:106;top:400;height:48" title="Dur: 105 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.507Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 28
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i30"><div class="op fail" id="i30" style="width:100;left:318;top:432;height:48" title="Dur: 107 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.588Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 30
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i32"><div class="op fail" id="i32" style="width:100;left:424;top:208;height:304" title="Dur: 581 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.604Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 32
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 [0 2]]}">3 cas [0 [0 2]]</div></a><a href="#i34"><div class="op fail" id="i34" style="width:100;left:106;top:464;height:80" title="Dur: 119 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.639Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 34
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i36"><div class="op fail" id="i36" style="width:100;left:318;top:496;height:80" title="Dur: 105 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.693Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 36
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i38"><div class="op fail" id="i38" style="width:100;left:106;top:560;height:48" title="Dur: 106 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.746Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 38
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i40"><div class="op fail" id="i40" style="width:100;left:212;top:16;height:624" title="Dur: 1012 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:43.797Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 40
+ :error :net-timeout
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i42"><div class="op fail" id="i42" style="width:100;left:318;top:592;height:80" title="Dur: 105 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.799Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 42
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i44"><div class="op info" id="i44" style="width:100;left:530;top:64;height:16688" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:43.815Z
+
+Op:
+{:process 4
+ :type :info
+ :f :cas
+ :index 44
+ :error :net-timeout
+ :value [0 [3 2]]}">4 cas [0 [3 2]]</div></a><a href="#i45"><div class="op fail" id="i45" style="width:100;left:636;top:80;height:640" title="Dur: 1000 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.822Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 45
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 3]}">5 write [0 3]</div></a><a href="#i48"><div class="op fail" id="i48" style="width:100;left:106;top:624;height:144" title="Dur: 105 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.851Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 48
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i50"><div class="op fail" id="i50" style="width:100;left:318;top:688;height:112" title="Dur: 104 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.906Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 50
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i52"><div class="op fail" id="i52" style="width:100;left:106;top:784;height:48" title="Dur: 127 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:43.997Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 52
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i54"><div class="op fail" id="i54" style="width:100;left:318;top:816;height:48" title="Dur: 123 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.031Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 54
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i56"><div class="op fail" id="i56" style="width:100;left:106;top:848;height:48" title="Dur: 138 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.135Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 56
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i58"><div class="op fail" id="i58" style="width:100;left:318;top:880;height:48" title="Dur: 155 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.186Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 58
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i60"><div class="op fail" id="i60" style="width:100;left:106;top:912;height:48" title="Dur: 112 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.248Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 60
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i62"><div class="op fail" id="i62" style="width:100;left:318;top:944;height:48" title="Dur: 113 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.300Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 62
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i64"><div class="op fail" id="i64" style="width:100;left:106;top:976;height:48" title="Dur: 106 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.354Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 64
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i66"><div class="op info" id="i66" style="width:100;left:0;top:1056;height:16" title="Msg: nil
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:44.357Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 66
+ :value }">:nemesis stop-partition </div></a><a href="#i67"><div class="op info" id="i67" style="width:100;left:0;top:1072;height:16" title="Msg: :network-healed
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:44.357Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 67
+ :value :network-healed}">:nemesis stop-partition <br /></div></a><a href="#i68"><div class="op fail" id="i68" style="width:100;left:318;top:1008;height:80" title="Dur: 105 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.405Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 68
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i70"><div class="op fail" id="i70" style="width:100;left:742;top:736;height:384" title="Dur: 607 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.429Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 70
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 2]]}">10 cas [0 [1 2]]</div></a><a href="#i72"><div class="op fail" id="i72" style="width:100;left:106;top:1040;height:112" title="Dur: 108 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.463Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 72
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i74"><div class="op fail" id="i74" style="width:100;left:424;top:528;height:656" title="Dur: 884 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.501Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 74
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 2]]}">3 cas [0 [4 2]]</div></a><a href="#i76"><div class="op fail" id="i76" style="width:100;left:636;top:752;height:464" title="Dur: 676 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.516Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 76
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 [0 3]]}">5 cas [0 [0 3]]</div></a><a href="#i77"><div class="op fail" id="i77" style="width:100;left:318;top:1104;height:128" title="Dur: 111 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.517Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 77
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i80"><div class="op fail" id="i80" style="width:100;left:106;top:1168;height:112" title="Dur: 117 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.581Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 80
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i82"><div class="op fail" id="i82" style="width:100;left:318;top:1248;height:64" title="Dur: 108 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.635Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 82
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i84"><div class="op fail" id="i84" style="width:100;left:106;top:1296;height:48" title="Dur: 125 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.707Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 84
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i86"><div class="op fail" id="i86" style="width:100;left:424;top:1200;height:176" title="Dur: 208 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.709Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 86
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 [1 1]]}">3 cas [0 [1 1]]</div></a><a href="#i88"><div class="op fail" id="i88" style="width:100;left:318;top:1328;height:80" title="Dur: 123 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.759Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 88
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i90"><div class="op fail" id="i90" style="width:100;left:212;top:656;height:784" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:44.799Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 90
+ :error :net-timeout
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i92"><div class="op fail" id="i92" style="width:100;left:106;top:1360;height:112" title="Dur: 155 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.862Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 92
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i94"><div class="op fail" id="i94" style="width:100;left:318;top:1424;height:80" title="Dur: 111 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.871Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 94
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i96"><div class="op fail" id="i96" style="width:100;left:212;top:1456;height:80" title="Dur: 112 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.912Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 96
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i98"><div class="op fail" id="i98" style="width:100;left:424;top:1392;height:176" title="Dur: 255 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.966Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 98
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i100"><div class="op fail" id="i100" style="width:100;left:106;top:1488;height:112" title="Dur: 111 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:44.975Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 100
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i102"><div class="op fail" id="i102" style="width:100;left:318;top:1520;height:112" title="Dur: 129 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.018Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 102
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i103"><div class="op fail" id="i103" style="width:100;left:212;top:1552;height:96" title="Dur: 112 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.025Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 103
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i106"><div class="op fail" id="i106" style="width:100;left:106;top:1616;height:80" title="Dur: 106 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.109Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 106
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i108"><div class="op fail" id="i108" style="width:100;left:318;top:1680;height:48" title="Dur: 106 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.160Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 108
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i110"><div class="op fail" id="i110" style="width:100;left:212;top:1664;height:96" title="Dur: 120 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.161Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 110
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i112"><div class="op fail" id="i112" style="width:100;left:106;top:1712;height:80" title="Dur: 142 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.251Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 112
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i114"><div class="op fail" id="i114" style="width:100;left:318;top:1744;height:80" title="Dur: 115 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.275Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 114
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i116"><div class="op fail" id="i116" style="width:100;left:212;top:1776;height:80" title="Dur: 123 ms
+Err: [:key-does-not-exist &quot;key does not exist&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.303Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 116
+ :error [:key-does-not-exist &quot;key does not exist&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i118"><div class="op ok" id="i118" style="width:100;left:742;top:1136;height:752" title="Dur: 898 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.328Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 118
+ :value [0 0]}">10 write [0 0]</div></a><a href="#i120"><div class="op ok" id="i120" style="width:100;left:106;top:1808;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.379Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 120
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i122"><div class="op ok" id="i122" style="width:100;left:318;top:1840;height:112" title="Dur: 143 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.429Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 122
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i124"><div class="op ok" id="i124" style="width:100;left:212;top:1872;height:112" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.430Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 124
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i126"><div class="op fail" id="i126" style="width:100;left:636;top:1264;height:752" title="Dur: 948 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.502Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 126
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 3]]}">5 cas [0 [0 3]]</div></a><a href="#i128"><div class="op ok" id="i128" style="width:100;left:106;top:1936;height:112" title="Dur: 147 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.527Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 128
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i130"><div class="op fail" id="i130" style="width:100;left:424;top:1584;height:496" title="Dur: 562 ms
+Err: [:precondition-failed &quot;expected 2, found 0&quot;]
+Wall-clock Time: 2026-10-30T15:42:45.529Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 130
+ :error [:precondition-failed &quot;expected 2, found 0&quot;]
+ :value [0 [2 1]]}">3 cas [0 [2 1]]</div></a><a href="#i132"><div class="op ok" id="i132" style="width:100;left:212;top:2000;height:112" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.552Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 132
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i133"><div class="op ok" id="i133" style="width:100;left:318;top:1968;height:160" title="Dur: 147 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.577Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 133
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i136"><div class="op ok" id="i136" style="width:100;left:106;top:2064;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.655Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 136
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i138"><div class="op ok" id="i138" style="width:100;left:318;top:2160;height:48" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.705Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 138
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i140"><div class="op ok" id="i140" style="width:100;left:212;top:2144;height:96" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.707Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 140
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i142"><div class="op ok" id="i142" style="width:100;left:106;top:2192;height:80" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.783Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 142
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i144"><div class="op ok" id="i144" style="width:100;left:318;top:2224;height:80" title="Dur: 129 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.835Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 144
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i146"><div class="op ok" id="i146" style="width:100;left:212;top:2256;height:80" title="Dur: 109 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.840Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 146
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i148"><div class="op ok" id="i148" style="width:100;left:106;top:2288;height:80" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.892Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 148
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i150"><div class="op ok" id="i150" style="width:100;left:742;top:1904;height:496" title="Dur: 568 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.903Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 150
+ :value [0 1]}">10 write [0 1]</div></a><a href="#i152"><div class="op ok" id="i152" style="width:100;left:318;top:2320;height:112" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.942Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 152
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i154"><div class="op ok" id="i154" style="width:100;left:212;top:2352;height:112" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:45.975Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 154
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i156"><div class="op ok" id="i156" style="width:100;left:106;top:2384;height:112" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.027Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 156
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i158"><div class="op ok" id="i158" style="width:100;left:318;top:2448;height:80" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.055Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 158
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i160"><div class="op ok" id="i160" style="width:100;left:212;top:2480;height:80" title="Dur: 132 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.108Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 160
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i162"><div class="op fail" id="i162" style="width:100;left:424;top:2096;height:496" title="Dur: 575 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:46.120Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 162
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 2]]}">3 cas [0 [1 2]]</div></a><a href="#i164"><div class="op ok" id="i164" style="width:100;left:106;top:2512;height:112" title="Dur: 131 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.158Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 164
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i166"><div class="op ok" id="i166" style="width:100;left:318;top:2544;height:112" title="Dur: 110 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.172Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 166
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i168"><div class="op ok" id="i168" style="width:100;left:742;top:2416;height:272" title="Dur: 310 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.213Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 168
+ :value [0 1]}">10 write [0 1]</div></a><a href="#i170"><div class="op ok" id="i170" style="width:100;left:212;top:2576;height:144" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.223Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 170
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i172"><div class="op ok" id="i172" style="width:100;left:106;top:2640;height:112" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.264Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 172
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i174"><div class="op ok" id="i174" style="width:100;left:318;top:2672;height:112" title="Dur: 143 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.316Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 174
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i176"><div class="op fail" id="i176" style="width:100;left:636;top:2032;height:784" title="Dur: 833 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:46.335Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 176
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 0]]}">5 cas [0 [1 0]]</div></a><a href="#i178"><div class="op ok" id="i178" style="width:100;left:212;top:2736;height:112" title="Dur: 140 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.365Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 178
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i180"><div class="op ok" id="i180" style="width:100;left:106;top:2768;height:112" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.378Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 180
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i182"><div class="op ok" id="i182" style="width:100;left:318;top:2800;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.429Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 182
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i184"><div class="op ok" id="i184" style="width:100;left:212;top:2864;height:80" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.480Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 184
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i186"><div class="op ok" id="i186" style="width:100;left:106;top:2896;height:80" title="Dur: 146 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.532Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 186
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i187"><div class="op ok" id="i187" style="width:100;left:742;top:2704;height:288" title="Dur: 318 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.532Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 187
+ :value [0 2]}">10 write [0 2]</div></a><a href="#i190"><div class="op ok" id="i190" style="width:100;left:318;top:2928;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.557Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 190
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i192"><div class="op ok" id="i192" style="width:100;left:212;top:2960;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.608Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 192
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i194"><div class="op ok" id="i194" style="width:100;left:106;top:3008;height:96" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.659Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 194
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i196"><div class="op ok" id="i196" style="width:100;left:318;top:3056;height:80" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.686Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 196
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i198"><div class="op ok" id="i198" style="width:100;left:212;top:3088;height:80" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.737Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 198
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i200"><div class="op fail" id="i200" style="width:100;left:742;top:3024;height:176" title="Dur: 226 ms
+Err: [:precondition-failed &quot;expected 0, found 2&quot;]
+Wall-clock Time: 2026-10-30T15:42:46.763Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 200
+ :error [:precondition-failed &quot;expected 0, found 2&quot;]
+ :value [0 [0 1]]}">10 cas [0 [0 1]]</div></a><a href="#i202"><div class="op fail" id="i202" style="width:100;left:424;top:2608;height:624" title="Dur: 648 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:46.777Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 202
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i204"><div class="op ok" id="i204" style="width:100;left:106;top:3120;height:144" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.790Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 204
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i206"><div class="op ok" id="i206" style="width:100;left:318;top:3152;height:144" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.812Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 206
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i208"><div class="op ok" id="i208" style="width:100;left:212;top:3184;height:144" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.864Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 208
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i210"><div class="op ok" id="i210" style="width:100;left:318;top:3312;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.916Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 210
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i212"><div class="op ok" id="i212" style="width:100;left:106;top:3280;height:112" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.917Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 212
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i214"><div class="op fail" id="i214" style="width:100;left:742;top:3216;height:208" title="Dur: 232 ms
+Err: [:precondition-failed &quot;expected 3, found 2&quot;]
+Wall-clock Time: 2026-10-30T15:42:46.996Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 214
+ :error [:precondition-failed &quot;expected 3, found 2&quot;]
+ :value [0 [3 4]]}">10 cas [0 [3 4]]</div></a><a href="#i215"><div class="op ok" id="i215" style="width:100;left:212;top:3344;height:96" title="Dur: 132 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:46.996Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 215
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i218"><div class="op ok" id="i218" style="width:100;left:318;top:3376;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.044Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 218
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i220"><div class="op ok" id="i220" style="width:100;left:106;top:3408;height:112" title="Dur: 123 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.046Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 220
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i222"><div class="op ok" id="i222" style="width:100;left:212;top:3456;height:96" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.123Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 222
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i224"><div class="op fail" id="i224" style="width:100;left:636;top:2832;height:752" title="Dur: 793 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:47.143Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 224
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 3]]}">5 cas [0 [2 3]]</div></a><a href="#i226"><div class="op ok" id="i226" style="width:100;left:106;top:3536;height:80" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.173Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 226
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i228"><div class="op ok" id="i228" style="width:100;left:318;top:3504;height:144" title="Dur: 129 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.174Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 228
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i230"><div class="op ok" id="i230" style="width:100;left:212;top:3568;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.228Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 230
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i232"><div class="op ok" id="i232" style="width:100;left:106;top:3632;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.278Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 232
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i234"><div class="op ok" id="i234" style="width:100;left:318;top:3664;height:80" title="Dur: 121 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.324Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 234
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i236"><div class="op ok" id="i236" style="width:100;left:742;top:3472;height:304" title="Dur: 313 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.328Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :cas
+ :index 236
+ :value [0 [2 3]]}">10 cas [0 [2 3]]</div></a><a href="#i238"><div class="op ok" id="i238" style="width:100;left:212;top:3696;height:112" title="Dur: 147 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.375Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 238
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i240"><div class="op ok" id="i240" style="width:100;left:106;top:3728;height:112" title="Dur: 147 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.426Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 240
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i242"><div class="op ok" id="i242" style="width:100;left:318;top:3760;height:112" title="Dur: 153 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.477Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 242
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i244"><div class="op ok" id="i244" style="width:100;left:212;top:3824;height:80" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.488Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 244
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i246"><div class="op ok" id="i246" style="width:100;left:106;top:3856;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.540Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 246
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i248"><div class="op ok" id="i248" style="width:100;left:318;top:3888;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.591Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 248
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i250"><div class="op ok" id="i250" style="width:100;left:212;top:3920;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.594Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 250
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i252"><div class="op ok" id="i252" style="width:100;left:424;top:3248;height:784" title="Dur: 862 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.641Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :write
+ :index 252
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i253"><div class="op ok" id="i253" style="width:100;left:106;top:3952;height:96" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.644Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 253
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i256"><div class="op ok" id="i256" style="width:100;left:318;top:3984;height:112" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.694Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 256
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i258"><div class="op ok" id="i258" style="width:100;left:212;top:4016;height:112" title="Dur: 129 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.745Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 258
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i260"><div class="op ok" id="i260" style="width:100;left:106;top:4080;height:80" title="Dur: 109 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.767Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 260
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i262"><div class="op fail" id="i262" style="width:100;left:742;top:3792;height:400" title="Dur: 479 ms
+Err: [:precondition-failed &quot;expected 1, found 3&quot;]
+Wall-clock Time: 2026-10-30T15:42:47.817Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 262
+ :error [:precondition-failed &quot;expected 1, found 3&quot;]
+ :value [0 [1 4]]}">10 cas [0 [1 4]]</div></a><a href="#i264"><div class="op ok" id="i264" style="width:100;left:318;top:4112;height:112" title="Dur: 123 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.818Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 264
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i266"><div class="op ok" id="i266" style="width:100;left:212;top:4144;height:112" title="Dur: 122 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.868Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 266
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i268"><div class="op ok" id="i268" style="width:100;left:106;top:4176;height:112" title="Dur: 152 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.920Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 268
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i270"><div class="op ok" id="i270" style="width:100;left:318;top:4240;height:80" title="Dur: 118 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.970Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 270
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i272"><div class="op ok" id="i272" style="width:100;left:212;top:4272;height:80" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:47.996Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 272
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i274"><div class="op ok" id="i274" style="width:100;left:106;top:4304;height:80" title="Dur: 128 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.048Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 274
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i276"><div class="op fail" id="i276" style="width:100;left:636;top:3600;height:816" title="Dur: 887 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:48.051Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 276
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 1]]}">5 cas [0 [4 1]]</div></a><a href="#i278"><div class="op ok" id="i278" style="width:100;left:318;top:4336;height:112" title="Dur: 121 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.092Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 278
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i280"><div class="op ok" id="i280" style="width:100;left:742;top:4208;height:272" title="Dur: 328 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.145Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :cas
+ :index 280
+ :value [0 [3 3]]}">10 cas [0 [3 3]]</div></a><a href="#i282"><div class="op ok" id="i282" style="width:100;left:212;top:4368;height:144" title="Dur: 137 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.146Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 282
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i284"><div class="op ok" id="i284" style="width:100;left:106;top:4400;height:144" title="Dur: 148 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.196Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 284
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i286"><div class="op ok" id="i286" style="width:100;left:318;top:4464;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.197Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 286
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i288"><div class="op ok" id="i288" style="width:100;left:212;top:4528;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.290Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 288
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i290"><div class="op ok" id="i290" style="width:100;left:318;top:4592;height:48" title="Dur: 117 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.338Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 290
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i291"><div class="op ok" id="i291" style="width:100;left:106;top:4560;height:96" title="Dur: 142 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.339Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 291
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i294"><div class="op fail" id="i294" style="width:100;left:742;top:4496;height:208" title="Dur: 248 ms
+Err: [:precondition-failed &quot;expected 1, found 3&quot;]
+Wall-clock Time: 2026-10-30T15:42:48.394Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 294
+ :error [:precondition-failed &quot;expected 1, found 3&quot;]
+ :value [0 [1 0]]}">10 cas [0 [1 0]]</div></a><a href="#i295"><div class="op ok" id="i295" style="width:100;left:212;top:4624;height:96" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.395Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 295
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i298"><div class="op fail" id="i298" style="width:100;left:424;top:4064;height:704" title="Dur: 774 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:48.430Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 298
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 1]]}">3 cas [0 [2 1]]</div></a><a href="#i300"><div class="op ok" id="i300" style="width:100;left:318;top:4672;height:128" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.443Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 300
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i302"><div class="op ok" id="i302" style="width:100;left:106;top:4688;height:144" title="Dur: 146 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.495Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 302
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i304"><div class="op ok" id="i304" style="width:100;left:212;top:4752;height:112" title="Dur: 142 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.546Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 304
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i306"><div class="op ok" id="i306" style="width:100;left:318;top:4816;height:80" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.584Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 306
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i308"><div class="op ok" id="i308" style="width:100;left:106;top:4848;height:80" title="Dur: 139 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.635Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 308
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i310"><div class="op fail" id="i310" style="width:100;left:424;top:4784;height:176" title="Dur: 219 ms
+Err: [:precondition-failed &quot;expected 0, found 3&quot;]
+Wall-clock Time: 2026-10-30T15:42:48.650Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 310
+ :error [:precondition-failed &quot;expected 0, found 3&quot;]
+ :value [0 [0 4]]}">3 cas [0 [0 4]]</div></a><a href="#i312"><div class="op ok" id="i312" style="width:100;left:212;top:4880;height:112" title="Dur: 138 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.685Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 312
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i313"><div class="op ok" id="i313" style="width:100;left:318;top:4912;height:96" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.698Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 313
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i316"><div class="op ok" id="i316" style="width:100;left:106;top:4944;height:112" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.750Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 316
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i318"><div class="op ok" id="i318" style="width:100;left:212;top:5024;height:64" title="Dur: 128 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.829Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 318
+ :value [0 3]}">1 read [0 nil]<br />[0 3]</div></a><a href="#i320"><div class="op ok" id="i320" style="width:100;left:318;top:5040;height:80" title="Dur: 144 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.880Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 320
+ :value [0 3]}">2 read [0 nil]<br />[0 3]</div></a><a href="#i322"><div class="op ok" id="i322" style="width:100;left:106;top:5072;height:80" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.880Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 322
+ :value [0 3]}">0 read [0 nil]<br />[0 3]</div></a><a href="#i324"><div class="op ok" id="i324" style="width:100;left:636;top:4432;height:752" title="Dur: 880 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.931Z
+
+Op:
+{:process 5
+ :type :ok
+ :f :write
+ :index 324
+ :value [0 1]}">5 write [0 1]</div></a><a href="#i326"><div class="op ok" id="i326" style="width:100;left:212;top:5104;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.943Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 326
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i328"><div class="op ok" id="i328" style="width:100;left:318;top:5136;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:48.994Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 328
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i330"><div class="op ok" id="i330" style="width:100;left:106;top:5168;height:112" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.009Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 330
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i332"><div class="op ok" id="i332" style="width:100;left:212;top:5232;height:80" title="Dur: 119 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.085Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 332
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i334"><div class="op ok" id="i334" style="width:100;left:106;top:5296;height:48" title="Dur: 118 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.135Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 334
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i335"><div class="op ok" id="i335" style="width:100;left:318;top:5264;height:96" title="Dur: 141 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.135Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 335
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i337"><div class="op fail" id="i337" style="width:100;left:636;top:5200;height:192" title="Dur: 222 ms
+Err: [:precondition-failed &quot;expected 3, found 1&quot;]
+Wall-clock Time: 2026-10-30T15:42:49.165Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 337
+ :error [:precondition-failed &quot;expected 3, found 1&quot;]
+ :value [0 [3 2]]}">5 cas [0 [3 2]]</div></a><a href="#i340"><div class="op ok" id="i340" style="width:100;left:212;top:5328;height:112" title="Dur: 129 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.215Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 340
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i342"><div class="op ok" id="i342" style="width:100;left:318;top:5376;height:96" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.266Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 342
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i344"><div class="op fail" id="i344" style="width:100;left:742;top:4736;height:768" title="Dur: 874 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:49.269Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 344
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 0]]}">10 cas [0 [1 0]]</div></a><a href="#i346"><div class="op ok" id="i346" style="width:100;left:106;top:5424;height:112" title="Dur: 135 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.316Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 346
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i348"><div class="op ok" id="i348" style="width:100;left:212;top:5456;height:112" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.345Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 348
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i350"><div class="op fail" id="i350" style="width:100;left:424;top:4976;height:624" title="Dur: 707 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:49.381Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 350
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 4]]}">3 cas [0 [2 4]]</div></a><a href="#i352"><div class="op ok" id="i352" style="width:100;left:318;top:5488;height:144" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.396Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 352
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i354"><div class="op ok" id="i354" style="width:100;left:106;top:5552;height:112" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.422Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 354
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i356"><div class="op ok" id="i356" style="width:100;left:212;top:5584;height:112" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.449Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 356
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i358"><div class="op ok" id="i358" style="width:100;left:318;top:5648;height:80" title="Dur: 123 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.534Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 358
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i360"><div class="op ok" id="i360" style="width:100;left:106;top:5680;height:80" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.561Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 360
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i362"><div class="op ok" id="i362" style="width:100;left:212;top:5712;height:80" title="Dur: 129 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.615Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 362
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i364"><div class="op ok" id="i364" style="width:100;left:318;top:5744;height:80" title="Dur: 119 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.653Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 364
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i366"><div class="op ok" id="i366" style="width:100;left:106;top:5776;height:80" title="Dur: 131 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.692Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 366
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i368"><div class="op ok" id="i368" style="width:100;left:742;top:5520;height:368" title="Dur: 444 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.716Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 368
+ :value [0 0]}">10 write [0 0]</div></a><a href="#i370"><div class="op ok" id="i370" style="width:100;left:212;top:5808;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.743Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 370
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i372"><div class="op ok" id="i372" style="width:100;left:318;top:5840;height:112" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.768Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 372
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i374"><div class="op ok" id="i374" style="width:100;left:106;top:5872;height:112" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.818Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 374
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i376"><div class="op ok" id="i376" style="width:100;left:212;top:5936;height:80" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.870Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 376
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i378"><div class="op fail" id="i378" style="width:100;left:424;top:5616;height:432" title="Dur: 503 ms
+Err: [:precondition-failed &quot;expected 1, found 0&quot;]
+Wall-clock Time: 2026-10-30T15:42:49.886Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 378
+ :error [:precondition-failed &quot;expected 1, found 0&quot;]
+ :value [0 [1 3]]}">3 cas [0 [1 3]]</div></a><a href="#i380"><div class="op ok" id="i380" style="width:100;left:318;top:5968;height:112" title="Dur: 138 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.920Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 380
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i382"><div class="op ok" id="i382" style="width:100;left:106;top:6000;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.946Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 382
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i384"><div class="op ok" id="i384" style="width:100;left:212;top:6032;height:112" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:49.995Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 384
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i386"><div class="op ok" id="i386" style="width:100;left:318;top:6096;height:80" title="Dur: 118 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.039Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 386
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i388"><div class="op fail" id="i388" style="width:100;left:636;top:5408;height:800" title="Dur: 871 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:50.041Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 388
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 2]}">5 write [0 2]</div></a><a href="#i390"><div class="op ok" id="i390" style="width:100;left:106;top:6128;height:112" title="Dur: 144 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.090Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 390
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i392"><div class="op ok" id="i392" style="width:100;left:212;top:6160;height:112" title="Dur: 144 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.140Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 392
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i394"><div class="op ok" id="i394" style="width:100;left:318;top:6192;height:112" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.160Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 394
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i396"><div class="op ok" id="i396" style="width:100;left:106;top:6256;height:80" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.211Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 396
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i398"><div class="op fail" id="i398" style="width:100;left:424;top:6064;height:304" title="Dur: 332 ms
+Err: [:precondition-failed &quot;expected 4, found 0&quot;]
+Wall-clock Time: 2026-10-30T15:42:50.219Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 398
+ :error [:precondition-failed &quot;expected 4, found 0&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a><a href="#i400"><div class="op ok" id="i400" style="width:100;left:212;top:6288;height:112" title="Dur: 121 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.262Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 400
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i402"><div class="op ok" id="i402" style="width:100;left:318;top:6320;height:112" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.269Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 402
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i404"><div class="op ok" id="i404" style="width:100;left:106;top:6352;height:112" title="Dur: 109 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.321Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 404
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i406"><div class="op ok" id="i406" style="width:100;left:212;top:6416;height:80" title="Dur: 109 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.372Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 406
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i408"><div class="op ok" id="i408" style="width:100;left:318;top:6448;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.383Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 408
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i410"><div class="op ok" id="i410" style="width:100;left:106;top:6480;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.434Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 410
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i412"><div class="op ok" id="i412" style="width:100;left:212;top:6512;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.485Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 412
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i414"><div class="op ok" id="i414" style="width:100;left:318;top:6544;height:80" title="Dur: 153 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.536Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 414
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i416"><div class="op fail" id="i416" style="width:100;left:742;top:5904;height:752" title="Dur: 825 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:50.549Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 416
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 2]]}">10 cas [0 [0 2]]</div></a><a href="#i418"><div class="op ok" id="i418" style="width:100;left:106;top:6576;height:112" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.559Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 418
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i420"><div class="op ok" id="i420" style="width:100;left:424;top:6384;height:336" title="Dur: 349 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.586Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :cas
+ :index 420
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i422"><div class="op ok" id="i422" style="width:100;left:212;top:6608;height:144" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.610Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 422
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i424"><div class="op ok" id="i424" style="width:100;left:318;top:6640;height:144" title="Dur: 123 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.661Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 424
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i426"><div class="op ok" id="i426" style="width:100;left:106;top:6704;height:112" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.689Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 426
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i428"><div class="op ok" id="i428" style="width:100;left:212;top:6768;height:80" title="Dur: 117 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.740Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 428
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i430"><div class="op ok" id="i430" style="width:100;left:318;top:6800;height:80" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.791Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 430
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i432"><div class="op ok" id="i432" style="width:100;left:106;top:6832;height:80" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.812Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 432
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i434"><div class="op ok" id="i434" style="width:100;left:212;top:6864;height:80" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.845Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 434
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i436"><div class="op ok" id="i436" style="width:100;left:318;top:6896;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.897Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 436
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i438"><div class="op ok" id="i438" style="width:100;left:424;top:6736;height:272" title="Dur: 320 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.906Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :write
+ :index 438
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i439"><div class="op fail" id="i439" style="width:100;left:636;top:6224;height:800" title="Dur: 859 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:50.911Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 439
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 2]]}">5 cas [0 [0 2]]</div></a><a href="#i441"><div class="op ok" id="i441" style="width:100;left:106;top:6928;height:128" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.946Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 441
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i442"><div class="op ok" id="i442" style="width:100;left:212;top:6960;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:50.958Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 442
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i444"><div class="op ok" id="i444" style="width:100;left:318;top:6992;height:112" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.008Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 444
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i448"><div class="op ok" id="i448" style="width:100;left:106;top:7088;height:80" title="Dur: 138 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.112Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 448
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i450"><div class="op ok" id="i450" style="width:100;left:212;top:7136;height:64" title="Dur: 118 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.162Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 450
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i452"><div class="op ok" id="i452" style="width:100;left:318;top:7152;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.163Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 452
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i453"><div class="op fail" id="i453" style="width:100;left:636;top:7040;height:208" title="Dur: 230 ms
+Err: [:precondition-failed &quot;expected 2, found 1&quot;]
+Wall-clock Time: 2026-10-30T15:42:51.164Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 453
+ :error [:precondition-failed &quot;expected 2, found 1&quot;]
+ :value [0 [2 2]]}">5 cas [0 [2 2]]</div></a><a href="#i456"><div class="op ok" id="i456" style="width:100;left:106;top:7184;height:112" title="Dur: 128 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.241Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 456
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i458"><div class="op ok" id="i458" style="width:100;left:212;top:7216;height:112" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.293Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 458
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i460"><div class="op fail" id="i460" style="width:100;left:742;top:6672;height:688" title="Dur: 778 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:51.332Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 460
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 0]]}">10 cas [0 [2 0]]</div></a><a href="#i462"><div class="op ok" id="i462" style="width:100;left:318;top:7280;height:112" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.344Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 462
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i464"><div class="op ok" id="i464" style="width:100;left:106;top:7312;height:112" title="Dur: 121 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.382Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 464
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i466"><div class="op ok" id="i466" style="width:100;left:212;top:7344;height:112" title="Dur: 132 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.425Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 466
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i468"><div class="op ok" id="i468" style="width:100;left:318;top:7408;height:80" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.475Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 468
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i470"><div class="op ok" id="i470" style="width:100;left:106;top:7440;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.488Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 470
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i472"><div class="op fail" id="i472" style="width:100;left:742;top:7376;height:176" title="Dur: 208 ms
+Err: [:precondition-failed &quot;expected 4, found 1&quot;]
+Wall-clock Time: 2026-10-30T15:42:51.541Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 472
+ :error [:precondition-failed &quot;expected 4, found 1&quot;]
+ :value [0 [4 3]]}">10 cas [0 [4 3]]</div></a><a href="#i474"><div class="op ok" id="i474" style="width:100;left:212;top:7472;height:112" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.541Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 474
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i476"><div class="op ok" id="i476" style="width:100;left:318;top:7504;height:112" title="Dur: 115 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.591Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 476
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i478"><div class="op ok" id="i478" style="width:100;left:106;top:7536;height:112" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.605Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 478
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i480"><div class="op ok" id="i480" style="width:100;left:212;top:7600;height:80" title="Dur: 115 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.659Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 480
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i482"><div class="op ok" id="i482" style="width:100;left:318;top:7632;height:80" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.708Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 482
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i484"><div class="op ok" id="i484" style="width:100;left:106;top:7664;height:80" title="Dur: 152 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.759Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 484
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i486"><div class="op fail" id="i486" style="width:100;left:742;top:7568;height:208" title="Dur: 219 ms
+Err: [:precondition-failed &quot;expected 3, found 1&quot;]
+Wall-clock Time: 2026-10-30T15:42:51.760Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 486
+ :error [:precondition-failed &quot;expected 3, found 1&quot;]
+ :value [0 [3 2]]}">10 cas [0 [3 2]]</div></a><a href="#i488"><div class="op ok" id="i488" style="width:100;left:212;top:7696;height:112" title="Dur: 147 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.807Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 488
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i489"><div class="op ok" id="i489" style="width:100;left:318;top:7728;height:96" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.811Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 489
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i491"><div class="op fail" id="i491" style="width:100;left:424;top:7120;height:736" title="Dur: 823 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:51.832Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 491
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 0]]}">3 cas [0 [2 0]]</div></a><a href="#i494"><div class="op ok" id="i494" style="width:100;left:106;top:7760;height:144" title="Dur: 149 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.909Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 494
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i496"><div class="op ok" id="i496" style="width:100;left:318;top:7840;height:96" title="Dur: 136 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.961Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 496
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i498"><div class="op fail" id="i498" style="width:100;left:636;top:7264;height:704" title="Dur: 778 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:51.975Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 498
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 4]}">5 write [0 4]</div></a><a href="#i500"><div class="op ok" id="i500" style="width:100;left:212;top:7888;height:112" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:51.983Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 500
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i502"><div class="op ok" id="i502" style="width:100;left:106;top:7920;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.023Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 502
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i504"><div class="op ok" id="i504" style="width:100;left:318;top:7952;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.075Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 504
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i506"><div class="op ok" id="i506" style="width:100;left:742;top:7792;height:304" title="Dur: 315 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.114Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 506
+ :value [0 1]}">10 write [0 1]</div></a><a href="#i508"><div class="op ok" id="i508" style="width:100;left:106;top:8048;height:80" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.126Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 508
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i509"><div class="op ok" id="i509" style="width:100;left:212;top:8016;height:128" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.126Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 509
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i512"><div class="op ok" id="i512" style="width:100;left:318;top:8080;height:112" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.182Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 512
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i514"><div class="op ok" id="i514" style="width:100;left:106;top:8160;height:64" title="Dur: 118 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.266Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 514
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i516"><div class="op ok" id="i516" style="width:100;left:212;top:8176;height:80" title="Dur: 129 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.302Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 516
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i518"><div class="op fail" id="i518" style="width:100;left:742;top:8112;height:176" title="Dur: 219 ms
+Err: [:precondition-failed &quot;expected 0, found 1&quot;]
+Wall-clock Time: 2026-10-30T15:42:52.333Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 518
+ :error [:precondition-failed &quot;expected 0, found 1&quot;]
+ :value [0 [0 4]]}">10 cas [0 [0 4]]</div></a><a href="#i520"><div class="op ok" id="i520" style="width:100;left:318;top:8208;height:112" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.337Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 520
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i522"><div class="op ok" id="i522" style="width:100;left:106;top:8240;height:112" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.383Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 522
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i524"><div class="op ok" id="i524" style="width:100;left:212;top:8272;height:112" title="Dur: 131 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.435Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 524
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i526"><div class="op ok" id="i526" style="width:100;left:318;top:8336;height:80" title="Dur: 136 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.486Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 526
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i528"><div class="op ok" id="i528" style="width:100;left:106;top:8368;height:80" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.490Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 528
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i530"><div class="op fail" id="i530" style="width:100;left:424;top:7872;height:608" title="Dur: 681 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:52.543Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 530
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i532"><div class="op ok" id="i532" style="width:100;left:212;top:8400;height:112" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.544Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 532
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i533"><div class="op fail" id="i533" style="width:100;left:742;top:8304;height:224" title="Dur: 210 ms
+Err: [:precondition-failed &quot;expected 0, found 1&quot;]
+Wall-clock Time: 2026-10-30T15:42:52.544Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 533
+ :error [:precondition-failed &quot;expected 0, found 1&quot;]
+ :value [0 [0 4]]}">10 cas [0 [0 4]]</div></a><a href="#i536"><div class="op ok" id="i536" style="width:100;left:318;top:8432;height:144" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.594Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 536
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i538"><div class="op ok" id="i538" style="width:100;left:106;top:8464;height:144" title="Dur: 145 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.646Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 538
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i540"><div class="op ok" id="i540" style="width:100;left:212;top:8544;height:96" title="Dur: 141 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.694Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 540
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i542"><div class="op ok" id="i542" style="width:100;left:318;top:8592;height:80" title="Dur: 136 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.745Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 542
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i544"><div class="op ok" id="i544" style="width:100;left:106;top:8624;height:80" title="Dur: 150 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.796Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 544
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i546"><div class="op ok" id="i546" style="width:100;left:212;top:8656;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.798Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 546
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i547"><div class="op fail" id="i547" style="width:100;left:636;top:7984;height:768" title="Dur: 842 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:52.818Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 547
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 4]]}">5 cas [0 [2 4]]</div></a><a href="#i549"><div class="op ok" id="i549" style="width:100;left:318;top:8688;height:96" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.849Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 549
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i552"><div class="op ok" id="i552" style="width:100;left:106;top:8720;height:112" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.900Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 552
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i554"><div class="op ok" id="i554" style="width:100;left:212;top:8800;height:64" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.970Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 554
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i556"><div class="op ok" id="i556" style="width:100;left:318;top:8816;height:80" title="Dur: 118 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:52.990Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 556
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i558"><div class="op ok" id="i558" style="width:100;left:106;top:8848;height:80" title="Dur: 122 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.022Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 558
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i560"><div class="op ok" id="i560" style="width:100;left:742;top:8560;height:400" title="Dur: 455 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.041Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :write
+ :index 560
+ :value [0 4]}">10 write [0 4]</div></a><a href="#i562"><div class="op ok" id="i562" style="width:100;left:212;top:8880;height:112" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.104Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 562
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i564"><div class="op ok" id="i564" style="width:100;left:318;top:8912;height:112" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.124Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 564
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i566"><div class="op ok" id="i566" style="width:100;left:106;top:8944;height:112" title="Dur: 128 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.151Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 566
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i568"><div class="op ok" id="i568" style="width:100;left:318;top:9040;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.228Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 568
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i570"><div class="op ok" id="i570" style="width:100;left:212;top:9008;height:112" title="Dur: 150 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.255Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 570
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i572"><div class="op ok" id="i572" style="width:100;left:106;top:9072;height:80" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.279Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 572
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i574"><div class="op ok" id="i574" style="width:100;left:636;top:8768;height:416" title="Dur: 468 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.304Z
+
+Op:
+{:process 5
+ :type :ok
+ :f :write
+ :index 574
+ :value [0 0]}">5 write [0 0]</div></a><a href="#i576"><div class="op ok" id="i576" style="width:100;left:318;top:9104;height:112" title="Dur: 139 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.368Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 576
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i578"><div class="op ok" id="i578" style="width:100;left:212;top:9136;height:112" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.369Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 578
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i580"><div class="op ok" id="i580" style="width:100;left:106;top:9168;height:112" title="Dur: 135 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.421Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 580
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i582"><div class="op fail" id="i582" style="width:100;left:424;top:8496;height:816" title="Dur: 898 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:53.441Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 582
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i584"><div class="op ok" id="i584" style="width:100;left:318;top:9232;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.473Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 584
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i586"><div class="op ok" id="i586" style="width:100;left:212;top:9264;height:112" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.491Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 586
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i588"><div class="op ok" id="i588" style="width:100;left:106;top:9296;height:112" title="Dur: 121 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.542Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 588
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i590"><div class="op ok" id="i590" style="width:100;left:318;top:9360;height:80" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.593Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 590
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i592"><div class="op ok" id="i592" style="width:100;left:212;top:9392;height:80" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.615Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 592
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i594"><div class="op ok" id="i594" style="width:100;left:106;top:9424;height:80" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.668Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 594
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i596"><div class="op ok" id="i596" style="width:100;left:318;top:9456;height:80" title="Dur: 114 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.708Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 596
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i598"><div class="op ok" id="i598" style="width:100;left:212;top:9488;height:80" title="Dur: 143 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.761Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 598
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i600"><div class="op ok" id="i600" style="width:100;left:424;top:9328;height:272" title="Dur: 328 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.770Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :write
+ :index 600
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i602"><div class="op ok" id="i602" style="width:100;left:106;top:9520;height:112" title="Dur: 143 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.812Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 602
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i604"><div class="op ok" id="i604" style="width:100;left:318;top:9552;height:112" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.820Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 604
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i606"><div class="op ok" id="i606" style="width:100;left:212;top:9584;height:112" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.872Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 606
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i608"><div class="op ok" id="i608" style="width:100;left:106;top:9648;height:80" title="Dur: 109 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.922Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 608
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i610"><div class="op fail" id="i610" style="width:100;left:742;top:8976;height:784" title="Dur: 906 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:53.950Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 610
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 2]]}">10 cas [0 [2 2]]</div></a><a href="#i612"><div class="op ok" id="i612" style="width:100;left:318;top:9680;height:112" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:53.966Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 612
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i614"><div class="op ok" id="i614" style="width:100;left:212;top:9712;height:112" title="Dur: 142 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.016Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 614
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i616"><div class="op fail" id="i616" style="width:100;left:424;top:9616;height:240" title="Dur: 247 ms
+Err: [:precondition-failed &quot;expected 1, found 4&quot;]
+Wall-clock Time: 2026-10-30T15:42:54.018Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 616
+ :error [:precondition-failed &quot;expected 1, found 4&quot;]
+ :value [0 [1 1]]}">3 cas [0 [1 1]]</div></a><a href="#i618"><div class="op ok" id="i618" style="width:100;left:106;top:9744;height:144" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.053Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 618
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i620"><div class="op fail" id="i620" style="width:100;left:636;top:9200;height:720" title="Dur: 796 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:54.101Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 620
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 1]]}">5 cas [0 [1 1]]</div></a><a href="#i622"><div class="op ok" id="i622" style="width:100;left:318;top:9808;height:144" title="Dur: 135 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.102Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 622
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i624"><div class="op ok" id="i624" style="width:100;left:212;top:9840;height:144" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.119Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 624
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i626"><div class="op ok" id="i626" style="width:100;left:106;top:9904;height:112" title="Dur: 139 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.208Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 626
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i628"><div class="op ok" id="i628" style="width:100;left:318;top:9968;height:80" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.210Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 628
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i630"><div class="op ok" id="i630" style="width:100;left:212;top:10000;height:80" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.252Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 630
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i632"><div class="op ok" id="i632" style="width:100;left:318;top:10064;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.350Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 632
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i634"><div class="op ok" id="i634" style="width:100;left:424;top:9872;height:272" title="Dur: 310 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.355Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :write
+ :index 634
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i635"><div class="op ok" id="i635" style="width:100;left:106;top:10032;height:128" title="Dur: 147 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.356Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 635
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i638"><div class="op ok" id="i638" style="width:100;left:212;top:10096;height:112" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.401Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 638
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i640"><div class="op ok" id="i640" style="width:100;left:318;top:10128;height:112" title="Dur: 132 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.483Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 640
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i642"><div class="op ok" id="i642" style="width:100;left:106;top:10192;height:80" title="Dur: 135 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.531Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 642
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i644"><div class="op ok" id="i644" style="width:100;left:212;top:10224;height:80" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.532Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 644
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i646"><div class="op ok" id="i646" style="width:100;left:318;top:10256;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.587Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 646
+ :value [0 1]}">2 read [0 nil]<br />[0 1]</div></a><a href="#i648"><div class="op ok" id="i648" style="width:100;left:106;top:10288;height:80" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.635Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 648
+ :value [0 1]}">0 read [0 nil]<br />[0 1]</div></a><a href="#i649"><div class="op ok" id="i649" style="width:100;left:212;top:10320;height:64" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.635Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 649
+ :value [0 1]}">1 read [0 nil]<br />[0 1]</div></a><a href="#i651"><div class="op fail" id="i651" style="width:100;left:742;top:9776;height:640" title="Dur: 698 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:54.649Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 651
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [3 3]]}">10 cas [0 [3 3]]</div></a><a href="#i654"><div class="op ok" id="i654" style="width:100;left:318;top:10352;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.700Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 654
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i656"><div class="op ok" id="i656" style="width:100;left:424;top:10176;height:320" title="Dur: 356 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.735Z
+
+Op:
+{:process 3
+ :type :ok
+ :f :write
+ :index 656
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i658"><div class="op ok" id="i658" style="width:100;left:106;top:10400;height:128" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.749Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 658
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i660"><div class="op ok" id="i660" style="width:100;left:212;top:10432;height:128" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.785Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 660
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i662"><div class="op ok" id="i662" style="width:100;left:318;top:10480;height:112" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.807Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 662
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i664"><div class="op ok" id="i664" style="width:100;left:106;top:10544;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.871Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 664
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i666"><div class="op ok" id="i666" style="width:100;left:212;top:10576;height:80" title="Dur: 117 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.903Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 666
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i668"><div class="op ok" id="i668" style="width:100;left:318;top:10608;height:80" title="Dur: 115 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.923Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 668
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i670"><div class="op fail" id="i670" style="width:100;left:424;top:10512;height:208" title="Dur: 221 ms
+Err: [:precondition-failed &quot;expected 2, found 0&quot;]
+Wall-clock Time: 2026-10-30T15:42:54.956Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 670
+ :error [:precondition-failed &quot;expected 2, found 0&quot;]
+ :value [0 [2 1]]}">3 cas [0 [2 1]]</div></a><a href="#i672"><div class="op ok" id="i672" style="width:100;left:106;top:10640;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:54.976Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 672
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i673"><div class="op fail" id="i673" style="width:100;left:636;top:9936;height:832" title="Dur: 887 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:54.988Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 673
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 1]}">5 write [0 1]</div></a><a href="#i676"><div class="op ok" id="i676" style="width:100;left:212;top:10672;height:144" title="Dur: 123 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.027Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 676
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i678"><div class="op ok" id="i678" style="width:100;left:318;top:10704;height:144" title="Dur: 154 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.077Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 678
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i680"><div class="op ok" id="i680" style="width:100;left:106;top:10800;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.130Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 680
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i682"><div class="op ok" id="i682" style="width:100;left:212;top:10832;height:80" title="Dur: 115 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.142Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 682
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i684"><div class="op ok" id="i684" style="width:100;left:318;top:10864;height:80" title="Dur: 117 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.195Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 684
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i686"><div class="op ok" id="i686" style="width:100;left:106;top:10896;height:80" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.246Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 686
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i688"><div class="op ok" id="i688" style="width:100;left:212;top:10928;height:80" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.284Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 688
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i690"><div class="op ok" id="i690" style="width:100;left:318;top:10960;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.299Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 690
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i692"><div class="op ok" id="i692" style="width:100;left:636;top:10784;height:288" title="Dur: 325 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.316Z
+
+Op:
+{:process 5
+ :type :ok
+ :f :write
+ :index 692
+ :value [0 0]}">5 write [0 0]</div></a><a href="#i694"><div class="op ok" id="i694" style="width:100;left:106;top:10992;height:112" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.367Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 694
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i696"><div class="op ok" id="i696" style="width:100;left:318;top:11056;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.403Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 696
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i698"><div class="op ok" id="i698" style="width:100;left:212;top:11024;height:144" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.418Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 698
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i700"><div class="op ok" id="i700" style="width:100;left:106;top:11120;height:80" title="Dur: 142 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.510Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 700
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i702"><div class="op ok" id="i702" style="width:100;left:318;top:11152;height:80" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.510Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 702
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i704"><div class="op ok" id="i704" style="width:100;left:212;top:11184;height:80" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.563Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 704
+ :value [0 0]}">1 read [0 nil]<br />[0 0]</div></a><a href="#i706"><div class="op ok" id="i706" style="width:100;left:318;top:11248;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.622Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 706
+ :value [0 0]}">2 read [0 nil]<br />[0 0]</div></a><a href="#i708"><div class="op ok" id="i708" style="width:100;left:106;top:11216;height:112" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.622Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 708
+ :value [0 0]}">0 read [0 nil]<br />[0 0]</div></a><a href="#i710"><div class="op ok" id="i710" style="width:100;left:742;top:10448;height:912" title="Dur: 984 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.663Z
+
+Op:
+{:process 10
+ :type :ok
+ :f :cas
+ :index 710
+ :value [0 [0 2]]}">10 cas [0 [0 2]]</div></a><a href="#i712"><div class="op ok" id="i712" style="width:100;left:212;top:11280;height:112" title="Dur: 109 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.673Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 712
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i714"><div class="op ok" id="i714" style="width:100;left:106;top:11344;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.731Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 714
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i716"><div class="op ok" id="i716" style="width:100;left:318;top:11312;height:144" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.747Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 716
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i718"><div class="op ok" id="i718" style="width:100;left:212;top:11408;height:80" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.782Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 718
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i720"><div class="op ok" id="i720" style="width:100;left:106;top:11440;height:80" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.834Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 720
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i722"><div class="op fail" id="i722" style="width:100;left:424;top:10736;height:816" title="Dur: 903 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:55.859Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 722
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i724"><div class="op ok" id="i724" style="width:100;left:318;top:11472;height:112" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.875Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 724
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i725"><div class="op fail" id="i725" style="width:100;left:636;top:11088;height:512" title="Dur: 541 ms
+Err: [:precondition-failed &quot;expected 0, found 2&quot;]
+Wall-clock Time: 2026-10-30T15:42:55.876Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 725
+ :error [:precondition-failed &quot;expected 0, found 2&quot;]
+ :value [0 [0 0]]}">5 cas [0 [0 0]]</div></a><a href="#i727"><div class="op ok" id="i727" style="width:100;left:212;top:11504;height:128" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.909Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 727
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i729"><div class="op ok" id="i729" style="width:100;left:106;top:11536;height:128" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:55.961Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 729
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i732"><div class="op ok" id="i732" style="width:100;left:318;top:11648;height:64" title="Dur: 126 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.065Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 732
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i734"><div class="op ok" id="i734" style="width:100;left:106;top:11680;height:64" title="Dur: 138 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.111Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 734
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i736"><div class="op ok" id="i736" style="width:100;left:212;top:11696;height:80" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.112Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 736
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i738"><div class="op ok" id="i738" style="width:100;left:106;top:11760;height:48" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.218Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 738
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i739"><div class="op ok" id="i739" style="width:100;left:318;top:11728;height:96" title="Dur: 152 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.218Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 739
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i742"><div class="op ok" id="i742" style="width:100;left:212;top:11792;height:80" title="Dur: 148 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.269Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 742
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i744"><div class="op ok" id="i744" style="width:100;left:318;top:11840;height:64" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.323Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 744
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i746"><div class="op ok" id="i746" style="width:100;left:106;top:11856;height:80" title="Dur: 117 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.337Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 746
+ :value [0 2]}">0 read [0 nil]<br />[0 2]</div></a><a href="#i748"><div class="op fail" id="i748" style="width:100;left:742;top:11376;height:592" title="Dur: 711 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:56.375Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 748
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 4]]}">10 cas [0 [4 4]]</div></a><a href="#i750"><div class="op ok" id="i750" style="width:100;left:212;top:11888;height:112" title="Dur: 119 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.388Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 750
+ :value [0 2]}">1 read [0 nil]<br />[0 2]</div></a><a href="#i752"><div class="op ok" id="i752" style="width:100;left:318;top:11920;height:112" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.439Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 752
+ :value [0 2]}">2 read [0 nil]<br />[0 2]</div></a><a href="#i754"><div class="op ok" id="i754" style="width:100;left:636;top:11616;height:448" title="Dur: 583 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.491Z
+
+Op:
+{:process 5
+ :type :ok
+ :f :write
+ :index 754
+ :value [0 4]}">5 write [0 4]</div></a><a href="#i756"><div class="op ok" id="i756" style="width:100;left:106;top:11952;height:144" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.493Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 756
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i758"><div class="op ok" id="i758" style="width:100;left:212;top:12016;height:112" title="Dur: 122 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.543Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 758
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i760"><div class="op fail" id="i760" style="width:100;left:424;top:11568;height:592" title="Dur: 697 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:56.565Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 760
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i762"><div class="op ok" id="i762" style="width:100;left:318;top:12048;height:144" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.593Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 762
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i764"><div class="op ok" id="i764" style="width:100;left:106;top:12112;height:112" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.644Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 764
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i766"><div class="op ok" id="i766" style="width:100;left:212;top:12144;height:112" title="Dur: 151 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.695Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 766
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i768"><div class="op ok" id="i768" style="width:100;left:318;top:12208;height:80" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.698Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 768
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i770"><div class="op fail" id="i770" style="width:100;left:636;top:12080;height:240" title="Dur: 208 ms
+Err: [:precondition-failed &quot;expected 0, found 4&quot;]
+Wall-clock Time: 2026-10-30T15:42:56.700Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 770
+ :error [:precondition-failed &quot;expected 0, found 4&quot;]
+ :value [0 [0 3]]}">5 cas [0 [0 3]]</div></a><a href="#i772"><div class="op ok" id="i772" style="width:100;left:106;top:12240;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.749Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 772
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i774"><div class="op ok" id="i774" style="width:100;left:212;top:12272;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.800Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 774
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i776"><div class="op ok" id="i776" style="width:100;left:318;top:12304;height:112" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.825Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 776
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i778"><div class="op ok" id="i778" style="width:100;left:106;top:12368;height:80" title="Dur: 127 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.877Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 778
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i780"><div class="op ok" id="i780" style="width:100;left:212;top:12400;height:80" title="Dur: 128 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.928Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 780
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i782"><div class="op fail" id="i782" style="width:100;left:636;top:12336;height:176" title="Dur: 227 ms
+Err: [:precondition-failed &quot;expected 3, found 4&quot;]
+Wall-clock Time: 2026-10-30T15:42:56.929Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 782
+ :error [:precondition-failed &quot;expected 3, found 4&quot;]
+ :value [0 [3 2]]}">5 cas [0 [3 2]]</div></a><a href="#i783"><div class="op ok" id="i783" style="width:100;left:318;top:12432;height:96" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.939Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 783
+ :value [0 4]}">2 read [0 nil]<br />[0 4]</div></a><a href="#i786"><div class="op ok" id="i786" style="width:100;left:106;top:12464;height:112" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:56.989Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 786
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i788"><div class="op ok" id="i788" style="width:100;left:212;top:12496;height:112" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.041Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 788
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i790"><div class="op info" id="i790" style="width:100;left:0;top:12640;height:16" title="Msg: :one
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.043Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 790
+ :value :one}">:nemesis start-partition <br /></div></a><a href="#i791"><div class="op info" id="i791" style="width:100;left:0;top:12656;height:16" title="Msg: [:isolated {&quot;n2&quot; #{&quot;n1&quot; &quot;n0&quot;}, &quot;n1&quot; #{&quot;n2&quot;}, &quot;n0&quot; #{&quot;n2&quot;}}]
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.047Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 791
+ :value [:isolated {&quot;n2&quot; #{&quot;n1&quot; &quot;n0&quot;}, &quot;n1&quot; #{&quot;n2&quot;}, &quot;n0&quot; #{&quot;n2&quot;}}]}">:nemesis start-partition <br /></div></a><a href="#i792"><div class="op ok" id="i792" style="width:100;left:106;top:12592;height:80" title="Dur: 145 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.138Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 792
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i794"><div class="op ok" id="i794" style="width:100;left:212;top:12624;height:80" title="Dur: 148 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.189Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 794
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i796"><div class="op ok" id="i796" style="width:100;left:106;top:12688;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.241Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 796
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i798"><div class="op fail" id="i798" style="width:100;left:742;top:11984;height:784" title="Dur: 888 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:57.271Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 798
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 3]]}">10 cas [0 [1 3]]</div></a><a href="#i800"><div class="op ok" id="i800" style="width:100;left:212;top:12720;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.293Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 800
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i802"><div class="op ok" id="i802" style="width:100;left:106;top:12752;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.345Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 802
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i804"><div class="op ok" id="i804" style="width:100;left:212;top:12816;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.405Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 804
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i806"><div class="op ok" id="i806" style="width:100;left:106;top:12848;height:48" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.457Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 806
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i808"><div class="op fail" id="i808" style="width:100;left:424;top:12176;height:752" title="Dur: 895 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:57.460Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 808
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 2]]}">3 cas [0 [0 2]]</div></a><a href="#i810"><div class="op ok" id="i810" style="width:100;left:212;top:12880;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.511Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 810
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i812"><div class="op ok" id="i812" style="width:100;left:106;top:12912;height:80" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.562Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 812
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i814"><div class="op ok" id="i814" style="width:100;left:212;top:12976;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.615Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 814
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i816"><div class="op ok" id="i816" style="width:100;left:106;top:13008;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.665Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 816
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i818"><div class="op ok" id="i818" style="width:100;left:212;top:13040;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.718Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 818
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i820"><div class="op ok" id="i820" style="width:100;left:106;top:13072;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.768Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 820
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i822"><div class="op ok" id="i822" style="width:100;left:212;top:13104;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.821Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 822
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i824"><div class="op ok" id="i824" style="width:100;left:106;top:13136;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.872Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 824
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i826"><div class="op fail" id="i826" style="width:100;left:636;top:12560;height:656" title="Dur: 952 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:57.917Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 826
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 4]}">5 write [0 4]</div></a><a href="#i828"><div class="op ok" id="i828" style="width:100;left:212;top:13168;height:80" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.925Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 828
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i829"><div class="op fail" id="i829" style="width:100;left:318;top:12544;height:720" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:57.945Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 829
+ :error :net-timeout
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i832"><div class="op ok" id="i832" style="width:100;left:106;top:13200;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:57.976Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 832
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i834"><div class="op ok" id="i834" style="width:100;left:106;top:13328;height:16" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.079Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 834
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i836"><div class="op ok" id="i836" style="width:100;left:212;top:13280;height:96" title="Dur: 143 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.093Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 836
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i838"><div class="op ok" id="i838" style="width:100;left:106;top:13360;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.183Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 838
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i840"><div class="op fail" id="i840" style="width:100;left:742;top:12784;height:656" title="Dur: 922 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:58.193Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 840
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 0]]}">10 cas [0 [2 0]]</div></a><a href="#i842"><div class="op ok" id="i842" style="width:100;left:212;top:13392;height:80" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.234Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 842
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i843"><div class="op fail" id="i843" style="width:100;left:424;top:12944;height:544" title="Dur: 764 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:58.234Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 843
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 0]]}">3 cas [0 [2 0]]</div></a><a href="#i846"><div class="op ok" id="i846" style="width:100;left:106;top:13424;height:112" title="Dur: 152 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.335Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 846
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i848"><div class="op ok" id="i848" style="width:100;left:212;top:13520;height:48" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.386Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 848
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i850"><div class="op ok" id="i850" style="width:100;left:106;top:13552;height:48" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.447Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 850
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i852"><div class="op ok" id="i852" style="width:100;left:212;top:13584;height:48" title="Dur: 111 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.497Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 852
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i854"><div class="op ok" id="i854" style="width:100;left:106;top:13616;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.550Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 854
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i856"><div class="op ok" id="i856" style="width:100;left:212;top:13648;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.601Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 856
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i858"><div class="op ok" id="i858" style="width:100;left:106;top:13680;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.654Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 858
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i860"><div class="op ok" id="i860" style="width:100;left:212;top:13712;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.705Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 860
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i862"><div class="op ok" id="i862" style="width:100;left:106;top:13744;height:48" title="Dur: 131 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.785Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 862
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i864"><div class="op ok" id="i864" style="width:100;left:212;top:13776;height:48" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.835Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 864
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i866"><div class="op ok" id="i866" style="width:100;left:106;top:13808;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.889Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 866
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i868"><div class="op fail" id="i868" style="width:100;left:636;top:13232;height:656" title="Dur: 999 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:58.916Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 868
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 4]]}">5 cas [0 [0 4]]</div></a><a href="#i869"><div class="op fail" id="i869" style="width:100;left:742;top:13456;height:448" title="Dur: 717 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:58.916Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 869
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 2]]}">10 cas [0 [2 2]]</div></a><a href="#i872"><div class="op ok" id="i872" style="width:100;left:212;top:13840;height:112" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.939Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 872
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i874"><div class="op fail" id="i874" style="width:100;left:318;top:13296;height:688" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:58.956Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 874
+ :error :net-timeout
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i876"><div class="op ok" id="i876" style="width:100;left:106;top:13872;height:144" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:58.992Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 876
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i878"><div class="op fail" id="i878" style="width:100;left:424;top:13504;height:544" title="Dur: 793 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:59.032Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 878
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 4]]}">3 cas [0 [0 4]]</div></a><a href="#i880"><div class="op ok" id="i880" style="width:100;left:212;top:13968;height:112" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.082Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 880
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i882"><div class="op ok" id="i882" style="width:100;left:106;top:14032;height:80" title="Dur: 140 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.133Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 882
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i884"><div class="op ok" id="i884" style="width:100;left:212;top:14096;height:48" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.190Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 884
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i886"><div class="op ok" id="i886" style="width:100;left:106;top:14128;height:48" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.240Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 886
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i888"><div class="op ok" id="i888" style="width:100;left:212;top:14160;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.293Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 888
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i890"><div class="op ok" id="i890" style="width:100;left:106;top:14192;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.345Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 890
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i892"><div class="op ok" id="i892" style="width:100;left:212;top:14224;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.396Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 892
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i894"><div class="op ok" id="i894" style="width:100;left:106;top:14256;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.447Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 894
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i896"><div class="op ok" id="i896" style="width:100;left:212;top:14288;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.498Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 896
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i898"><div class="op ok" id="i898" style="width:100;left:106;top:14320;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.551Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 898
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i900"><div class="op ok" id="i900" style="width:100;left:212;top:14352;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.602Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 900
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i902"><div class="op fail" id="i902" style="width:100;left:742;top:13920;height:512" title="Dur: 711 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:59.635Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 902
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 1]]}">10 cas [0 [0 1]]</div></a><a href="#i904"><div class="op fail" id="i904" style="width:100;left:424;top:14064;height:400" title="Dur: 606 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:42:59.638Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 904
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [1 1]]}">3 cas [0 [1 1]]</div></a><a href="#i906"><div class="op ok" id="i906" style="width:100;left:106;top:14384;height:112" title="Dur: 135 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.687Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 906
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i908"><div class="op ok" id="i908" style="width:100;left:212;top:14416;height:112" title="Dur: 135 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.737Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 908
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i910"><div class="op ok" id="i910" style="width:100;left:106;top:14512;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.791Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 910
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i912"><div class="op ok" id="i912" style="width:100;left:212;top:14544;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.842Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 912
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i914"><div class="op ok" id="i914" style="width:100;left:106;top:14576;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.894Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 914
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i916"><div class="op info" id="i916" style="width:100;left:636;top:13936;height:2816" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:59.935Z
+
+Op:
+{:process 5
+ :type :info
+ :f :cas
+ :index 916
+ :error :net-timeout
+ :value [0 [2 4]]}">5 cas [0 [2 4]]</div></a><a href="#i918"><div class="op ok" id="i918" style="width:100;left:212;top:14608;height:80" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:42:59.944Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 918
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i919"><div class="op fail" id="i919" style="width:100;left:318;top:14000;height:704" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:42:59.957Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 919
+ :error :net-timeout
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i922"><div class="op ok" id="i922" style="width:100;left:106;top:14640;height:112" title="Dur: 150 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.045Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 922
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i924"><div class="op ok" id="i924" style="width:100;left:212;top:14720;height:64" title="Dur: 130 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.095Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 924
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i926"><div class="op ok" id="i926" style="width:100;left:106;top:14768;height:48" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.158Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 926
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i928"><div class="op ok" id="i928" style="width:100;left:212;top:14800;height:48" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.209Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 928
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i930"><div class="op ok" id="i930" style="width:100;left:106;top:14832;height:48" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.260Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 930
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i932"><div class="op fail" id="i932" style="width:100;left:742;top:14448;height:464" title="Dur: 660 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:00.296Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 932
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 1]]}">10 cas [0 [0 1]]</div></a><a href="#i934"><div class="op ok" id="i934" style="width:100;left:212;top:14864;height:80" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.312Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 934
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i936"><div class="op ok" id="i936" style="width:100;left:106;top:14896;height:80" title="Dur: 102 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.363Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 936
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i938"><div class="op ok" id="i938" style="width:100;left:212;top:14960;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.421Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 938
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i940"><div class="op ok" id="i940" style="width:100;left:106;top:14992;height:48" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.472Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 940
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i942"><div class="op fail" id="i942" style="width:100;left:424;top:14480;height:592" title="Dur: 865 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:00.522Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 942
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [2 3]]}">3 cas [0 [2 3]]</div></a><a href="#i944"><div class="op ok" id="i944" style="width:100;left:212;top:15024;height:80" title="Dur: 150 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.572Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 944
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i946"><div class="op ok" id="i946" style="width:100;left:106;top:15056;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.577Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 946
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i948"><div class="op fail" id="i948" style="width:100;left:848;top:14672;height:496" title="Dur: 741 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:00.676Z
+
+Op:
+{:process 11
+ :type :fail
+ :f :cas
+ :index 948
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 1]]}">11 cas [0 [0 1]]</div></a><a href="#i950"><div class="op ok" id="i950" style="width:100;left:212;top:15120;height:80" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.678Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 950
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i952"><div class="op ok" id="i952" style="width:100;left:106;top:15152;height:80" title="Dur: 132 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.728Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 952
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i954"><div class="op ok" id="i954" style="width:100;left:106;top:15248;height:16" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.832Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 954
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i956"><div class="op ok" id="i956" style="width:100;left:212;top:15216;height:80" title="Dur: 151 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.853Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 956
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i958"><div class="op ok" id="i958" style="width:100;left:106;top:15280;height:48" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.937Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 958
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i960"><div class="op fail" id="i960" style="width:100;left:318;top:14736;height:624" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:43:00.979Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 960
+ :error :net-timeout
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i962"><div class="op ok" id="i962" style="width:100;left:212;top:15312;height:80" title="Dur: 134 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:00.988Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 962
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i964"><div class="op ok" id="i964" style="width:100;left:106;top:15344;height:80" title="Dur: 133 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.070Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 964
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i966"><div class="op ok" id="i966" style="width:100;left:212;top:15408;height:48" title="Dur: 119 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.132Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 966
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i968"><div class="op fail" id="i968" style="width:100;left:742;top:14928;height:560" title="Dur: 847 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:01.144Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 968
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [0 2]]}">10 cas [0 [0 2]]</div></a><a href="#i970"><div class="op ok" id="i970" style="width:100;left:106;top:15440;height:80" title="Dur: 124 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.195Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 970
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i972"><div class="op ok" id="i972" style="width:100;left:212;top:15472;height:80" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.246Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 972
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i974"><div class="op ok" id="i974" style="width:100;left:106;top:15536;height:48" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.302Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 974
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i976"><div class="op ok" id="i976" style="width:100;left:212;top:15568;height:48" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.353Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 976
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i978"><div class="op ok" id="i978" style="width:100;left:106;top:15600;height:48" title="Dur: 101 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.404Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 978
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i980"><div class="op fail" id="i980" style="width:100;left:424;top:15088;height:592" title="Dur: 903 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:01.425Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 980
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 0]]}">3 cas [0 [4 0]]</div></a><a href="#i982"><div class="op ok" id="i982" style="width:100;left:212;top:15632;height:80" title="Dur: 122 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.475Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 982
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i984"><div class="op ok" id="i984" style="width:100;left:106;top:15664;height:80" title="Dur: 120 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.524Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 984
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i986"><div class="op fail" id="i986" style="width:100;left:848;top:15184;height:592" title="Dur: 866 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:01.543Z
+
+Op:
+{:process 11
+ :type :fail
+ :f :write
+ :index 986
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 3]}">11 write [0 3]</div></a><a href="#i988"><div class="op ok" id="i988" style="width:100;left:212;top:15728;height:80" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.581Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 988
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i990"><div class="op ok" id="i990" style="width:100;left:106;top:15760;height:80" title="Dur: 107 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.632Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 990
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i992"><div class="op ok" id="i992" style="width:100;left:212;top:15824;height:48" title="Dur: 110 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.694Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 992
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i994"><div class="op ok" id="i994" style="width:100;left:106;top:15856;height:48" title="Dur: 112 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.744Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 994
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i996"><div class="op ok" id="i996" style="width:100;left:212;top:15888;height:48" title="Dur: 122 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.816Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 996
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i998"><div class="op ok" id="i998" style="width:100;left:106;top:15920;height:48" title="Dur: 121 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.866Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 998
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1000"><div class="op ok" id="i1000" style="width:100;left:212;top:15952;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.920Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1000
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1002"><div class="op fail" id="i1002" style="width:100;left:742;top:15504;height:528" title="Dur: 821 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:01.965Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :write
+ :index 1002
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 2]}">10 write [0 2]</div></a><a href="#i1004"><div class="op ok" id="i1004" style="width:100;left:106;top:15984;height:80" title="Dur: 104 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:01.970Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1004
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1005"><div class="op fail" id="i1005" style="width:100;left:318;top:15376;height:704" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:43:01.980Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 1005
+ :error :net-timeout
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i1008"><div class="op fail" id="i1008" style="width:100;left:424;top:15696;height:432" title="Dur: 614 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:02.040Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 1008
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 2]]}">3 cas [0 [4 2]]</div></a><a href="#i1010"><div class="op ok" id="i1010" style="width:100;left:212;top:16016;height:144" title="Dur: 146 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.067Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1010
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1012"><div class="op ok" id="i1012" style="width:100;left:106;top:16112;height:80" title="Dur: 116 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.117Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1012
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1014"><div class="op ok" id="i1014" style="width:100;left:212;top:16176;height:48" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.192Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1014
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1016"><div class="op ok" id="i1016" style="width:100;left:106;top:16208;height:48" title="Dur: 125 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.243Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1016
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1018"><div class="op ok" id="i1018" style="width:100;left:212;top:16240;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.296Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1018
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1020"><div class="op fail" id="i1020" style="width:100;left:848;top:15792;height:528" title="Dur: 794 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:02.338Z
+
+Op:
+{:process 11
+ :type :fail
+ :f :write
+ :index 1020
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 2]}">11 write [0 2]</div></a><a href="#i1022"><div class="op ok" id="i1022" style="width:100;left:106;top:16272;height:80" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.346Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1022
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1024"><div class="op ok" id="i1024" style="width:100;left:212;top:16304;height:80" title="Dur: 106 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.402Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1024
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1026"><div class="op ok" id="i1026" style="width:100;left:106;top:16368;height:48" title="Dur: 103 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.458Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1026
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1028"><div class="op ok" id="i1028" style="width:100;left:212;top:16400;height:48" title="Dur: 105 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.509Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1028
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1030"><div class="op ok" id="i1030" style="width:100;left:106;top:16432;height:48" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.567Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1030
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1032"><div class="op ok" id="i1032" style="width:100;left:212;top:16464;height:48" title="Dur: 108 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.617Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1032
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1034"><div class="op ok" id="i1034" style="width:100;left:106;top:16496;height:48" title="Dur: 139 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.707Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1034
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1036"><div class="op fail" id="i1036" style="width:100;left:424;top:16144;height:432" title="Dur: 693 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:02.734Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 1036
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 2]]}">3 cas [0 [4 2]]</div></a><a href="#i1038"><div class="op ok" id="i1038" style="width:100;left:212;top:16528;height:80" title="Dur: 139 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.757Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1038
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1040"><div class="op ok" id="i1040" style="width:100;left:106;top:16560;height:80" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.820Z
+
+Op:
+{:process 0
+ :type :ok
+ :f :read
+ :index 1040
+ :value [0 4]}">0 read [0 nil]<br />[0 4]</div></a><a href="#i1041"><div class="op ok" id="i1041" style="width:100;left:212;top:16624;height:32" title="Dur: 113 ms
+Err: nil
+Wall-clock Time: 2026-10-30T15:43:02.870Z
+
+Op:
+{:process 1
+ :type :ok
+ :f :read
+ :index 1041
+ :value [0 4]}">1 read [0 nil]<br />[0 4]</div></a><a href="#i1042"><div class="op fail" id="i1042" style="width:100;left:742;top:16048;height:624" title="Dur: 914 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:02.880Z
+
+Op:
+{:process 10
+ :type :fail
+ :f :cas
+ :index 1042
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [4 1]]}">10 cas [0 [4 1]]</div></a><a href="#i1043"><div class="op fail" id="i1043" style="width:100;left:318;top:16096;height:592" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:43:02.983Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 1043
+ :error :net-timeout
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i1044"><div class="op info" id="i1044" style="width:100;left:848;top:16336;height:416" title="Dur: 999 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:43:03.338Z
+
+Op:
+{:process 11
+ :type :info
+ :f :write
+ :index 1044
+ :error :net-timeout
+ :value [0 2]}">11 write [0 2]</div></a><a href="#i1045"><div class="op fail" id="i1045" style="width:100;left:424;top:16592;height:128" title="Dur: 872 ms
+Err: [:temporarily-unavailable &quot;key is locked&quot;]
+Wall-clock Time: 2026-10-30T15:43:03.613Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 1045
+ :error [:temporarily-unavailable &quot;key is locked&quot;]
+ :value [0 [3 4]]}">3 cas [0 [3 4]]</div></a></div></body></html>

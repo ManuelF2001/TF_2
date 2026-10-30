@@ -1,0 +1,13 @@
+# Third-party / downloaded (see README.md)
+maelstrom
+archives/
+
+# Raw Maelstrom runs (large, ~350 MB); the cited runs are copied to lab2/runs/
+store/
+lab2/results/last-output.txt
+
+# Python / editor / LaTeX
+__pycache__/
+*.pyc
+.vscode/
+.idea/

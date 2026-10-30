@@ -1,0 +1,634 @@
+<html><head><style>.ops        { position: absolute; }
+.op         { position: absolute; padding: 2px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.3s cubic-bezier(.25,.8,.25,1); overflow: hidden; }
+.op.invoke  { background: #eeeeee; }
+.op.ok      { background: #6DB6FE; }
+.op.info    { background: #FFAA26; }
+.op.fail    { background: #FEB5DA; }
+.op:target  { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+</style></head><body><div><a href="/">jepsen</a> / <a href="/files/lin-kv">lin-kv</a> / <a href="/files/lin-kv/20261030T145950.982Z">20261030T145950.982Z</a> / <a href="/files/lin-kv/20261030T145950.982Z/">independent</a> / <a href="/files/lin-kv/20261030T145950.982Z/independent/1">1</a></div><h1>lin-kv key 1</h1><div class="ops"><a href="#i1"><div class="op info" id="i1" style="width:100;left:0;top:0;height:16" title="Msg: :majorities-ring
+Err: nil
+Wall-clock Time: 2026-10-30T14:59:51.007Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 1
+ :value :majorities-ring}">:nemesis start-partition <br /></div></a><a href="#i2"><div class="op info" id="i2" style="width:100;left:0;top:16;height:16" title="Msg: [:isolated {&quot;n2&quot; #{&quot;n0&quot;}, &quot;n0&quot; #{&quot;n1&quot;}, &quot;n1&quot; #{&quot;n2&quot;}}]
+Err: nil
+Wall-clock Time: 2026-10-30T14:59:51.013Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 2
+ :value [:isolated {&quot;n2&quot; #{&quot;n0&quot;}, &quot;n0&quot; #{&quot;n1&quot;}, &quot;n1&quot; #{&quot;n2&quot;}}]}">:nemesis start-partition <br /></div></a><a href="#i212"><div class="op fail" id="i212" style="width:100;left:636;top:32;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.573Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 212
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 2]}">40 cas [1 2]</div></a><a href="#i214"><div class="op fail" id="i214" style="width:100;left:636;top:64;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.711Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 214
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 4]}">40 cas [2 4]</div></a><a href="#i217"><div class="op fail" id="i217" style="width:100;left:636;top:96;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.749Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 217
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [3 1]}">40 cas [3 1]</div></a><a href="#i222"><div class="op fail" id="i222" style="width:100;left:636;top:160;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.901Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 222
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [0 1]}">40 cas [0 1]</div></a><a href="#i224"><div class="op fail" id="i224" style="width:100;left:636;top:192;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.906Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 224
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [4 4]}">40 cas [4 4]</div></a><a href="#i226"><div class="op fail" id="i226" style="width:100;left:636;top:224;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.955Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 226
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [4 2]}">40 cas [4 2]</div></a><a href="#i228"><div class="op fail" id="i228" style="width:100;left:636;top:256;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:02.963Z
+
+Op:
+{:process 40
+ :type :fail
+ :f :cas
+ :index 228
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 0]}">40 cas [2 0]</div></a><a href="#i233"><div class="op fail" id="i233" style="width:100;left:530;top:304;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:03.248Z
+
+Op:
+{:process 39
+ :type :fail
+ :f :cas
+ :index 233
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [0 3]}">39 cas [0 3]</div></a><a href="#i236"><div class="op fail" id="i236" style="width:100;left:530;top:336;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:03.329Z
+
+Op:
+{:process 39
+ :type :fail
+ :f :cas
+ :index 236
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [4 2]}">39 cas [4 2]</div></a><a href="#i240"><div class="op fail" id="i240" style="width:100;left:212;top:128;height:288" title="Dur: 1003 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:03.885Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 240
+ :error :net-timeout
+ :value }">1 read </div></a><a href="#i242"><div class="op fail" id="i242" style="width:100;left:318;top:144;height:304" title="Dur: 1003 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:03.889Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 242
+ :error :net-timeout
+ :value }">2 read </div></a><a href="#i244"><div class="op info" id="i244" style="width:100;left:424;top:288;height:1680" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:04.153Z
+
+Op:
+{:process 35
+ :type :info
+ :f :write
+ :index 244
+ :error :net-timeout
+ :value 1}">35 write 1</div></a><a href="#i246"><div class="op fail" id="i246" style="width:100;left:742;top:496;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:04.156Z
+
+Op:
+{:process 41
+ :type :fail
+ :f :cas
+ :index 246
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 0]}">41 cas [1 0]</div></a><a href="#i248"><div class="op fail" id="i248" style="width:100;left:106;top:368;height:176" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:04.441Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 248
+ :error :net-timeout
+ :value }">0 read </div></a><a href="#i250"><div class="op info" id="i250" style="width:100;left:530;top:384;height:1584" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:04.641Z
+
+Op:
+{:process 39
+ :type :info
+ :f :write
+ :index 250
+ :error :net-timeout
+ :value 2}">39 write 2</div></a><a href="#i252"><div class="op info" id="i252" style="width:100;left:636;top:400;height:1568" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:04.681Z
+
+Op:
+{:process 40
+ :type :info
+ :f :write
+ :index 252
+ :error :net-timeout
+ :value 3}">40 write 3</div></a><a href="#i254"><div class="op fail" id="i254" style="width:100;left:954;top:624;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:04.843Z
+
+Op:
+{:process 46
+ :type :fail
+ :f :cas
+ :index 254
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 1]}">46 cas [2 1]</div></a><a href="#i256"><div class="op fail" id="i256" style="width:100;left:954;top:656;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:04.884Z
+
+Op:
+{:process 46
+ :type :fail
+ :f :cas
+ :index 256
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 2]}">46 cas [2 2]</div></a><a href="#i257"><div class="op fail" id="i257" style="width:100;left:212;top:432;height:256" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:04.886Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 257
+ :error :net-timeout
+ :value }">1 read </div></a><a href="#i259"><div class="op fail" id="i259" style="width:100;left:954;top:704;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:04.947Z
+
+Op:
+{:process 46
+ :type :fail
+ :f :cas
+ :index 259
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 1]}">46 cas [2 1]</div></a><a href="#i260"><div class="op fail" id="i260" style="width:100;left:318;top:464;height:272" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:04.953Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 260
+ :error :net-timeout
+ :value }">2 read </div></a><a href="#i262"><div class="op fail" id="i262" style="width:100;left:954;top:752;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:04.967Z
+
+Op:
+{:process 46
+ :type :fail
+ :f :cas
+ :index 262
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [0 4]}">46 cas [0 4]</div></a><a href="#i265"><div class="op info" id="i265" style="width:100;left:742;top:528;height:1440" title="Dur: 1003 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:05.263Z
+
+Op:
+{:process 41
+ :type :info
+ :f :write
+ :index 265
+ :error :net-timeout
+ :value 0}">41 write 0</div></a><a href="#i267"><div class="op fail" id="i267" style="width:100;left:954;top:832;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:05.277Z
+
+Op:
+{:process 46
+ :type :fail
+ :f :cas
+ :index 267
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 1]}">46 cas [1 1]</div></a><a href="#i269"><div class="op fail" id="i269" style="width:100;left:954;top:864;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:05.407Z
+
+Op:
+{:process 46
+ :type :fail
+ :f :cas
+ :index 269
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [4 1]}">46 cas [4 1]</div></a><a href="#i270"><div class="op fail" id="i270" style="width:100;left:106;top:560;height:336" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:05.442Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 270
+ :error :net-timeout
+ :value }">0 read </div></a><a href="#i272"><div class="op info" id="i272" style="width:100;left:848;top:592;height:1376" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:05.642Z
+
+Op:
+{:process 45
+ :type :info
+ :f :write
+ :index 272
+ :error :net-timeout
+ :value 1}">45 write 1</div></a><a href="#i274"><div class="op fail" id="i274" style="width:100;left:1060;top:944;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:05.690Z
+
+Op:
+{:process 47
+ :type :fail
+ :f :cas
+ :index 274
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [3 3]}">47 cas [3 3]</div></a><a href="#i276"><div class="op fail" id="i276" style="width:100;left:1166;top:976;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:05.784Z
+
+Op:
+{:process 51
+ :type :fail
+ :f :cas
+ :index 276
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 0]}">51 cas [1 0]</div></a><a href="#i280"><div class="op fail" id="i280" style="width:100;left:1060;top:1040;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:06.003Z
+
+Op:
+{:process 47
+ :type :fail
+ :f :cas
+ :index 280
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 0]}">47 cas [2 0]</div></a><a href="#i281"><div class="op fail" id="i281" style="width:100;left:212;top:784;height:288" title="Dur: 1003 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:06.137Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 281
+ :error :net-timeout
+ :value }">1 read </div></a><a href="#i284"><div class="op fail" id="i284" style="width:100;left:318;top:800;height:320" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:06.264Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 284
+ :error :net-timeout
+ :value }">2 read </div></a><a href="#i286"><div class="op fail" id="i286" style="width:100;left:106;top:912;height:240" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:06.515Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 286
+ :error :net-timeout
+ :value }">0 read </div></a><a href="#i288"><div class="op info" id="i288" style="width:100;left:1166;top:1008;height:960" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:06.790Z
+
+Op:
+{:process 51
+ :type :info
+ :f :write
+ :index 288
+ :error :net-timeout
+ :value 4}">51 write 4</div></a><a href="#i290"><div class="op fail" id="i290" style="width:100;left:1484;top:1200;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:06.793Z
+
+Op:
+{:process 57
+ :type :fail
+ :f :cas
+ :index 290
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [4 4]}">57 cas [4 4]</div></a><a href="#i291"><div class="op info" id="i291" style="width:100;left:954;top:1024;height:944" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:06.884Z
+
+Op:
+{:process 46
+ :type :info
+ :f :write
+ :index 291
+ :error :net-timeout
+ :value 0}">46 write 0</div></a><a href="#i294"><div class="op fail" id="i294" style="width:100;left:1272;top:1264;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:07.058Z
+
+Op:
+{:process 52
+ :type :fail
+ :f :cas
+ :index 294
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [2 4]}">52 cas [2 4]</div></a><a href="#i295"><div class="op fail" id="i295" style="width:100;left:212;top:1088;height:208" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:07.149Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 295
+ :error :net-timeout
+ :value }">1 read </div></a><a href="#i297"><div class="op fail" id="i297" style="width:100;left:1272;top:1312;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:07.153Z
+
+Op:
+{:process 52
+ :type :fail
+ :f :cas
+ :index 297
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 1]}">52 cas [1 1]</div></a><a href="#i299"><div class="op info" id="i299" style="width:100;left:1060;top:1104;height:864" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:07.194Z
+
+Op:
+{:process 47
+ :type :info
+ :f :write
+ :index 299
+ :error :net-timeout
+ :value 3}">47 write 3</div></a><a href="#i301"><div class="op fail" id="i301" style="width:100;left:1378;top:1376;height:16" title="Dur: 3 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:07.218Z
+
+Op:
+{:process 53
+ :type :fail
+ :f :cas
+ :index 301
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [0 2]}">53 cas [0 2]</div></a><a href="#i303"><div class="op fail" id="i303" style="width:100;left:1272;top:1408;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:07.232Z
+
+Op:
+{:process 52
+ :type :fail
+ :f :cas
+ :index 303
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 1]}">52 cas [1 1]</div></a><a href="#i306"><div class="op fail" id="i306" style="width:100;left:318;top:1136;height:336" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:07.368Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 306
+ :error :net-timeout
+ :value }">2 read </div></a><a href="#i308"><div class="op fail" id="i308" style="width:100;left:106;top:1168;height:336" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:07.518Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 308
+ :error :net-timeout
+ :value }">0 read </div></a><a href="#i310"><div class="op info" id="i310" style="width:100;left:1484;top:1248;height:720" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:07.935Z
+
+Op:
+{:process 57
+ :type :info
+ :f :write
+ :index 310
+ :error :net-timeout
+ :value 1}">57 write 1</div></a><a href="#i312"><div class="op fail" id="i312" style="width:100;left:1802;top:1552;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:07.938Z
+
+Op:
+{:process 63
+ :type :fail
+ :f :cas
+ :index 312
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [1 0]}">63 cas [1 0]</div></a><a href="#i314"><div class="op fail" id="i314" style="width:100;left:1802;top:1584;height:16" title="Dur: 1 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:07.940Z
+
+Op:
+{:process 63
+ :type :fail
+ :f :cas
+ :index 314
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [4 3]}">63 cas [4 3]</div></a><a href="#i316"><div class="op fail" id="i316" style="width:100;left:212;top:1344;height:288" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:08.163Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 316
+ :error :net-timeout
+ :value }">1 read </div></a><a href="#i318"><div class="op info" id="i318" style="width:100;left:1272;top:1440;height:528" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:08.262Z
+
+Op:
+{:process 52
+ :type :info
+ :f :write
+ :index 318
+ :error :net-timeout
+ :value 4}">52 write 4</div></a><a href="#i320"><div class="op info" id="i320" style="width:100;left:1378;top:1456;height:512" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:08.338Z
+
+Op:
+{:process 53
+ :type :info
+ :f :write
+ :index 320
+ :error :net-timeout
+ :value 3}">53 write 3</div></a><a href="#i321"><div class="op fail" id="i321" style="width:100;left:318;top:1488;height:224" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:08.370Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 321
+ :error :net-timeout
+ :value }">2 read </div></a><a href="#i323"><div class="op fail" id="i323" style="width:100;left:106;top:1520;height:224" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:08.519Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 323
+ :error :net-timeout
+ :value }">0 read </div></a><a href="#i326"><div class="op info" id="i326" style="width:100;left:1802;top:1616;height:352" title="Dur: 1003 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:09.109Z
+
+Op:
+{:process 63
+ :type :info
+ :f :write
+ :index 326
+ :error :net-timeout
+ :value 3}">63 write 3</div></a><a href="#i328"><div class="op fail" id="i328" style="width:100;left:1908;top:1808;height:16" title="Dur: 2 ms
+Err: [:not-supported &quot;cas not supported&quot;]
+Wall-clock Time: 2026-10-30T15:00:09.112Z
+
+Op:
+{:process 69
+ :type :fail
+ :f :cas
+ :index 328
+ :error [:not-supported &quot;cas not supported&quot;]
+ :value [0 0]}">69 cas [0 0]</div></a><a href="#i329"><div class="op fail" id="i329" style="width:100;left:212;top:1648;height:192" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:09.169Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 329
+ :error :net-timeout
+ :value }">1 read </div></a><a href="#i330"><div class="op info" id="i330" style="width:100;left:1590;top:1680;height:288" title="Dur: 1000 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:09.262Z
+
+Op:
+{:process 58
+ :type :info
+ :f :write
+ :index 330
+ :error :net-timeout
+ :value 0}">58 write 0</div></a><a href="#i334"><div class="op info" id="i334" style="width:100;left:1696;top:1728;height:240" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:09.446Z
+
+Op:
+{:process 59
+ :type :info
+ :f :write
+ :index 334
+ :error :net-timeout
+ :value 1}">59 write 1</div></a><a href="#i336"><div class="op info" id="i336" style="width:100;left:0;top:1888;height:16" title="Msg: nil
+Err: nil
+Wall-clock Time: 2026-10-30T15:00:09.511Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 336
+ :value }">:nemesis stop-partition </div></a><a href="#i337"><div class="op info" id="i337" style="width:100;left:0;top:1904;height:16" title="Msg: :network-healed
+Err: nil
+Wall-clock Time: 2026-10-30T15:00:09.512Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 337
+ :value :network-healed}">:nemesis stop-partition <br /></div></a><a href="#i338"><div class="op fail" id="i338" style="width:100;left:106;top:1760;height:160" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:09.619Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 338
+ :error :net-timeout
+ :value }">0 read </div></a><a href="#i341"><div class="op fail" id="i341" style="width:100;left:318;top:1776;height:160" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-10-30T15:00:09.673Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 341
+ :error :net-timeout
+ :value }">2 read </div></a></div></body></html>

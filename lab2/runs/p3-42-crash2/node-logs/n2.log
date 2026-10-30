@@ -1,0 +1,225 @@
+DEBUG:root:received {"id":2,"src":"c2","dest":"n2","body":{"type":"init","node_id":"n2","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+INFO:root:node n2 initialized, QR=4 QW=2
+DEBUG:root:sending {"dest": "c2", "src": "n2", "body": {"msg_id": 1, "in_reply_to": 1, "type": "init_ok"}}
+DEBUG:root:received {"id":14,"src":"n0","dest":"n2","body":{"msg_id":4,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 2, "in_reply_to": 4, "type": "get_ok", "tag": [0, ""], "value": null}}
+DEBUG:root:received {"id":22,"src":"n0","dest":"n2","body":{"msg_id":8,"type":"put","key":0,"tag":[1,"c10"],"value":3}}
+TRACE {"t": 1793373894.119794, "node": "n2", "event": "put", "key": 0, "tag": [1, "c10"], "value": 3, "had": [[0, ""], null], "stored": true, "coordinator": "n0"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 3, "in_reply_to": 8, "type": "put_ok"}}
+DEBUG:root:received {"id":30,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":1}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 4, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 5, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 6, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 7, "type": "get", "key": 0}}
+DEBUG:root:received {"id":35,"src":"n0","dest":"n2","body":{"msg_id":12,"in_reply_to":4,"type":"get_ok","tag":[1,"c10"],"value":3}}
+DEBUG:root:received {"id":36,"src":"n1","dest":"n2","body":{"msg_id":4,"in_reply_to":5,"type":"get_ok","tag":[1,"c10"],"value":3}}
+DEBUG:root:received {"id":37,"src":"n3","dest":"n2","body":{"msg_id":4,"in_reply_to":6,"type":"get_ok","tag":[1,"c10"],"value":3}}
+DEBUG:root:received {"id":38,"src":"n4","dest":"n2","body":{"msg_id":4,"in_reply_to":7,"type":"get_ok","tag":[1,"c10"],"value":3}}
+TRACE {"t": 1793373894.291233, "node": "n2", "event": "read", "key": 0, "client": "c11", "answers": {"n2": [[1, "c10"], 3], "n0": [[1, "c10"], 3], "n1": [[1, "c10"], 3], "n3": [[1, "c10"], 3]}, "returned": [[1, "c10"], 3]}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 8, "in_reply_to": 1, "type": "read_ok", "value": 3}}
+DEBUG:root:received {"id":43,"src":"n3","dest":"n2","body":{"msg_id":7,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 9, "in_reply_to": 7, "type": "get_ok", "tag": [1, "c10"], "value": 3}}
+DEBUG:root:received {"id":54,"src":"n0","dest":"n2","body":{"msg_id":16,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 10, "in_reply_to": 16, "type": "get_ok", "tag": [1, "c10"], "value": 3}}
+DEBUG:root:received {"id":64,"src":"c15","dest":"n2","body":{"key":0,"from":0,"to":2,"type":"cas","msg_id":1}}
+DEBUG:root:sending {"dest": "c15", "src": "n2", "body": {"msg_id": 11, "in_reply_to": 1, "type": "error", "code": 10, "text": "cas not supported"}}
+DEBUG:root:received {"id":69,"src":"n3","dest":"n2","body":{"msg_id":13,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 12, "in_reply_to": 13, "type": "get_ok", "tag": [1, "c10"], "value": 3}}
+DEBUG:root:received {"id":77,"src":"n3","dest":"n2","body":{"msg_id":17,"type":"put","key":0,"tag":[2,"c16"],"value":4}}
+TRACE {"t": 1793373894.618985, "node": "n2", "event": "put", "key": 0, "tag": [2, "c16"], "value": 4, "had": [[1, "c10"], 3], "stored": true, "coordinator": "n3"}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 13, "in_reply_to": 17, "type": "put_ok"}}
+DEBUG:root:received {"id":87,"src":"n4","dest":"n2","body":{"msg_id":11,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 14, "in_reply_to": 11, "type": "get_ok", "tag": [2, "c16"], "value": 4}}
+DEBUG:root:received {"id":95,"src":"n4","dest":"n2","body":{"msg_id":15,"type":"put","key":0,"tag":[3,"c17"],"value":3}}
+TRACE {"t": 1793373894.667342, "node": "n2", "event": "put", "key": 0, "tag": [3, "c17"], "value": 3, "had": [[2, "c16"], 4], "stored": true, "coordinator": "n4"}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 15, "in_reply_to": 15, "type": "put_ok"}}
+DEBUG:root:received {"id":104,"src":"n0","dest":"n2","body":{"msg_id":25,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 16, "in_reply_to": 25, "type": "get_ok", "tag": [3, "c17"], "value": 3}}
+DEBUG:root:received {"id":116,"src":"n1","dest":"n2","body":{"msg_id":14,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 17, "in_reply_to": 14, "type": "get_ok", "tag": [3, "c17"], "value": 3}}
+DEBUG:root:received {"id":129,"src":"n3","dest":"n2","body":{"msg_id":26,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 18, "in_reply_to": 26, "type": "get_ok", "tag": [3, "c17"], "value": 3}}
+DEBUG:root:received {"id":140,"src":"n0","dest":"n2","body":{"msg_id":35,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 19, "in_reply_to": 35, "type": "get_ok", "tag": [3, "c17"], "value": 3}}
+DEBUG:root:received {"id":150,"src":"n1","dest":"n2","body":{"msg_id":21,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 20, "in_reply_to": 21, "type": "get_ok", "tag": [3, "c17"], "value": 3}}
+DEBUG:root:received {"id":158,"src":"n1","dest":"n2","body":{"msg_id":25,"type":"put","key":0,"tag":[4,"c14"],"value":2}}
+TRACE {"t": 1793373895.275854, "node": "n2", "event": "put", "key": 0, "tag": [4, "c14"], "value": 2, "had": [[3, "c17"], 3], "stored": true, "coordinator": "n1"}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 21, "in_reply_to": 25, "type": "put_ok"}}
+DEBUG:root:received {"id":166,"src":"c15","dest":"n2","body":{"key":0,"value":2,"type":"write","msg_id":2}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 22, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 23, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 24, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 25, "type": "get", "key": 0}}
+DEBUG:root:received {"id":171,"src":"n0","dest":"n2","body":{"msg_id":41,"in_reply_to":22,"type":"get_ok","tag":[4,"c14"],"value":2}}
+DEBUG:root:received {"id":172,"src":"n1","dest":"n2","body":{"msg_id":29,"in_reply_to":23,"type":"get_ok","tag":[4,"c14"],"value":2}}
+DEBUG:root:received {"id":173,"src":"n3","dest":"n2","body":{"msg_id":32,"in_reply_to":24,"type":"get_ok","tag":[4,"c14"],"value":2}}
+DEBUG:root:received {"id":174,"src":"n4","dest":"n2","body":{"msg_id":24,"in_reply_to":25,"type":"get_ok","tag":[4,"c14"],"value":2}}
+TRACE {"t": 1793373895.369992, "node": "n2", "event": "version", "key": 0, "value": 2, "client": "c15", "tag": [5, "c15"], "seen": {"n2": [4, "c14"], "n0": [4, "c14"], "n1": [4, "c14"], "n3": [4, "c14"]}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 26, "type": "put", "key": 0, "tag": [5, "c15"], "value": 2}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 27, "type": "put", "key": 0, "tag": [5, "c15"], "value": 2}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 28, "type": "put", "key": 0, "tag": [5, "c15"], "value": 2}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 29, "type": "put", "key": 0, "tag": [5, "c15"], "value": 2}}
+TRACE {"t": 1793373895.370845, "node": "n2", "event": "put", "key": 0, "tag": [5, "c15"], "value": 2, "had": [[4, "c14"], 2], "stored": true, "coordinator": "n2"}
+DEBUG:root:received {"id":179,"src":"n0","dest":"n2","body":{"msg_id":42,"in_reply_to":26,"type":"put_ok"}}
+TRACE {"t": 1793373895.372392, "node": "n2", "event": "write_done", "key": 0, "tag": [5, "c15"], "value": 2, "client": "c15", "acks": ["n2", "n0"]}
+DEBUG:root:received {"id":180,"src":"n1","dest":"n2","body":{"msg_id":30,"in_reply_to":27,"type":"put_ok"}}
+DEBUG:root:sending {"dest": "c15", "src": "n2", "body": {"msg_id": 30, "in_reply_to": 2, "type": "write_ok"}}
+DEBUG:root:received {"id":181,"src":"n3","dest":"n2","body":{"msg_id":33,"in_reply_to":28,"type":"put_ok"}}
+DEBUG:root:received {"id":182,"src":"n4","dest":"n2","body":{"msg_id":25,"in_reply_to":29,"type":"put_ok"}}
+DEBUG:root:received {"id":186,"src":"n0","dest":"n2","body":{"msg_id":44,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 31, "in_reply_to": 44, "type": "get_ok", "tag": [5, "c15"], "value": 2}}
+DEBUG:root:received {"id":196,"src":"n0","dest":"n2","body":{"msg_id":49,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 32, "in_reply_to": 49, "type": "get_ok", "tag": [5, "c15"], "value": 2}}
+DEBUG:root:received {"id":214,"src":"n0","dest":"n2","body":{"msg_id":58,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 33, "in_reply_to": 58, "type": "get_ok", "tag": [5, "c15"], "value": 2}}
+DEBUG:root:received {"id":222,"src":"n0","dest":"n2","body":{"msg_id":62,"type":"put","key":0,"tag":[6,"c10"],"value":2}}
+TRACE {"t": 1793373895.800423, "node": "n2", "event": "put", "key": 0, "tag": [6, "c10"], "value": 2, "had": [[5, "c15"], 2], "stored": true, "coordinator": "n0"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 34, "in_reply_to": 62, "type": "put_ok"}}
+DEBUG:root:received {"id":233,"src":"n4","dest":"n2","body":{"msg_id":32,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 35, "in_reply_to": 32, "type": "get_ok", "tag": [6, "c10"], "value": 2}}
+DEBUG:root:received {"id":243,"src":"n0","dest":"n2","body":{"msg_id":68,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 36, "in_reply_to": 68, "type": "get_ok", "tag": [6, "c10"], "value": 2}}
+DEBUG:root:received {"id":250,"src":"n1","dest":"n2","body":{"msg_id":37,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 37, "in_reply_to": 37, "type": "get_ok", "tag": [6, "c10"], "value": 2}}
+DEBUG:root:received {"id":262,"src":"n0","dest":"n2","body":{"msg_id":74,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 38, "in_reply_to": 74, "type": "get_ok", "tag": [6, "c10"], "value": 2}}
+DEBUG:root:received {"id":273,"src":"n3","dest":"n2","body":{"msg_id":44,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 39, "in_reply_to": 44, "type": "get_ok", "tag": [6, "c10"], "value": 2}}
+DEBUG:root:received {"id":281,"src":"n3","dest":"n2","body":{"msg_id":48,"type":"put","key":0,"tag":[7,"c16"],"value":2}}
+TRACE {"t": 1793373896.195389, "node": "n2", "event": "put", "key": 0, "tag": [7, "c16"], "value": 2, "had": [[6, "c10"], 2], "stored": true, "coordinator": "n3"}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 40, "in_reply_to": 48, "type": "put_ok"}}
+DEBUG:root:received {"id":291,"src":"n4","dest":"n2","body":{"msg_id":42,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 41, "in_reply_to": 42, "type": "get_ok", "tag": [7, "c16"], "value": 2}}
+DEBUG:root:received {"id":299,"src":"n4","dest":"n2","body":{"msg_id":46,"type":"put","key":0,"tag":[8,"c17"],"value":3}}
+TRACE {"t": 1793373896.230255, "node": "n2", "event": "put", "key": 0, "tag": [8, "c17"], "value": 3, "had": [[7, "c16"], 2], "stored": true, "coordinator": "n4"}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 42, "in_reply_to": 46, "type": "put_ok"}}
+DEBUG:root:received {"id":308,"src":"n0","dest":"n2","body":{"msg_id":83,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 43, "in_reply_to": 83, "type": "get_ok", "tag": [8, "c17"], "value": 3}}
+DEBUG:root:received {"id":318,"src":"n0","dest":"n2","body":{"msg_id":88,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 44, "in_reply_to": 88, "type": "get_ok", "tag": [8, "c17"], "value": 3}}
+DEBUG:root:received {"id":330,"src":"n0","dest":"n2","body":{"msg_id":94,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 45, "in_reply_to": 94, "type": "get_ok", "tag": [8, "c17"], "value": 3}}
+DEBUG:root:received {"id":338,"src":"n0","dest":"n2","body":{"msg_id":98,"type":"put","key":0,"tag":[9,"c10"],"value":0}}
+TRACE {"t": 1793373896.516479, "node": "n2", "event": "put", "key": 0, "tag": [9, "c10"], "value": 0, "had": [[8, "c17"], 3], "stored": true, "coordinator": "n0"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 46, "in_reply_to": 98, "type": "put_ok"}}
+DEBUG:root:received {"id":352,"src":"n0","dest":"n2","body":{"msg_id":105,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 47, "in_reply_to": 105, "type": "get_ok", "tag": [9, "c10"], "value": 0}}
+DEBUG:root:received {"id":360,"src":"n0","dest":"n2","body":{"msg_id":109,"type":"put","key":0,"tag":[10,"c10"],"value":0}}
+TRACE {"t": 1793373896.822026, "node": "n2", "event": "put", "key": 0, "tag": [10, "c10"], "value": 0, "had": [[9, "c10"], 0], "stored": true, "coordinator": "n0"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 48, "in_reply_to": 109, "type": "put_ok"}}
+DEBUG:root:received {"id":370,"src":"c15","dest":"n2","body":{"key":0,"from":3,"to":1,"type":"cas","msg_id":3}}
+DEBUG:root:sending {"dest": "c15", "src": "n2", "body": {"msg_id": 49, "in_reply_to": 3, "type": "error", "code": 10, "text": "cas not supported"}}
+DEBUG:root:received {"id":378,"src":"n0","dest":"n2","body":{"msg_id":114,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 50, "in_reply_to": 114, "type": "get_ok", "tag": [10, "c10"], "value": 0}}
+DEBUG:root:received {"id":388,"src":"n0","dest":"n2","body":{"msg_id":119,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 51, "in_reply_to": 119, "type": "get_ok", "tag": [10, "c10"], "value": 0}}
+DEBUG:root:received {"id":398,"src":"n1","dest":"n2","body":{"msg_id":57,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 52, "in_reply_to": 57, "type": "get_ok", "tag": [10, "c10"], "value": 0}}
+DEBUG:root:received {"id":406,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":2}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 53, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 54, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 55, "type": "get", "key": 0}}
+DEBUG:root:sending {"dest": "n4", "src": "n2", "body": {"msg_id": 56, "type": "get", "key": 0}}
+DEBUG:root:received {"id":411,"src":"n0","dest":"n2","body":{"msg_id":124,"in_reply_to":53,"type":"get_ok","tag":[10,"c10"],"value":0}}
+DEBUG:root:received {"id":412,"src":"n3","dest":"n2","body":{"msg_id":63,"in_reply_to":55,"type":"get_ok","tag":[10,"c10"],"value":0}}
+DEBUG:root:received {"id":413,"src":"n1","dest":"n2","body":{"msg_id":61,"in_reply_to":54,"type":"get_ok","tag":[10,"c10"],"value":0}}
+DEBUG:root:received {"id":414,"src":"n4","dest":"n2","body":{"msg_id":59,"in_reply_to":56,"type":"get_ok","tag":[10,"c10"],"value":0}}
+TRACE {"t": 1793373897.822211, "node": "n2", "event": "read", "key": 0, "client": "c11", "answers": {"n2": [[10, "c10"], 0], "n0": [[10, "c10"], 0], "n3": [[10, "c10"], 0], "n1": [[10, "c10"], 0]}, "returned": [[10, "c10"], 0]}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 57, "in_reply_to": 2, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":419,"src":"n3","dest":"n2","body":{"msg_id":66,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 58, "in_reply_to": 66, "type": "get_ok", "tag": [10, "c10"], "value": 0}}
+DEBUG:root:received {"id":430,"src":"n0","dest":"n2","body":{"msg_id":128,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 59, "in_reply_to": 128, "type": "get_ok", "tag": [10, "c10"], "value": 0}}
+DEBUG:root:received {"id":440,"src":"n1","dest":"n2","body":{"msg_id":65,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 60, "in_reply_to": 65, "type": "get_ok", "tag": [10, "c10"], "value": 0}}
+DEBUG:root:received {"id":448,"src":"n1","dest":"n2","body":{"msg_id":69,"type":"put","key":0,"tag":[11,"c14"],"value":2}}
+TRACE {"t": 1793373898.419171, "node": "n2", "event": "put", "key": 0, "tag": [11, "c14"], "value": 2, "had": [[10, "c10"], 0], "stored": true, "coordinator": "n1"}
+DEBUG:root:sending {"dest": "n1", "src": "n2", "body": {"msg_id": 61, "in_reply_to": 69, "type": "put_ok"}}
+DEBUG:root:received {"id":458,"src":"n0","dest":"n2","body":{"msg_id":135,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 62, "in_reply_to": 135, "type": "get_ok", "tag": [11, "c14"], "value": 2}}
+DEBUG:root:received {"id":469,"src":"n3","dest":"n2","body":{"msg_id":75,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 63, "in_reply_to": 75, "type": "get_ok", "tag": [11, "c14"], "value": 2}}
+DEBUG:root:received {"id":477,"src":"n3","dest":"n2","body":{"msg_id":79,"type":"put","key":0,"tag":[12,"c16"],"value":2}}
+TRACE {"t": 1793373898.687966, "node": "n2", "event": "put", "key": 0, "tag": [12, "c16"], "value": 2, "had": [[11, "c14"], 2], "stored": true, "coordinator": "n3"}
+DEBUG:root:sending {"dest": "n3", "src": "n2", "body": {"msg_id": 64, "in_reply_to": 79, "type": "put_ok"}}
+DEBUG:root:received {"id":486,"src":"n0","dest":"n2","body":{"msg_id":142,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 65, "in_reply_to": 142, "type": "get_ok", "tag": [12, "c16"], "value": 2}}
+DEBUG:root:received {"id":496,"src":"n0","dest":"n2","body":{"msg_id":147,"type":"get","key":0}}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 66, "in_reply_to": 147, "type": "get_ok", "tag": [12, "c16"], "value": 2}}
+TRACE {"t": 1793373898.988421, "node": "n2", "event": "crash"}
+DEBUG:root:crashed, dropping received {"id":506,"src":"n0","dest":"n2","body":{"msg_id":152,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":513,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":3}}
+DEBUG:root:crashed, dropping received {"id":517,"src":"n3","dest":"n2","body":{"msg_id":87,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":527,"src":"n4","dest":"n2","body":{"msg_id":73,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":531,"src":"c15","dest":"n2","body":{"key":0,"from":1,"to":0,"type":"cas","msg_id":4}}
+DEBUG:root:crashed, dropping received {"id":536,"src":"n0","dest":"n2","body":{"msg_id":160,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":543,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":4}}
+DEBUG:root:crashed, dropping received {"id":547,"src":"n3","dest":"n2","body":{"msg_id":94,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":557,"src":"n4","dest":"n2","body":{"msg_id":79,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":564,"src":"c15","dest":"n2","body":{"key":0,"from":4,"to":1,"type":"cas","msg_id":5}}
+DEBUG:root:crashed, dropping received {"id":567,"src":"n0","dest":"n2","body":{"msg_id":169,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":576,"src":"n0","dest":"n2","body":{"msg_id":173,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":584,"src":"n3","dest":"n2","body":{"msg_id":101,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":588,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":5}}
+DEBUG:root:crashed, dropping received {"id":597,"src":"n3","dest":"n2","body":{"msg_id":105,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":603,"src":"c15","dest":"n2","body":{"key":0,"from":1,"to":3,"type":"cas","msg_id":6}}
+DEBUG:root:crashed, dropping received {"id":607,"src":"n4","dest":"n2","body":{"msg_id":91,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":613,"src":"n0","dest":"n2","body":{"msg_id":180,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":621,"src":"n0","dest":"n2","body":{"msg_id":184,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":626,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":6}}
+DEBUG:root:crashed, dropping received {"id":635,"src":"n3","dest":"n2","body":{"msg_id":114,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":639,"src":"c15","dest":"n2","body":{"key":0,"from":2,"to":4,"type":"cas","msg_id":7}}
+DEBUG:root:crashed, dropping received {"id":642,"src":"n0","dest":"n2","body":{"msg_id":189,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":650,"src":"n4","dest":"n2","body":{"msg_id":99,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":654,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":7}}
+DEBUG:root:crashed, dropping received {"id":659,"src":"n0","dest":"n2","body":{"msg_id":195,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":675,"src":"n3","dest":"n2","body":{"msg_id":124,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":682,"src":"n3","dest":"n2","body":{"msg_id":128,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":688,"src":"n0","dest":"n2","body":{"msg_id":201,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":698,"src":"n4","dest":"n2","body":{"msg_id":108,"type":"get","key":0}}
+DEBUG:root:crashed, dropping received {"id":702,"src":"c11","dest":"n2","body":{"key":0,"type":"read","msg_id":8}}
+DEBUG:root:crashed, dropping received {"id":711,"src":"n3","dest":"n2","body":{"msg_id":134,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":717,"src":"n0","dest":"n2","body":{"msg_id":209,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":725,"src":"n0","dest":"n2","body":{"msg_id":213,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":733,"src":"n3","dest":"n2","body":{"msg_id":140,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":740,"src":"n4","dest":"n2","body":{"msg_id":116,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":744,"src":"c15","dest":"n2","body":{"key":1,"from":3,"to":3,"type":"cas","msg_id":8}}
+DEBUG:root:crashed, dropping received {"id":752,"src":"c11","dest":"n2","body":{"key":1,"type":"read","msg_id":9}}
+DEBUG:root:crashed, dropping received {"id":759,"src":"n3","dest":"n2","body":{"msg_id":145,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":765,"src":"n0","dest":"n2","body":{"msg_id":221,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":773,"src":"n3","dest":"n2","body":{"msg_id":150,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":780,"src":"n4","dest":"n2","body":{"msg_id":126,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":786,"src":"n0","dest":"n2","body":{"msg_id":227,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":791,"src":"c15","dest":"n2","body":{"key":1,"from":1,"to":4,"type":"cas","msg_id":9}}
+DEBUG:root:crashed, dropping received {"id":795,"src":"n4","dest":"n2","body":{"msg_id":131,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":805,"src":"n0","dest":"n2","body":{"msg_id":232,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":810,"src":"c11","dest":"n2","body":{"key":1,"type":"read","msg_id":10}}
+DEBUG:root:crashed, dropping received {"id":822,"src":"n3","dest":"n2","body":{"msg_id":163,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":829,"src":"n4","dest":"n2","body":{"msg_id":137,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":835,"src":"n0","dest":"n2","body":{"msg_id":238,"type":"get","key":1}}
+DEBUG:root:crashed, dropping received {"id":840,"src":"c15","dest":"n2","body":{"key":1,"from":3,"to":0,"type":"cas","msg_id":10}}
+DEBUG:root:crashed, dropping received {"id":849,"src":"n3","dest":"n2","body":{"msg_id":171,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":855,"src":"n0","dest":"n2","body":{"msg_id":243,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":861,"src":"c11","dest":"n2","body":{"key":2,"type":"read","msg_id":11}}
+DEBUG:root:crashed, dropping received {"id":865,"src":"n3","dest":"n2","body":{"msg_id":176,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":876,"src":"n4","dest":"n2","body":{"msg_id":145,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":882,"src":"n0","dest":"n2","body":{"msg_id":251,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":887,"src":"c15","dest":"n2","body":{"key":2,"from":3,"to":3,"type":"cas","msg_id":11}}
+DEBUG:root:crashed, dropping received {"id":893,"src":"n0","dest":"n2","body":{"msg_id":255,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":906,"src":"n3","dest":"n2","body":{"msg_id":184,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":913,"src":"n3","dest":"n2","body":{"msg_id":188,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":919,"src":"c11","dest":"n2","body":{"key":2,"type":"read","msg_id":12}}
+DEBUG:root:crashed, dropping received {"id":927,"src":"n4","dest":"n2","body":{"msg_id":158,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":937,"src":"n0","dest":"n2","body":{"msg_id":263,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":948,"src":"n0","dest":"n2","body":{"msg_id":269,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":954,"src":"c15","dest":"n2","body":{"key":2,"from":1,"to":0,"type":"cas","msg_id":12}}
+DEBUG:root:crashed, dropping received {"id":959,"src":"n0","dest":"n2","body":{"msg_id":273,"type":"get","key":2}}
+DEBUG:root:crashed, dropping received {"id":971,"src":"c11","dest":"n2","body":{"key":2,"type":"read","msg_id":13}}
+DEBUG:root:crashed, dropping received {"id":978,"src":"n0","dest":"n2","body":{"msg_id":279,"type":"get","key":3}}
+DEBUG:root:crashed, dropping received {"id":987,"src":"n3","dest":"n2","body":{"msg_id":200,"type":"get","key":3}}
+DEBUG:root:crashed, dropping received {"id":993,"src":"n0","dest":"n2","body":{"msg_id":284,"type":"get","key":3}}
+DEBUG:root:crashed, dropping received {"id":1001,"src":"n3","dest":"n2","body":{"msg_id":205,"type":"get","key":3}}
+DEBUG:root:crashed, dropping received {"id":1009,"src":"n4","dest":"n2","body":{"msg_id":171,"type":"get","key":3}}
+DEBUG:root:crashed, dropping received {"id":1013,"src":"c11","dest":"n2","body":{"key":3,"type":"read","msg_id":14}}
+DEBUG:root:crashed, dropping received {"id":1016,"src":"n0","dest":"n2","body":{"msg_id":290,"type":"get","key":3}}

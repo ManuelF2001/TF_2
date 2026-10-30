@@ -1,0 +1,88 @@
+{:linearizable
+ {:valid? false,
+  :configs
+  ({:model {:value 3},
+    :last-op
+    {:process 0,
+     :type :ok,
+     :f :read,
+     :value 3,
+     :index 181,
+     :time 1872824687},
+    :pending
+    [{:process 1,
+      :type :invoke,
+      :f :read,
+      :value 0,
+      :index 180,
+      :time 1859418668}
+     {:process 2,
+      :type :invoke,
+      :f :read,
+      :value 3,
+      :index 182,
+      :time 1876670209}]}),
+  :final-paths
+  ([{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 3,
+      :index 181,
+      :time 1872824687},
+     :model {:value 3}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 183,
+      :time 1883101608},
+     :model {:msg "can't read 0 from register 3"}}]
+   [{:op
+     {:process 0,
+      :type :ok,
+      :f :read,
+      :value 3,
+      :index 181,
+      :time 1872824687},
+     :model {:value 3}}
+    {:op
+     {:process 2,
+      :type :invoke,
+      :f :read,
+      :value 3,
+      :index 182,
+      :time 1876670209},
+     :model {:value 3}}
+    {:op
+     {:process 1,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 183,
+      :time 1883101608},
+     :model {:msg "can't read 0 from register 3"}}]),
+  :previous-ok
+  {:process 0,
+   :type :ok,
+   :f :read,
+   :value 3,
+   :index 181,
+   :time 1872824687},
+  :last-op
+  {:process 0,
+   :type :ok,
+   :f :read,
+   :value 3,
+   :index 181,
+   :time 1872824687},
+  :op
+  {:process 1,
+   :type :ok,
+   :f :read,
+   :value 0,
+   :index 183,
+   :time 1883101608}},
+ :timeline {:valid? true},
+ :valid? false}

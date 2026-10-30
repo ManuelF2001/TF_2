@@ -1,0 +1,111 @@
+{:linearizable
+ {:valid? false,
+  :op
+  {:process 4,
+   :type :ok,
+   :f :read,
+   :value 4,
+   :index 75,
+   :time 3590600683},
+  :previous-ok
+  {:process 3,
+   :type :ok,
+   :f :read,
+   :value 0,
+   :index 73,
+   :time 3494346559},
+  :final-paths
+  ([{:op
+     {:process 3,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 73,
+      :time 3494346559},
+     :model {:value 0}}
+    {:op
+     {:process 7,
+      :type :info,
+      :f :write,
+      :value 0,
+      :index 47,
+      :time 2481761410,
+      :error :net-timeout},
+     :model {:value 0}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 75,
+      :time 3590600683},
+     :model {:msg "can't read 4 from register 0"}}]
+   [{:op
+     {:process 3,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 73,
+      :time 3494346559},
+     :model {:value 0}}
+    {:op
+     {:process 15,
+      :type :info,
+      :f :write,
+      :value 0,
+      :index 64,
+      :time 3228665121,
+      :error :net-timeout},
+     :model {:value 0}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 75,
+      :time 3590600683},
+     :model {:msg "can't read 4 from register 0"}}]
+   [{:op
+     {:process 3,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 73,
+      :time 3494346559},
+     :model {:value 0}}
+    {:op
+     {:process 6,
+      :type :info,
+      :f :write,
+      :value 0,
+      :index 41,
+      :time 2233836081,
+      :error :net-timeout},
+     :model {:value 0}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 75,
+      :time 3590600683},
+     :model {:msg "can't read 4 from register 0"}}]
+   [{:op
+     {:process 3,
+      :type :ok,
+      :f :read,
+      :value 0,
+      :index 73,
+      :time 3494346559},
+     :model {:value 0}}
+    {:op
+     {:process 4,
+      :type :ok,
+      :f :read,
+      :value 4,
+      :index 75,
+      :time 3590600683},
+     :model {:msg "can't read 4 from register 0"}}]),
+  :configs ()},
+ :timeline {:valid? true},
+ :valid? false}
