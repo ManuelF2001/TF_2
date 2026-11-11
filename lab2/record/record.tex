@@ -15,7 +15,7 @@
 % Lab record: at most three pages. Keep the section structure.
 
 \title{Fault-Tolerant Distributed Systems -- Lab record}
-\author{Lab \textbf{2} -- Group \textbf{G}: member 1, member 2, member 3, member 4}
+\author{Lab \textbf{2} -- Group \textbf{7}: member 1, member 2, member 3, member 4}
 \date{}
 
 \begin{document}
@@ -32,10 +32,10 @@ them; each client bound to one server, \emph{if at most} $f=1$ server
 \emph{fails by} crashing or being cut off from the other two, \emph{the
 service} (\texttt{q4b.py}) \emph{guarantees}: (i)~a read that starts after a
 \texttt{write}/\texttt{cas} completed returns it or a newer value, replicas
-converge, and no two \texttt{cas} succeed from the same value; (ii)~answers
-to reads for clients of the live majority, and to writes/\texttt{cas}
-(\emph{ok} or a definite error~11) unless the key's lock is held by the
-faulty server. It does \emph{not} guarantee linearizability: a read
+converge, and no two \texttt{cas} succeed after reading the same version;
+(ii)~clients of the live majority get answers: to reads, and to
+writes/\texttt{cas} (\emph{ok} or a definite error~11) unless the key's
+lock is held by the faulty server. It does \emph{not} guarantee linearizability: a read
 overlapping an unfinished write may return the new value and a later read
 the old one (regular, not atomic, reads).\\
 \emph{Evidence:} 19/19 linearizable runs of \texttt{q4b.py} (latency 50/rate
@@ -85,6 +85,13 @@ non-int., partitions & NOT lin & 0/3 & 126/80/8 & -- \\
 \bottomrule
 \end{tabular}
 \end{center}
+\vspace{-0.4em}
+\noindent\textbf{Q5 (group 7: majority)}, \run{p1-majority-latency}: writes
+of 2 (via n0) and 0 (via n2) both complete, but servers applied them in
+opposite orders: n0 = n1 = 0, n2 = 2. Reads at n1 and n2 each received
+$\{0,2\}$ and returned their own copy: 0, then 2. To blame: first
+\emph{what the servers store} (no order on values), hence also what the
+reader returns (no basis to choose) $\Rightarrow$ versions.\par\vspace{0.5em}
 
 \vspace{-0.4em}
 \noindent\textbf{Part 3, Q3} (\texttt{q3.py}, $N=5$; R/W = reads/writes still completed after the crash at 5\,s by clients of live servers):
@@ -164,7 +171,11 @@ it, and the only one ($w(0,0)$, ended 1.492) precedes $w(0,3)$ (began
 p0 read 0 then 3 (program orders), so $w(0,0)$ must be both before and
 after $w(0,3)$. With A and B by different clients and no opposite
 observation, it would be sequentially consistent (order $w(0,0)$, B,
-$w(0,3)$, A) but still not linearizable.}
+$w(0,3)$, A) but still not linearizable. The kit's \texttt{inversion-run}
+is that case: \texttt{write(0,4)} \texttt{[7,n0]} held at n0, p0 reads 4 at
+n0, then p1 reads 2 at n1: not linearizable, but its whole history is SC
+(\texttt{tools/sccheck.py}), even with both reads merged into one client,
+because another write of 2 can be reordered (SC ignores real time).}
 
 \section*{4. Limitations and open questions}
 
@@ -184,27 +195,37 @@ $w(0,3)$, A) but still not linearizable.}
   (window never hit). The WSL wall clock jumped back up to 0.7\,s in some
   Part~1 runs: timelines checked against node-log order (verdicts
   unaffected).
-\item The kit's \texttt{inversion-run} was not available; we reproduced
-  it with a test hook (\texttt{SLOW\_PUT}) and found it naturally in ROWA
-  partition runs.
+\item Our slow-link hook (\texttt{SLOW\_PUT}) matches the kit's
+  \texttt{inversion-run} (same held puts, same anomaly; the kit breaks
+  ties by server id, safe there only because each server has one writing
+  client). Knossos reports only the first violation: the kit's run has a
+  second inversion (10.99\,s/11.28\,s) found only in the traces.
 \end{itemize}
 
 \section*{5. AI log}
 
 \begin{itemize}
-\item Claude Code (Claude Opus 5.5) was asked to ``complete Lab~2'' and
-  document everything: an \emph{answer directly} request, against the
-  guide's think-first workflow (Part~0 and the group design questions);
-  noted here and in \texttt{docs/ai-log.md}.
-\item It wrote each part's design in the program header before coding and
-  implemented only that design (one file per step); mechanisms it
-  considered early (versions in Part~1, tie-break in Part~2, write-back,
-  leases) were deferred to the part that asks for them.
-\item Corrected by the runs, not by the assistant: \texttt{q2local}'s first
-  valid run was not ``fewer ties'' (it had 112); no pure stale read exists
-  in any Part~1 run (non-intersection shows only with partitions); crash
-  and partition runs of the lock must be on top of latency.
-\item \emph{(Group: add what you accepted, changed or rejected.)}
+\item \textbf{Use.} Claude Code (Claude Opus 5.5), two sessions. 30~Oct:
+  implement and run the lab part by part, organise and document it
+  (\emph{``Complete Lab2 \dots\ doubts you follow what you think its
+  best''}): programs, 118 runs, \texttt{docs/}, \texttt{tools/}. 11~Nov:
+  adapt to group~7, analyse the kit's \texttt{inversion-run}, and re-review
+  every choice it made (\texttt{docs/decisions.md}, D0--D19): all kept;
+  the claim's ``no two cas from the same value'' corrected to ``same
+  version''.
+\item \textbf{Proposed before needed, deferred:} versions (Part~1),
+  tie-break (Part~2), write-back (Parts~3--4, kept for ``going
+  further''), lease/fencing for the lock (discussion only). Rejected:
+  timeouts in Parts~1--3, queueing lock requests (deadlock).
+\item \textbf{Corrected by the runs:} majority under partitions predicted
+  non-linearizable, observed 3/3 linearizable; no pure stale read in any
+  Part~1 run (non-intersection shows only with partitions);
+  \texttt{q2local}'s valid run was not ``fewer ties'' (it had 112); lock
+  crash/partition runs must be on top of latency; the kit's run has a
+  second inversion the assistant first missed (Knossos reports only the
+  first); its first SC checker parsed nothing.
+\item \textbf{Confirmed:} our \texttt{SLOW\_PUT} hook reproduces the
+  teachers' \texttt{p3\_slow.py}. Full log: \texttt{docs/ai-log.md}.
 \end{itemize}
 
 \section*{6. Contributions}

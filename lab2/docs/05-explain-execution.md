@@ -161,13 +161,18 @@ other two:
 1. *Safety for completed operations:* a read that starts after a
    write/cas has completed returns that value or a newer one; all servers
    converge on the same value for a key once they have received the same
-   puts (tags with tie-break); two cas can never both succeed from the same
-   value, and a write cannot slip between a cas's read and its put (the
-   majority lock).
+   puts (tags with tie-break); two cas can never both succeed after
+   reading the same version (tag), and a write cannot slip between a cas's
+   read and its put (the majority lock). (Two cas *from the same value*
+   can both succeed legitimately, one after the other, if a write puts
+   that value back in between.)
 2. *No guarantee for reads overlapping a write in progress:* such a read
    may return the new value and a later read the old one (this execution).
    So the store is **not linearizable** (it is a regular register for
-   reads + atomic cas/write), and not even sequentially consistent.
+   reads + atomic cas/write), and it does not guarantee sequential
+   consistency either: two clients can observe two writes in opposite
+   orders (§3). Whether a given history is SC also depends on repeated
+   values (§5).
 3. *Availability:* clients of the two live, connected servers get answers
    to reads; writes and cas are answered (ok, or error 11 when the lock
    cannot be taken within 0.8 s), unless the key's lock is held by a server
@@ -189,3 +194,51 @@ without memory; lock holders that crash or are cut off (key blocked for
 good, observed in 3 of 7 crash runs and in 1 partition run, `04` §4);
 fairness (a coordinator can be starved of the lock); valid runs are
 not proofs (20 s, one hot key, few clients).
+
+## 5. The same questions for the kit's `inversion-run`
+
+The guide offers `inversion-run` to groups without a run of their own. We
+had one, so §1–§3 use ours; but the kit's run (reconstructed in
+`03-concurrent-writers.md` §5.1) answers Q3 differently, and the contrast is
+instructive.
+
+**Execution** (key 0): W4 = p3's `write(0,4)` via n0, tag `[7,"n0"]`,
+[3.266, 3.771], held at n0 only; **A** = p0's read at n0 [3.344, 3.345] → 4;
+**B** = p1's read at n1 [3.737, 3.738] → 2, answered by n1 and n2. Before W4,
+p3's own `write(0,2)` `[6,"n0"]` [2.296, 2.802] had been stored everywhere.
+
+**Linearizable? No** (Knossos agrees: *can't read 2 from register 4*). A
+returned 4, so W4 is before A; B began after A ended, so B is after W4; B
+returned 2, so a write of 2 must lie between W4 and B. The writes of 2 that
+began before B ended are p4's [2.109, 2.127] and p3's [2.296, 2.802]; both
+ended before W4 began (3.266), so both must precede W4. Contradiction.
+
+**Sequentially consistent? Yes**, for the whole 20 s history of key 0:
+`tools/sccheck.py ../kit/inversion-run` finds an order that respects every
+client's program order and register semantics. Here A and B are by
+*different* clients and no client saw the two writes in the opposite
+order, so SC may simply place B before W4: p1's read of 2 is legal right
+after p3's `write(0,2)`, then W4, then A. Only real time between p0 and p1
+is violated, and SC does not care about real time.
+
+**Same client?** If A and B had been performed by the same client, the
+"new, then old" pair would be in one program order, and the textbook
+answer is "not SC". In *this* history it is still SC
+(`tools/sccheck.py ../kit/inversion-run --merge 0,1`, and `--merge 1,0`),
+and the reason is worth knowing: values repeat. SC ignores real time, so B
+can be explained by a write of 2 that happened *at another time*: p4's
+`write(0,2)` [2.109, 2.127] (it only has to stay before p4's later
+`write(0,1)`) can be ordered after W4, or p5's `write(0,2)` at 10.613,
+p5's first operation. With unique values (each value written once) the
+only write of 2 would precede W4 in p3's program order, and the same-client
+history would not be SC. Conclusion for the discussion: across clients the
+inversion is a linearizability violation that SC tolerates; within one
+client it violates SC unless another write of the same value can take the
+blame, which is why analysing an anomaly needs the writes as well as the
+reads.
+
+(Our own run's §3 verdict "not SC" is for the sub-history listed there,
+which has a single write of each value; over the whole history of a run
+with values 0–4 written hundreds of times, SC can borrow writes from
+elsewhere in the same way. The checker on our full history, 600+
+operations at rate 50, did not finish: the search is exponential.)

@@ -128,3 +128,33 @@ with Tectonic; `cite_runs.sh` copies the 27 cited runs to `runs/` and
 writes `runs/INDEX.md`, which marks the 9 cited by the record (the ones
 to submit). Final count: **118 Maelstrom runs** in `results/results.tsv`
 (plus 3 smoke tests in `/tmp`, not recorded).
+
+## 10. Session 2 – 2026-11-11: group 7, `inversion-run`, Part 0, AI log
+
+Prompt and assessment in `ai-log.md` §2.
+
+- `inversion-run.tar.bz2` (downloaded by the group into `~/TF_2`) was
+  extracted in `kit/` as the guide says, and the archive moved to
+  `archives/` (`.gitignore`d, like `kit.tar.bz2`).
+- `tools/clockcheck.py`: no clock jump; `tools/anomaly.py` and
+  `../kit/timeline.py inversion-run --history --key 0 | grep -v cas`: the
+  anomaly at 3.345 / 3.738 s. `jepsen.log` gives the command line
+  (`p3_slow.py`, rate 10, no latency, concurrency 2n). All 21 slow writes
+  by p3 were then inspected by hand: a second inversion at 10.991 /
+  11.284 s (my first count said "only one").
+- `tools/sccheck.py` written; first version parsed no operation (wrong
+  field order in `history.edn`) and so "proved" an empty history SC;
+  fixed. Results: kit run SC (whole history, and with p1 merged into p0
+  or p0 into p1); our `runs/p3-inversion` full history: stopped after
+  15 min without an answer.
+- Documents: `03` §5.1 (new), `05` §5 (new), `00-predict.md` rewritten,
+  `ai-log.md` rewritten, `decisions.md` D8/D13/D14, `01` §3 (group 7),
+  `code.md` §11, READMEs; record: Group 7, Part 1 Q5 paragraph, kit run in
+  §3–§5; recompiled with Tectonic, still 3 pages.
+- Later the same day: `00-predict.md` now holds Manuel's own Part 0
+  answers (given by him), with the comparison against the runs; the
+  assistant's reference answers were removed.
+- Re-review of every decision against `q4b.py` and the runs
+  (`decisions.md`, last section): no code change; the claim's cas
+  statement ("same value" → "same version"), claim (ii) and the SC
+  sentence of `05` §4 made precise; record recompiled.

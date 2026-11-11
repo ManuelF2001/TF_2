@@ -94,7 +94,8 @@ Things we learnt from the runs:
 
 The configuration to explain depends on the group number (majority for
 groups 1, 4, 7, 10; ROWA for 2, 5, 8; non-intersecting for 3, 6, 9). We do
-not know ours (`decisions.md` D13), so here is one for each; keep yours.
+not know ours at first (`decisions.md` D13), so here is one for each.
+**We are group 7: majority, §3.2.**
 
 How we found them: `tools/anomaly.py <run> --hide-cas` prints the last
 operation the checker could linearize and the ones it then could not, plus
@@ -146,6 +147,10 @@ and one crashed server blocks every write (here: 0 writes after the crash,
 the writes.
 
 ### 3.2 Majority (2,2): divergent copies, and the reader prefers its own
+
+> **This is group 7's answer to Q5** (majority is assigned to groups 1, 4,
+> 7, 10; `decisions.md` D13). §3.1 and §3.3 are kept for the class
+> comparison.
 
 Run `runs/p1-majority-latency` (`store/lin-kv/20261030T144955.465Z`), key 0:
 

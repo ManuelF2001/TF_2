@@ -39,3 +39,7 @@ store/ directories of the runs it cites (only those)"):
 `p1-rowa-latency`, `p1-majority-latency`, `p2-latency`, `p3-inversion`,
 `p3-rowa-partition`, `p4-lost-update`, `p4-crash-holder`, `p4-blocked-key`,
 `px-rowa-crash`. The others are cited only in `docs/`.
+
+**Not ours:** the kit's `inversion-run` (teachers' `p3_slow.py`) is in
+`../kit/inversion-run`; the record mentions it, but it is not a run of
+ours and is not submitted.

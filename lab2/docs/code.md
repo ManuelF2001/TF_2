@@ -201,8 +201,9 @@ scheduled with `set_timeout(0.5, send, dest)` instead of being sent now,
 and traced as `slow_put`. n0's own copy is updated at once. This simulates
 a slow link from n0 and reproduces the "write that has reached only the
 server that received it" of Part 3, question 4 (the kit's
-`inversion-run.tar.bz2` is distributed on eLearning and was not available
-to us, `decisions.md` D8).
+`inversion-run.tar.bz2` was not available to us at first, `decisions.md`
+D8; once it was, it confirmed that the teachers' `p3_slow.py` holds n0's
+puts in the same way, `03-concurrent-writers.md` §5.1).
 
 ## 6. `q4a.py` – Part 4, cas without lock
 
@@ -384,6 +385,17 @@ writes its log in execution order, so a trace whose time is lower than
 the previous one of the same node reveals a backward step of the clock
 (the WSL virtual machine is resynchronised with Windows from time to
 time). Around a jump, merged timelines can be in the wrong order.
+
+**`tools/sccheck.py <run> [--key K] [--merge A,B]`** answers "is the
+history of key K sequentially consistent?", which Knossos does not check.
+It takes the `:ok` reads and writes of `history.edn` per process, in
+history order, and searches depth-first for one total order that keeps
+every process's order and register semantics (a read can be placed only
+if it returns the current value). States (operations placed per process,
+current value) are memoised. `--merge A,B` treats B's operations as A's,
+to answer "what if the same client had done both?". Exponential in the
+worst case: 4 s on the kit's `inversion-run` (rate 10), did not finish
+in 15 min on our rate-50 runs.
 
 **`tools/after.py <run> [seconds]`** counts client results (ok / fail /
 info) per server and per operation type, before and after a given time

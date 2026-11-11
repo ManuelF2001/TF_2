@@ -5,8 +5,9 @@ TF_2/
 ├── README.md        this file
 ├── .gitignore       store/, maelstrom, archives/, caches (if this becomes a git repo)
 ├── env.sh           Java 17 + gnuplot on the PATH, MAELSTROM -> ./maelstrom
-├── archives/        original download: kit.tar.bz2 (Lab 2 kit)
-├── kit/             course kit: Lab 1 kit + Lab 2 kit extracted over it, unmodified
+├── archives/        original downloads: kit.tar.bz2 (Lab 2 kit), inversion-run.tar.bz2
+├── kit/             course kit: Lab 1 kit + Lab 2 kit extracted over it, unmodified;
+│                    + inversion-run/ (extracted here, as the guide says, Part 3 Q5)
 ├── maelstrom ->     symlink to ~/TF/maelstrom (Maelstrom 0.2.4, from Lab 1)
 └── lab2/            Lab 2 — Quorums (everything we did is here)
 ```

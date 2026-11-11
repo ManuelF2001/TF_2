@@ -154,8 +154,98 @@ write. (Removing it is the "Going further" part.)
 
 ## 5. Q5 – finding the execution in a run
 
-The kit's `inversion-run.tar.bz2` comes from eLearning and was not
-available to us (`decisions.md` D8). We produced the same situation with
+### 5.1 The kit's `inversion-run` (eLearning)
+
+Extracted in `kit/` (`../kit/inversion-run`; the archive is kept in
+`../archives/`). It was added on 11 November; until then we only had our
+own reproduction (§5.2, `decisions.md` D8).
+
+**The run.** `lein run test -w lin-kv --bin p3_slow.py --node-count 3
+--time-limit 20 --rate 10 --concurrency 2n` (from `jepsen.log`): N = 3,
+no `--latency` (default, ~0 ms), 6 clients. Here p0, p1, p2 only read
+(at n0, n1, n2) and p3, p4, p5 only write (at n0, n1, n2). Every put n0
+sends to n1 and n2 is held 0.5 s (`slow_put ... delay=0.5`), so **every
+write by p3 reaches only n0 for half a second** and takes ≈ 0.5 s to
+complete, while writes at n1 and n2 take ~2 ms. Verdict: not linearizable
+on key 0 (128 ok / 57 fail / 0 info; the 55 cas fail with error 10). No
+wall-clock jump (`tools/clockcheck.py`). The checker: *"can't read 2 from
+register 4"*, previous ok = index 64, failing op = index 71.
+
+**The execution**, found with `../kit/timeline.py inversion-run --history
+--key 0 | grep -v cas` (same lines as `tools/anomaly.py ../kit/inversion-run
+--hide-cas`). Before: all three servers hold `[6, "n0"]` = 2 (p3's
+previous write, whose slow puts arrived at ≈ 2.80).
+
+```
+ 3.266  p3  invoke  write [0 4] -> n0
+ 3.268  n0  write   key=0 value=4 version=[7, "n0"]          (phase 1 saw [6,n0])
+ 3.268  n0  slow_put to n1 delay=0.5;  slow_put to n2 delay=0.5     only n0 has 4
+ 3.344  p0  invoke  read -> n0
+ 3.346  n0  read    replies=[[4, [7,"n0"]], [2, [6,"n0"]]]   own copy + n1's
+ 3.345  p0  ok      read [0 4]                               <- read A (p0 at n0): NEW
+ 3.737  p1  invoke  read -> n1                               (0.39 s after A ended)
+ 3.739  n1  read    replies=[[2, [6,"n0"]], [2, [6,"n0"]]]   own copy + n2's: neither has 4
+ 3.738  p1  ok      read [0 2]                               <- read B (p1 at n1): OLD  ✗
+ 3.756  p4  invoke  write [0 1] -> n1
+ 3.758  n1  write   key=0 value=1 version=[8, "n1"]          (phase 1: own [6,n0], n0's [7,n0])
+ 3.758  p4  ok      write [0 1]
+ 3.771  p3  ok      write [0 4]          (slow puts [7,n0] arrive after [8,n1]: ignored)
+ 3.936  p0  ok      read [0 1]
+```
+
+This is exactly the execution of Q4 (§4): a write that has reached only
+the server that received it (n0); read A, coordinated by n0, includes n0's
+own copy and returns the new value; read B, which starts after A ended, is
+answered by n1 and n2, a legal read quorum that does not contain n0, and
+returns the old value. Write 4 is in progress during both reads (3.266 –
+3.771), so the intersection argument (completed writes) says nothing.
+Afterwards, a write by p4 at n1 gets number 8 (its phase 1 saw `[7,n0]` at
+n0) and overwrites 4 everywhere before write 4 even completes: as in our
+run, "completed" does not mean "readable".
+
+**Compared with our reproduction (§5.2).** Same anomaly, same cause.
+
+| | kit `inversion-run` | ours, `runs/p3-inversion` |
+|---|---|---|
+| program | `p3_slow.py` (the teachers') | `q3.py` + `SLOW_PUT="n0=0.5"` |
+| load | `--rate 10`, no latency, 3 readers + 3 writers | `--latency 10 --rate 50`, 5 clients doing both |
+| slow link | n0's puts to n1, n2 held 0.5 s | the same (our hook copies the `slow_put` event) |
+| tag | `[number, server id]` | `[number, client id]` (`decisions.md` D6) |
+| write | phase 1: ask versions, max + 1 | the same |
+| read A / read B | p0 at n0, then **p1** at n1 (different clients) | p1 at n1, then p1 again (**same client**) |
+| first failure | index 71, 3.738 s | 1.852 s |
+| sequentially consistent? | **yes** (whole history, `tools/sccheck.py`) | the sub-history is not (`05` §3) |
+
+Two differences worth knowing for the discussion:
+
+- **Tie-break by server id** works in this run because each server
+  coordinates writes from one writing client only (p3 → n0, p4 → n1,
+  p5 → n2): ties happen across servers (e.g. `[9,"n0"]` vs `[9,"n1"]` at
+  4.289 / 4.391, `[29,"n0"]` vs `[29,"n1"]` at 19.233 / 19.393) and are
+  resolved the same way everywhere. With two concurrent writes at the
+  *same* server, `[n, server]` could give two different values the same
+  tag; our `[n, client]` avoids that because a client has one operation
+  at a time. This is exactly the case `decisions.md` D6 was written for
+  (with `--concurrency 2n` two clients share each server); the kit's run
+  avoids it only because the second client of each server never writes.
+- **The kit's anomaly is between two clients**, so it is *not
+  linearizable but sequentially consistent*; ours is seen by one client
+  (and the opposite order by another), which also breaks SC in the
+  sub-history. Classification in `05-explain-execution.md` §5.
+
+Did the pattern appear elsewhere in the kit's run? **Once more**, after
+the first failure (Knossos stops at the first one it cannot linearize):
+p3's `write(0,1)` `[16,"n0"]` (10.796 – 11.307); p0 reads 1 at n0
+(10.991), then p2 reads at n2 (11.281 – 11.284), answered by n2 and n1
+with `[15,"n2"]` = 2: new, then old again. In the other 19 slow writes
+by p3 the pattern did not occur: either no read at n1/n2 came before
+the slow puts arrived, or it asked n0 and got the new value, or the old
+and new values were equal (e.g. 2.502, 5.722), or a faster write by p4 or
+p5 overtook the slow one (1.720, 4.391, 13.172, 19.393).
+
+### 5.2 Our reproduction with a slow link
+
+Before the kit's run was available we produced the same situation with
 the `SLOW_PUT` test hook: `SLOW_PUT="n0=0.5"` delays by 0.5 s every put
 that n0 sends to another server (traced as `slow_put`), so any write
 coordinated by n0 "reaches only the server that received it" for half a

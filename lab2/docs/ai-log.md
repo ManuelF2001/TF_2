@@ -1,108 +1,127 @@
 # AI log
 
-The lab requires logging "the prompts that mattered and what you had to
-correct or reject, including any mechanism the assistant proposed before
-you needed it". Be honest here: the final discussion is individual, and the
-examiner can ask any member to explain any line.
+What the guide asks for (deliverable item 5): the prompts that mattered,
+what we had to correct or reject, and any mechanism the assistant proposed
+before we needed it. Assistant used: **Claude Code (Claude Opus 5.5)**, in
+two sessions.
 
-## Session 1 — Claude Code (Claude Opus 5.5), 2026-10-30
+## 1. How the assistant was used
 
-**Prompt:** *"Complete Lab2, while doing that organize every folder and
-content, explain everything you did in mds and explain everything that the
-software also does in mds and doubts you have you follow what you think
-its best and also explain what you did in md"*
+| session | what we asked | what it produced |
+|---|---|---|
+| 30 Oct | implement and run the lab part by part, organise the folders, document every step and every doubt | `code/q1.py` … `q4b.py`, `qx.py`; 118 Maelstrom runs; `docs/`; `tools/`; first version of the record |
+| 11 Nov | adapt everything to group 7, analyse the kit's `inversion-run`, improve this log | `03` §5.1, `05` §5, `tools/sccheck.py`; record updated |
+| 11 Nov | re-review every design decision against the final code and the runs | all decisions kept; two claim statements made precise (`decisions.md`, last section) |
 
-This asks the assistant to do the whole lab, including the parts the guide
-says must be done **without AI and without a computer** (Part 0
-individually; Part 1 Q1–Q2, Part 2 Q1, Part 3 Q4, Part 4 Q3 "as a group,
-without a computer"). Under `kit/AGENTS.md` this is an **"answer directly"**
-request, which must be noted here (it is also in §5 of the record).
-The group must still:
+Prompts, verbatim:
 
-- write its own Part 0 answers and compare them with `00-predict.md`;
-- check every decision in `decisions.md` (D2–D11) and change the code if
-  the group decides differently (each program's header lists its design);
-- be able to explain every line of the final program `code/q4b.py` and of
-  the steps before it (`code.md`).
+- 30 Oct: *"Complete Lab2, while doing that organize every folder and
+  content, explain everything you did in mds and explain everything that
+  the software also does in mds and doubts you have you follow what you
+  think its best and also explain what you did in md"*
+- 11 Nov: *"acabei de meter o inversion_run kit e nós somos o grupo 7,
+  altera o que for preciso ser alterado e faz a parte 0 zero também e uma
+  boa ai log, sendo ao teu critério o que consideres bom"*. The Part 0
+  answers in `00-predict.md` are Manuel's own; the assistant only added
+  the comparison with the runs.
 
-**What the assistant did** (details in `worklog.md`):
+Every design choice the assistant made is listed in `decisions.md`
+(D0–D19), so that we could review and overrule it (§5).
 
-1. Organised `~/TF_2` like Lab 1 (`kit/` = Lab 1 kit + Lab 2 kit extracted
-   over it; `archives/`; `env.sh`; Maelstrom shared with Lab 1 by symlink).
-2. Restated the design of each part in the program header *before* writing
-   it, and implemented **only** that design, one file per step (`q1.py` …
-   `q4b.py`, `qx.py`), as the guide's "implement exactly the design of the
-   current part" and `AGENTS.md` require.
-3. Ran every scenario (118 Maelstrom runs, `results/results.tsv`),
-   wrote predictions *before* the corresponding runs, and wrote the
-   documents from the actual results, with the traces that support each
-   explanation.
-4. Wrote `tools/` (`anomaly.py`: the operations the checker could not
-   linearize and the timeline around them; `after.py`, `clockcheck.py`,
-   `table.py`) and `cite_runs.sh`; filled in and compiled the record.
+## 2. Prompts and requests that mattered
 
-**Suggested 3-line summary** (as `AGENTS.md` asks): *Asked to complete
-Lab 2 directly. Implemented one program per part's design, ran 118
-Maelstrom runs, wrote all documents and the record from the results.
-Group to check: Part 0, the decisions in `decisions.md`, the claim.*
+| request | why it mattered | what came out |
+|---|---|---|
+| "implement exactly the design of the current part" (guide) | stopped mechanisms from leaking into earlier parts | §3 |
+| "explain everything the software does" | every program and script is documented, so each of us can explain each line | `code.md` |
+| "doubts: follow what you think is best" | choices had to be written down, not made silently | `decisions.md` |
+| Part 4 Q2: find the two cas that both succeeded | the checker's minimal history did not show them; the traces did | 5 lost-update pairs in q4a, 0 in q4b |
+| "we are group 7" | Part 1 Q5 configuration | majority, `01` §3.2 |
+| the kit's `inversion-run` | first check of our slow-link reproduction against the teachers' run | same anomaly; SC vs linearizable contrast |
 
-## Mechanisms proposed before they were needed (rejected for the part at hand)
+## 3. Mechanisms proposed before we needed them
 
-The guide asks to note mechanisms the assistant proposed before the group
-decided on them. Since the assistant was both "group" and "assistant" here,
-these are the mechanisms it *considered* and deliberately left out of a
-part, adding them only in the part that asks for them:
-
-| mechanism | considered in | left out because | added in |
+| mechanism | came up in | why it was left out | where it went |
 |---|---|---|---|
-| version numbers | Part 1 (reader rule) | Part 1 design: "only its value" | Part 2 (`q2.py`) |
-| tie-break by writer id | Part 2 | Part 2 Q1 asks only for the version | Part 3 (`q3.py`) |
-| read write-back / read repair | Part 3 (inversion) | not in Parts 1–4 | Going further (`qx.py`) |
-| timeouts + error reply in Parts 1–3 | Part 1 | not in the design; error 11 would be wrong for writes | never (D3) |
-| lease / lock takeover | Part 4 | Part 4 asks to *observe* a crashed holder | discussed only (Part 6 Q2) |
-| queueing lock requests at the server | Part 4 | deadlock risk (D9) | rejected |
+| version numbers | Part 1, reader rule | Part 1 stores only values | Part 2 (`q2.py`) |
+| tie-break by writer id | Part 2 | Part 2 Q1 asks only for a version | Part 3 (`q3.py`) |
+| read write-back / read repair | Part 3, inversion | not in Parts 1–4 | Going further (`qx.py`) |
+| timeouts + error replies in Parts 1–3 | Part 1 | not in the design; error 11 would be wrong for writes | rejected (D3) |
+| lease / fencing for lock takeover | Part 4 | Part 4 asks to *observe* a crashed holder | Part 6 Q2, discussion only |
+| queueing lock requests at the server | Part 4 | deadlock risk | rejected (D9) |
 
-## Corrections / things learnt from the runs (not from the assistant's predictions)
+## 4. What we had to correct
 
-- `kit/AGENTS.md` was updated for Lab 2: it now explicitly lists versions,
-  tie-breaking and write-back among the mechanisms an assistant must not
-  add unasked. The assistant's first idea for Part 1 Q1 ("return the value
-  with the highest version") had to be rejected for that reason: Part 1
-  has no versions.
-- **Wrong prediction:** majority quorums under partitions in Part 1 were
-  predicted non-linearizable (stale own copy after a heal); 3/3 runs were
-  linearizable: the window exists but no read hit it (`01` §3.4).
-- **Wrong expectation:** non-intersecting quorums were expected to show
-  stale reads under latency; a search of all 36 Part 1 runs found **none**
-  without a concurrent write (puts reach the third server as fast as the
-  acks come back). The non-intersection example had to come from a
-  partition run (`01` §3.3).
-- **Wrong explanation, retracted:** the assistant first explained
-  q2local's one valid run by "a narrower tie window"; counting showed 112
-  ties in that run, as many as in failing runs (`02` §4.2).
-- **Misreading of the guide, corrected:** Part 4 Q4's crash and
-  partitions are meant *on top of* `--latency 50 --rate 50`; the first
-  runs without latency never caught a lock holder (`decisions.md` D17).
-- **Tooling:** the WSL wall clock jumps backwards during runs, which makes
-  merged timelines wrong around the jump; found while explaining an
-  anomaly, handled with `tools/clockcheck.py` and index-based
-  `tools/anomaly.py` (`worklog.md` §5). Editing a shell script while bash
-  executes it is unsafe (`worklog.md` §7).
-- The kit's `inversion-run.tar.bz2` (eLearning) was not available; the
-  assistant reproduced the execution with a `SLOW_PUT` test hook instead
-  (`decisions.md` D8). The group should compare with the real run.
+**The assistant's predictions and explanations that the runs proved wrong:**
 
-**Accepted / changed / rejected by the group:** *(fill in)*
+- Majority quorums under partitions (Part 1) were predicted
+  non-linearizable; 3/3 runs were linearizable. The stale-copy window
+  exists but no read hit it (`01` §3.4).
+- Non-intersecting quorums were expected to show stale reads under
+  latency; none of the 36 Part 1 runs had one. The example had to come
+  from a partition run (`01` §3.3).
+- q2local's one valid run was first explained by "fewer version ties";
+  counting found 112 ties, as many as in failing runs. Explanation
+  withdrawn (`02` §4.2).
+- Part 4 Q4: the crash and partition runs were first done without
+  latency and never caught a lock holder; the guide means them *on top
+  of* `--latency 50 --rate 50` (D17).
+- `inversion-run`: the first count said the pattern appears once;
+  checking all 21 slow writes found a second inversion, which Knossos
+  does not report because it stops at the first failure (`03` §5.1).
+- The first version of `tools/sccheck.py` parsed no operation and so
+  called an empty history consistent; caught because it printed 0
+  operations per process.
 
-## Optional (Part 3): ask an AI whether the Part 2 store is linearizable
+**Tooling problems found along the way:**
 
-*(The guide suggests asking an assistant before Part 3. Do it in a
-**fresh** session that has not seen our runs, paste its answer here, and
-compare with `03-concurrent-writers.md`.)*
+- The WSL wall clock jumps backwards during runs, so merged timelines can
+  show events in the wrong order. Handled with `tools/clockcheck.py` and
+  by locating operations by history index (`worklog.md` §5).
+- Editing a shell script while bash is running it is unsafe; the edit was
+  reverted and redone after the run (`worklog.md` §7).
 
-- Assistant's answer: …
-- What we found: Part 2 is **not** linearizable: equal versions from
-  concurrent writes leave replicas with different values (`02` §3); and
-  even with the tie-break of Part 3, a read can return a write still in
-  progress and a later read the older value (`03` §4).
+**Rejected:** the first answer to Part 1 Q1 ("return the value with the
+highest version"), because Part 1 has no versions.
+
+**Confirmed:** the `SLOW_PUT` test hook (D8), written before the kit's run
+was available, holds n0's puts exactly like the teachers' `p3_slow.py`.
+
+## 5. Review of the decisions
+
+The assistant's second pass (11 Nov, details in `decisions.md`, last
+section) is in the middle column; the group's verdict goes in the last.
+
+| item | where | assistant's re-review | group |
+|---|---|---|-------|
+| reader rule of Part 1 (own copy first) | D2 | keep | ok    |
+| version from a read quorum, not the local copy | D5 | keep (the kit's protocol does the same) | ok    |
+| tie-break by client id (the kit uses server id) | D6, `03` §5.1 | keep (server id fails with 2 writers per server) | ok    |
+| lock: refuse + random backoff, error 11 after 0.8 s | D9 | keep; costs documented | ok    |
+| Part 5 execution: ours (`p3-inversion`) | `05` | keep | ok    |
+| revised claim | `05` §4, record §1 | **changed**: cas "same version", not "same value"; (ii) clarified | ok    |
+
+What the re-review corrected: the claim said "no two cas succeed from the
+same value", but two cas from the same value can both succeed if a write
+puts the value back in between; the lock guarantees, and the runs
+checked, that no two cas succeed after reading the same *version*.
+
+## 6. Optional (Part 3): ask a fresh AI whether the Part 2 store is linearizable
+
+Ask in a **new** session that has not seen our runs:
+
+> *"A key-value store on 3 servers. Each server keeps, per key, a value and
+> an integer version. write(k, v): the receiving server asks all servers
+> for their version, waits for 2 answers, takes max + 1, sends (v, version)
+> to all, and replies after 2 acks; a server stores a put only if its
+> version is strictly higher. read(k): asks all servers, waits for 2
+> answers, returns the value with the highest version. Is this store
+> linearizable? Why or why not?"*
+
+- Its answer: …
+- What we found: **not linearizable**. Concurrent writes get equal
+  versions and each server keeps its own (`02` §3, `runs/p2-latency`);
+  even with the Part 3 tie-break, a read can return a write still in
+  progress and a later read the older one (`03` §4–5, kit
+  `inversion-run`).
 - Agreement / disagreement: …

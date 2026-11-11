@@ -69,6 +69,9 @@ group number, which we do not know (the Lab 1 record also says "Group G").
 We explain **one non-linearizable run for each of the three
 configurations** (majority, ROWA, non-intersecting), so the group can keep
 the one assigned to it.
+*Update, 11 November:* we are **group 7 → majority**; our Q5 answer is
+`01-wait-for-some.md` §3.2 (`runs/p1-majority-latency`). §3.1 (ROWA) and
+§3.3 (non-intersecting) stay as extra material for Part 6.
 
 ## Part 2
 
@@ -105,16 +108,22 @@ The record asks which configuration we would choose for a read-heavy and
 for a write-heavy service, so we ran **two** extra configurations, (2,4)
 and (4,2), besides majority (3,3) and ROWA (1,5): 16 runs with N = 5.
 
-**D8. `inversion-run.tar.bz2` was not available.** It is downloaded from
+**D8. `inversion-run.tar.bz2` was not available (until 11 November).** It is downloaded from
 eLearning, which we do not have access to. To still find the execution of
 Part 3, Q4 in a real run, we added a **test hook** to `q3.py` (and `qx.py`),
 off by default: `SLOW_PUT="n0=0.5"` delays every put that n0 sends to
 another server by 0.5 s and traces it as `slow_put`, like the
 `slow_put` events the guide mentions. This is fault injection, like
 `MS_CRASH` in `ms.py`, not a protocol mechanism. We also looked for the
-same pattern in our ROWA runs, as the guide asks. *When the group has the
-real `inversion-run`, run* `../kit/timeline.py inversion-run --history
---key 0 | grep -v cas` *and compare.*
+same pattern in our ROWA runs, as the guide asks.
+*Update, 11 November:* the group downloaded the real run; it is extracted
+in `kit/inversion-run` and compared in `03-concurrent-writers.md` §5.1. The
+hook turned out to be faithful: the teachers' `p3_slow.py` holds n0's puts
+to n1 and n2 for 0.5 s, exactly what `SLOW_PUT="n0=0.5"` does, and the run
+shows the same anomaly. We keep our run as the Part 5 execution (the guide
+prefers the group's own run) and use the kit's for the SC contrast
+(`05-explain-execution.md` §5).
+
 
 ## Part 4
 
@@ -186,16 +195,53 @@ already at a write quorum).
 pages max) and the guide's list (claim, design evolution, Part 1 table,
 Part 3 table with read-/write-heavy choice, Part 5 diagram, limitations,
 AI log, contributions). Group number, names and contributions are left
-as placeholders: we do not know them. It is compiled with Tectonic
+as placeholders: we do not know them. *(11 November: group number set
+to 7; names and contributions still to be filled in by the group.)* It is compiled with Tectonic
 (`cd record && tectonic record.tex`).
 
-**D15. AI use.** The whole lab was done by an AI assistant at the group's
-request ("complete Lab 2"). Under `kit/AGENTS.md`, that is an "answer
-directly" request, which must be noted in the AI log; it is, in
-`ai-log.md` and in §5 of the record, together with what the group still
-has to do itself (Part 0 individually, check the design decisions above).
+**D15. AI use.** The lab was implemented with an AI assistant (Claude
+Code); what it was asked, what it produced and what had to be corrected is
+in `ai-log.md` and in §5 of the record.
 
 **D16. Part 6 (class table).** Other groups' results are not available
 here: `06-compare.md` gives our rows for the class table, what we expect
 other groups to see differently and why, and the answer to the lock
 takeover question.
+
+## Re-review, 11 November
+
+A second pass over every decision, against the final code (`q4b.py`), the
+runs and the kit's `inversion-run`, done by the assistant (session 3,
+`ai-log.md`). The group's own verdicts go in `ai-log.md` §5.
+
+| decision | verdict | reason |
+|---|---|---|
+| D2 reader rule (Part 1) | keep | with values only no rule is correct; this one adds no mechanism and its failure (`01` §3.2) is what motivates versions |
+| D3 no timeouts in Parts 1–3 | keep | error 11 after a timeout would be false for a write that reached some servers |
+| D4 own copy without a message | keep | equivalent to a zero-delay message; the only side effect (own answer first) is documented |
+| D5 version from a read quorum | keep | QR + QW > N makes versions grow with real time for completed writes; `q2local` (local version) failed more (`02` §4); the teachers' `p3_slow.py` does the same |
+| D6 tie-break by client id | keep | the kit's run breaks ties by server id, which is safe there only because each server has one writing client; with `--concurrency 2n` two clients of one server can write concurrently |
+| D7 one file per step | keep | every cited run is reproducible with the exact code |
+| D8 `SLOW_PUT` hook | keep, confirmed | same held puts and same anomaly as the kit's run |
+| D9 lock: refuse + random backoff, error 11 after 0.8 s | keep | queueing deadlocks; error 11 is truthful (nothing written before the lock); 0.8 s < client timeout. Known costs: starvation, a crashed holder blocks the key (record §4) |
+| D9b cas read with QR, two-phase write under the lock | keep | the lock serialises writers, the read quorum still gives the latest tag |
+| D10 write-back on `q3.py` | keep | the comparison isolates the read change |
+| D11 (2,4) and (4,2) as extra configurations | keep | needed for the read-/write-heavy choice |
+| D17–D19 | keep | |
+
+**Changed in the documents (not in the code):**
+
+- The claim said "no two cas succeed from the same value". Too strong: two
+  cas from the same value may both succeed legitimately if a write puts the
+  value back in between. What the lock guarantees, and what the runs
+  checked ("no two successful cas read the same tag", `04` §4), is **no
+  two cas succeed after reading the same version**. Fixed in the record §1
+  and `05` §4.
+- Claim (ii) was ambiguous about whose writes are answered; it now says
+  clients of the live majority for reads, writes and cas alike.
+- `05` §4 said the store is "not even sequentially consistent"; now: it
+  does *not guarantee* SC (two clients can see two writes in opposite
+  orders, §3), since whether a whole history is SC also depends on
+  repeated values (`05` §5).
+
+No decision needed a code change, so no run was repeated.

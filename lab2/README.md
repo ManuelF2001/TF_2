@@ -28,6 +28,11 @@ The final store (`q4b.py`) is regular-not-atomic for reads, atomic for
 writes and cas, and tolerates 1 failure of 3, except for keys whose lock
 the failed server held: claim in `docs/05-explain-execution.md` §4.
 
+**Group 7** (Part 1 Q5: majority, `docs/01-wait-for-some.md` §3.2). The
+kit's `inversion-run` is in `../kit/inversion-run`: same anomaly as our
+reproduction, not linearizable but sequentially consistent
+(`docs/03-concurrent-writers.md` §5.1, `docs/05-explain-execution.md` §5).
+
 ## Layout
 
 ```
@@ -65,6 +70,7 @@ lab2/
 │   ├── anomaly.py          where did the checker find a run non-linearizable? (+ timeline window)
 │   ├── after.py            ok/fail/info per server and operation, before/after a time
 │   ├── clockcheck.py       did the wall clock jump during a run? (WSL, worklog.md §5)
+│   ├── sccheck.py          is the history of a key sequentially consistent? (Part 5 Q3)
 │   └── table.py            results/results.tsv -> markdown table
 ├── runs/                   copies of the cited runs (INDEX.md lists them)
 ├── results/results.tsv     one line per run: program, N, QR, QW, scenario, summary.py line, store dir
@@ -102,21 +108,22 @@ Compile the record: `cd record && tectonic record.tex` (Tectonic is in
 
 ## Before submitting (13 November) — what the group still has to do
 
-- [ ] Fill in the group number, member names and **Contributions** in
+- [x] Group number (7) in `record/record.tex`.
+- [ ] Fill in the member names and **Contributions** in
       `record/record.tex` (and recompile).
-- [ ] Each member: write your own Part 0 answers and compare them with
-      `docs/00-predict.md` (the guide wants them without AI).
+- [x] Part 0: Manuel's answers in `docs/00-predict.md`, compared with
+      the runs. Other members: add yours there.
 - [ ] Check the design decisions in `docs/decisions.md` (D2, D5, D6, D9 in
       particular); if the group decides otherwise, change the program and
       rerun (`run_all.sh partN`).
-- [ ] Part 1 Q5: keep the subsection of `docs/01-wait-for-some.md` §3 for
-      your group's configuration (groups 1, 4, 7, 10: majority; 2, 5, 8:
-      ROWA; 3, 6, 9: non-intersecting) and cite it.
-- [ ] Download `inversion-run.tar.bz2` from eLearning, extract it in `kit/`,
-      and compare with our reproduction (`docs/03-concurrent-writers.md` §5).
-- [ ] Complete `docs/ai-log.md` and §5 of the record with what *you*
-      accepted, changed or rejected (and, optionally, ask a *fresh* AI
-      session whether the Part 2 store is linearizable).
+- [x] Part 1 Q5, group 7 → majority: `docs/01-wait-for-some.md` §3.2,
+      cited in the record (§2).
+- [x] `inversion-run.tar.bz2` extracted in `kit/` and compared with our
+      reproduction (`docs/03-concurrent-writers.md` §5.1).
+- [ ] Fill in the last column of `docs/ai-log.md` §6 (what *you*
+      accepted, changed or rejected) and the last bullet of §5 of the
+      record; optionally ask a *fresh* AI session whether the Part 2 store
+      is linearizable (suggested prompt in `docs/ai-log.md` §7).
 - [ ] Replace our rows in `docs/06-compare.md` with the class table.
 - [ ] Every member can explain every line of `code/q4b.py` and the steps
       before it (`docs/code.md`): the final discussion is individual.

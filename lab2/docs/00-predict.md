@@ -1,71 +1,56 @@
 # Part 0 – Predict
 
-> The guide asks for these answers **individually, without discussion and
-> without AI**. What follows are reference answers written afterwards (by
-> the AI assistant, see `ai-log.md`). Each member should keep their own
-> original answers and compare: the differences are good material for the
-> final discussion. The answers are checked against the runs in
-> `03-concurrent-writers.md` §3.
+Answers written individually, as the guide asks (Manuel Fernandes). Other
+members: add yours below in the same format.
 
-## 1. N = 3: every pair (Qr, Qw); which ones must see a completed write?
+## Manuel Fernandes
 
-There are nine pairs (1 ≤ Qr, Qw ≤ 3):
+**1.** Com N = 3 há 9 pares (Qr, Qw), cada um entre 1 e 3: (1,1), (1,2),
+(1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3).
 
-| Qr \ Qw | 1 | 2 | 3 |
-|---|---|---|---|
-| 1 | (1,1) no | (1,2) no | (1,3) **yes** |
-| 2 | (2,1) no | (2,2) **yes** | (2,3) **yes** |
-| 3 | (3,1) **yes** | (3,2) **yes** | (3,3) **yes** |
+Uma leitura que começa depois de uma escrita terminada tem de a ver quando
+Qr + Qw > N. Isso acontece nestes pares: (1,3), (2,2), (2,3), (3,1), (3,2),
+(3,3).
 
-**A read that starts after a write has completed must see it exactly when
-Qr + Qw > N = 3**, i.e. (1,3), (2,2), (2,3), (3,1), (3,2), (3,3).
+Porquê: qualquer quórum de leitura cruza-se com qualquer quórum de escrita
+em pelo menos um servidor. Esse servidor tem o valor mais recente. Quando
+Qr + Qw ≤ 3, os quóruns podem não ter nenhum servidor em comum, e a leitura
+pode devolver um valor antigo.
 
-**Why:** the write completed after Qw servers stored it; the read waits for
-Qr answers. If Qr + Qw > N, the two sets cannot be disjoint (pigeonhole):
-at least one of the Qr answers comes from a server that stored the write.
-If Qr + Qw ≤ N, the read may be answered entirely by servers the write has
-not reached yet, e.g. (1,2): the write is stored at n0, n1; a read at n2
-asks only itself.
+**2.** Cada valor é guardado com uma versão (timestamp ou número de versão,
+com o ID do cliente para desempatar). O leitor devolve o valor com a versão
+mais alta. Também pode reescrever esse valor nos servidores desatualizados
+(read repair / write-back).
 
-Two caveats that the lab then explores:
+**3.** Com N = 5:
 
-- "**sees**" is not "**returns**": among the Qr answers the reader must be
-  able to tell the newest one (question 2, Part 2).
-- Pairs with Qr + Qw > N but small Qw, like (3,1), make every read wait for
-  all servers; and if Qw ≤ N/2, two writes may not see each other, which
-  matters for ordering them (versions, Part 2) and for cas (Part 4).
+- Quóruns por maioria (Qr = Qw = 3): as leituras toleram 2 servidores em
+  falha, e as escritas também 2.
+- ROWA (Qr = 1, Qw = 5): as leituras toleram 4 servidores em falha, porque
+  basta 1 vivo. As escritas toleram 0, porque precisam de todos os
+  servidores.
 
-## 2. Answers disagree: which one to return?
+## Compared with the runs
 
-With only values, **there is no correct rule**: `{3, 7}` does not say which
-was written last. Majority voting does not help either (with Qr = 2 there
-is no majority, and the newest value may be in the minority right after a
-write). The reader needs **extra information with each value: a version
-number** (or timestamp), increasing with every write, and returns the value
-with the **highest version**. For this to work:
-
-- versions must grow along real time for completed writes (a new write must
-  get a version higher than every completed one: the writer has to *learn*
-  the current highest version first, from a quorum);
-- two concurrent writes must not get the same version, or ties must be
-  broken by the same rule everywhere (e.g. by writer id).
-
-This is exactly the path of Parts 2 and 3.
-
-## 3. N = 5: how many crashed servers can be tolerated?
-
-An operation that waits for Q answers out of N completes as long as at
-least Q servers are up, i.e. it tolerates **N − Q** crashes.
-
-| configuration | reads (Qr) | writes (Qw) |
+| prediction | observed | where |
 |---|---|---|
-| majority, Qr = Qw = 3 | **2** crashes | **2** crashes |
-| ROWA, Qr = 1, Qw = 5 | **4** crashes | **0** crashes (one crash blocks every write) |
+| 1: Qr + Qw > N is needed | (1,2) non-intersecting under partitions, 0/3: reads returned 4, then 3, then 4, because a read asks only its own server, which write 4 had not reached | `01` §3.3, `runs/p1-nonint-partition` |
+| 1: … but intersection alone is not enough | (2,2) and (1,3) intersect and still failed 0/3 under load: copies diverged and the reader had no way to tell the newest value | `01` §3.1–3.2, `runs/p1-majority-latency` |
+| 1: holds for *completed* writes only | with majority quorums, a read returned a write still in progress and a later read the old value | `03` §5, kit `inversion-run`, `runs/p3-inversion` |
+| 2: versions | versions alone: 0/5 under load (concurrent writes got **equal** versions) | `02` §3, `runs/p2-latency` |
+| 2: + client id to break ties | `[number, client]`: 10/10 under load | `03` §2, `runs/p3-latency` |
+| 2: write-back | not in Parts 1–4; added in "going further": slow link 0/3 → 3/3, cost: ROWA reads need all 5 servers | `07`, `runs/px-slow-n0`, `runs/px-rowa-crash` |
+| 3: majority (3,3): 2 / 2 | reads and writes completed with n1 and n2 crashed | `03` §3 |
+| 3: ROWA (1,5): 4 / 0 | reads completed, **0 writes** after one crash | `03` §3, `runs/p3-rowa-crash` |
 
-Majority is the best compromise for both at once (⌊(N − 1)/2⌋ = 2); ROWA is
-best for reads and worst for writes.
+All three answers held. Two things Part 0 did not anticipate:
 
-Note added after Part 2: our writes ask a read quorum *before* writing
-(two phases), so a write needs both Qr and Qw servers; for these two
-configurations it changes nothing (ROWA's phase 1 is local), but for e.g.
-(4, 2) it does (`theory.md` §8).
+- *Why* intersection is not enough: with values only, the reader receives
+  the newest value but cannot recognise it (Part 1), and the intersection
+  argument says nothing about writes still in progress (Part 3 Q4).
+- Our write reads versions from Qr servers first, so a write needs Qr
+  *and* Qw servers: (4,2) completed nothing with 2 crashes
+  (`03` §3, `theory.md` §8).
+
+Write-back, in answer 2, is the mechanism that later removes the new–old
+inversion (`07-going-further.md`); the guide keeps it out of Parts 1–4.
